@@ -1,0 +1,36 @@
+name: CI
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 10.30.0
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "24.22.1"
+          cache: pnpm
+
+      - name: Assert Node floor (D-28)
+        run: |
+          node -v
+          node -e "const [M,m,p]=process.versions.node.split('.').map(Number); if(M<24||(M===24&&m===22&&p<1)) process.exit(1)"
+
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm check
+
+      - uses: astral-sh/setup-uv@v5
+        with:
+          python-version: "3.12"
+
+      - run: uv sync
+      - run: uv run pytest
