@@ -1,0 +1,27 @@
+{
+  "name": "@mondrian/web",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=24.22.1"
+  },
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "test": "vitest run",
+    "lint": "node -e \"console.log('web: lint deferred')\""
+  },
+  "dependencies": {
+    "@astrojs/svelte": "^9.1.1",
+    "@mondrian/editor": "workspace:*",
+    "@mondrian/tokens": "workspace:*",
+    "astro": "^7.4.2",
+    "svelte": "^5.57.3"
+  },
+  "devDependencies": {
+    "typescript": "^5.9.3",
+    "vitest": "^3.2.4"
+  }
+}

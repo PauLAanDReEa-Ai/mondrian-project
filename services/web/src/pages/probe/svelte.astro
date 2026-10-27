@@ -1,0 +1,9 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import Probe from "@mondrian/editor/Probe.svelte";
+---
+<BaseLayout title="Svelte probe" noindex={true}>
+  <h1>Svelte probe</h1>
+  <p>Hydration check for M1 — not linked from public nav.</p>
+  <Probe client:load />
+</BaseLayout>

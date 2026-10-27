@@ -1,0 +1,14 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { Content } from "../../../../CONTRIBUTING.md";
+---
+<BaseLayout title="Contribute — Liquid Mondrian">
+  <article class="prose">
+    <Content />
+  </article>
+</BaseLayout>
+
+<style>
+  .prose :global(h1) { font-size: 1.5rem; }
+  .prose :global(h2) { font-size: 1.2rem; margin-top: 1.5rem; }
+</style>

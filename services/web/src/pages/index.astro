@@ -1,0 +1,17 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { withBase } from "../lib/url";
+
+const base = import.meta.env.BASE_URL;
+const contribute = withBase("/contribute/", base);
+---
+<BaseLayout title="Liquid Mondrian">
+  <h1>Liquid Mondrian</h1>
+  <p>
+    Measure neoplastic compositions after Mondrian, choose a format, produce
+    variations, and take your personal version — URL, print, or file.
+  </p>
+  <p>
+    <a href={contribute}>How to contribute</a>
+  </p>
+</BaseLayout>

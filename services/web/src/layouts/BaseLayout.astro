@@ -1,0 +1,47 @@
+---
+import "@mondrian/tokens";
+
+interface Props {
+  title: string;
+  noindex?: boolean;
+}
+
+const { title, noindex = false } = Astro.props;
+const base = import.meta.env.BASE_URL;
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    {noindex && <meta name="robots" content="noindex" />}
+    <title>{title}</title>
+    <link rel="icon" type="image/svg+xml" href={`${base}favicon.svg`} />
+  </head>
+  <body>
+    <header>
+      <a href={base}>Liquid Mondrian</a>
+    </header>
+    <main>
+      <slot />
+    </main>
+    <footer>
+      <p>Geometric studies after Mondrian · FE I / UDIT</p>
+    </footer>
+  </body>
+</html>
+
+<style is:global>
+  body {
+    margin: 0;
+    font-family: var(--font-sans, system-ui, sans-serif);
+    background: var(--mp-color-canvas, #f7f5f0);
+    color: var(--mp-color-ink, #111);
+  }
+  header, footer, main {
+    padding: 1rem 1.25rem;
+    max-width: 42rem;
+    margin-inline: auto;
+  }
+  a { color: inherit; }
+</style>
