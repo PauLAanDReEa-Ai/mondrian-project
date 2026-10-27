@@ -1,0 +1,153 @@
+{
+  "status": "extracted_injected_evaluator_safe",
+  "source": {
+    "file_name": "spie-2010.pdf",
+    "sha256": "c85b3b9ffc8c0637dc8d21cca4059784334757aade9c9098baf19a98d2c4e7e4",
+    "document_id": "db745f4a-1dea-5727-8f28-19330e20a8e2",
+    "coat": "spie_2010_c85b3b9f",
+    "database": "/Users/ruvebal/ahmes-library/scholar/documents/spie_2010_c85b3b9f/extract/extraction.db"
+  },
+  "extraction": {
+    "nodes": 118,
+    "entities": 202,
+    "relations": 73,
+    "semantic_eligible": 90,
+    "semantic_annotated": 59,
+    "unknown_term_uris_rejected": 7
+  },
+  "bibliography": {
+    "evaluator_safe": true,
+    "doi": "10.1117/12.840558",
+    "year": 2010,
+    "container": "SPIE Proceedings",
+    "confidence": 0.95,
+    "method": "manual-verified-crossref",
+    "apa": "Andrzejewski, D., Stork, D. G., Zhu, X., & Spronk, R. (2010). Inferring compositional style in the neo-plastic paintings of Piet Mondrian by machine learning (D. G. Stork, J. Coddington, & A. Bentkowska-Kafel, Eds.; p. 75310G). https://doi.org/10.1117/12.840558",
+    "citation_result": "(Andrzejewski, 2010, p. 1)"
+  },
+  "athanor": {
+    "project_slug": "profield-frontend-pedagogy",
+    "library": "scholar",
+    "project_id": "723f8d32-efdb-4604-a9a9-4c9812bbec8b",
+    "injection_id": "9a1a8bb5-05ff-4340-88bd-fbc10268a50f",
+    "status": "COMPLETED"
+  },
+  "graphrag": {
+    "status": "blocked",
+    "reason": "The running DevIAC graph service does not expose the scholar library through AHMES_VAULT_DIR.",
+    "fallback": "Athanor vector hits were resolved to complete Ahmes nodes; local relation edges were inspected but not used as citation evidence."
+  },
+  "schema_adoption": {
+    "scope": "Section 3.2 image representation only",
+    "canonical_primitives": [
+      "normalized x/y grid points including 0/1 canvas borders",
+      "colored rectangles referencing point pairs",
+      "black horizontal/vertical lines with center, extent, and perpendicular-axis relative thickness",
+      "implicit white background"
+    ],
+    "project_adaptations": [
+      "normalized coordinates",
+      "method-discriminated provenance, rights, and uncertainty",
+      "single-gray extension",
+      "derived CSS Grid render plan"
+    ],
+    "excluded": [
+      "decision-tree classifier",
+      "maximum-likelihood generator",
+      "authenticity or aesthetic score",
+      "claim about Mondrian's working process"
+    ]
+  },
+  "anchors": [
+    {
+      "node_id": "cabc67dc-6c7a-5b58-a988-aa06c9cc269b",
+      "pdf_page": 5,
+      "use": "oriented grid-point primitive"
+    },
+    {
+      "node_id": "2ada1ff9-422e-570b-bde4-691531991161",
+      "pdf_page": 5,
+      "use": "canvas-border grid points"
+    },
+    {
+      "node_id": "7fcf369b-f528-5e22-8a02-935dd4790a1f",
+      "pdf_page": 5,
+      "use": "horizontal-line representation"
+    },
+    {
+      "node_id": "05b10333-3aeb-5288-8403-d747ef5a8474",
+      "pdf_page": 5,
+      "use": "line center point"
+    },
+    {
+      "node_id": "f282bd43-974d-58a4-9dfc-6968e72d504d",
+      "pdf_page": 5,
+      "use": "line extent points"
+    },
+    {
+      "node_id": "610630e8-f370-518b-ac62-a8d0bf42cab8",
+      "pdf_page": 5,
+      "use": "analogous vertical-line representation"
+    },
+    {
+      "node_id": "149d76aa-d296-518c-9de9-16013293dbb3",
+      "pdf_page": 5,
+      "use": "rectangle point-pair bounds"
+    },
+    {
+      "node_id": "a0530710-719c-577b-b43c-2399694278cf",
+      "pdf_page": 5,
+      "use": "color roles, line thickness, and white background"
+    },
+    {
+      "node_id": "6616761f-d24c-5974-b028-697187da655a",
+      "pdf_page": 5,
+      "use": "lines represented over rectangles"
+    },
+    {
+      "node_id": "43d6c900-a5f0-5426-8ca0-4f382480303e",
+      "pdf_page": 6,
+      "use": "enumerated white/red/yellow/blue/black roles"
+    },
+    {
+      "node_id": "e44e0d8d-0e0f-5cfb-9c71-dc0fde0e6f46",
+      "pdf_page": 2,
+      "use": "classical analyzer and normalized representation"
+    },
+    {
+      "node_id": "a0530710-719c-577b-b43c-2399694278cf",
+      "pdf_page": 5,
+      "use": "rectangle colour, line thickness and grid-point schema"
+    },
+    {
+      "node_id": "1d5b7216-991c-5a4d-833a-7e3a60c311dd",
+      "pdf_page": 2,
+      "use": "classical corpus scope and exclusions"
+    },
+    {
+      "node_id": "07cd656b-12e0-5604-853c-636078747225",
+      "pdf_page": 4,
+      "use": "material and colour limitations of idealized sketches"
+    },
+    {
+      "node_id": "6939e2a2-5697-5c18-b10a-b29ebe7c0450",
+      "pdf_page": 6,
+      "use": "model is not Mondrian's working process"
+    },
+    {
+      "node_id": "35d78ae8-7871-5810-9f13-c94d45c7202e",
+      "pdf_page": 1,
+      "use": "reported classifier result"
+    },
+    {
+      "node_id": "07107abf-a337-52db-8225-378ae39b0bfe",
+      "pdf_page": 8,
+      "use": "evaluation design and baseline"
+    },
+    {
+      "node_id": "b1e40c2d-741b-5f62-a2bc-0be9e3cbad43",
+      "pdf_page": 10,
+      "use": "generation limitations"
+    }
+  ]
+}
