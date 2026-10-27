@@ -1,7 +1,9 @@
 <!--
 Mondrian Project — cascade pack index (two faces: product owner / technical director).
-Author: Rubén Vega Balbás, PhD · 25 October 2026 · amended 27 October 2026 (D-21…D-27; M0 F3–F6).
-Lives here until PHASE-M1 moves the pack into the product repository (docs/DEV_PLAN/MONDRIAN/).
+Author: Rubén Vega Balbás, PhD · 25 October 2026 · amended 27 October 2026
+  (D-21…D-32; M0 DONE; M1 DONE; M2 READY).
+Canonical home: product repo docs/DEV_PLAN/MONDRIAN/ (moved at M1).
+Forge pointer: web-atelier-udit/frontend-pedagogy/forge/mondrian-project/INDEX.md
 -->
 
 # The Mondrian Project — cascade pack
@@ -9,6 +11,7 @@ Lives here until PHASE-M1 moves the pack into the product repository (docs/DEV_P
 **Status:** ACTIVE cascade (M0–M9). Adopted 25 Oct 2026 as the Front-End I 2026–27 semester-1 integrator. This is **not** the student brief (M9 writes it, EN + ES, last) and **not** a course page (nothing here is published by `web-foundations`).
 **Author:** Rubén Vega Balbás, PhD · `ruvebal@crea-comm.net`
 **Readers:** department / research group / instructor → rationale first; implementing agent → cascade second.
+**Canonical path:** `~/projects/ruvebal/scholar/udit/courses-repos/mondrian-project/docs/DEV_PLAN/MONDRIAN/` · remote `ruvebal/mondrian-project`.
 
 ## How to read this pack
 
@@ -25,24 +28,26 @@ Lives here until PHASE-M1 moves the pack into the product repository (docs/DEV_P
 | Format aspect presets | [`DECISIONS/D31-2026-10-27-FORMAT-ASPECT-PRESETS.md`](DECISIONS/D31-2026-10-27-FORMAT-ASPECT-PRESETS.md) | Aspect chips + maximise-in-paper; game = texture → format → variations → version. |
 | SVG study ≠ photo | [`DECISIONS/D32-2026-10-27-SVG-STUDY-NOT-PHOTO.md`](DECISIONS/D32-2026-10-27-SVG-STUDY-NOT-PHOTO.md) | Distributed artefact = measured SVG study, not museum photo; composition rights still per-work. |
 | Cohort seats | [`TEAM-ASSIGNMENTS.md`](TEAM-ASSIGNMENTS.md) | Seats 1–2 backend, 3–5 storytelling, 6–7 app UI; student task specs; CODEOWNERS mapping. |
-| Pre-M1 scaffold | [`scaffold/`](scaffold/) | Token CSS barrel, `work.schema.json` draft, HTML export helpers (+ self-check), generate-request schema, CODEOWNERS example, **`.nvmrc` 24.22.1** + engines (D-28). |
-| Technical director | [`MONDRIAN-CASCADE.md`](MONDRIAN-CASCADE.md) | D-01…D-26, ordered programme with falsifiable gates, master paste, hard constraints, layer map, closing protocol, resume rule, amendments to the pitch, target repository layout. |
-| Private correspondence | `_private/` (gitignored) | Student preflight and department/ECSIT emails. Only status/dates enter tracked reports; addresses, replies and signed material remain private. |
+| Technical director | [`MONDRIAN-CASCADE.md`](MONDRIAN-CASCADE.md) | D-01…D-32, ordered programme with falsifiable gates, master paste, hard constraints, layer map, closing protocol, resume rule, amendments to the pitch, repository layout. |
+| Private correspondence | `_private/` (gitignored; forge only) | Student preflight and department/ECSIT emails. Only status/dates enter tracked reports; addresses, replies and signed material remain private. |
 | Grounding | [`grounding/ANDRZEJEWSKI-2010.md`](grounding/ANDRZEJEWSKI-2010.md) · [`JSON`](grounding/ANDRZEJEWSKI-2010.json) · [`prior-art queue`](grounding/PRIOR-ART-DISCOVERY.md) · [`corpus overnight`](grounding/CORPUS-OVERNIGHT.md) · [`phase GraphRAG queries`](grounding/GRAPHRAG-PHASE-QUERIES.md) · [`About value`](grounding/ABOUT-MONDRIAN-VALUE.md) | Ahmes extraction, Athanor injection/retrieval, full node/page anchors, limits, unresolved gates; overnight primary/secondary Mondrian corpus under Athanor slug `mondrian-project`. |
 | Origin | [`PITCH.md`](PITCH.md) | The 22 Oct decision document: matrix, hue formula, frame contract, art-historical contract, rights, 50 risks. Still authoritative where the cascade §7 does not amend it. |
 | AI grading sufficiency | [`AI-EVALUATION-SUFFICIENCY-REVIEW.md`](AI-EVALUATION-SUFFICIENCY-REVIEW.md) | Instructor-only: spine vs operational gaps vs TTOD close-out; what to add before M1 templates freeze. |
 | AI operating contract | [`AI-CRITICAL-OPERATING-ADDENDUM.md`](AI-CRITICAL-OPERATING-ADDENDUM.md) | Required PR log, human/assistant verification boundary, formative checkpoint and instructor signs; shared rubric remains the only summative instrument. |
 | Git / contribution sufficiency | [`GIT-HYGIENE-AND-CONTRIBUTION-SUFFICIENCY-REVIEW.md`](GIT-HYGIENE-AND-CONTRIBUTION-SUFFICIENCY-REVIEW.md) | Instructor-only: port TTOD Git hygiene + PR-review automation; rewrite CONTRIBUTING from student M1 feedback. |
-| Parallel work queue | [`WORK-QUEUE.md`](WORK-QUEUE.md) | Non-blocking items (e.g. Q-FA1 fractal-architect Mondrian tree mode + pitch/course backgrounds after Bountis coat). |
+| Parallel work queue | [`WORK-QUEUE.md`](WORK-QUEUE.md) | Non-blocking items (Q-FA1…Q-FA4 DONE). Visual kits remain under forge `assets/` — not product chrome. |
 | Phases | [M0](PHASE-M0.md) preflight · [M1](PHASE-M1.md) `git init` → Pages + Svelte probe · [M2](PHASE-M2.md) contracts + catalog · [M3](PHASE-M3.md) shell/story · [M4](PHASE-M4.md) analyzer · [M5](PHASE-M5.md) LAN API · [M6](PHASE-M6.md) Svelte+SVG editor · [M7](PHASE-M7.md) kiosk · [M8](PHASE-M8.md) corpus (parallel) · [M9](PHASE-M9.md) research + brief | One paste-ready runbook each. Do not invert. |
 
 Closing: each phase → VERIFYING → `PHASE-Mn-COLD-REVIEW.md` → amend if needed → `PHASE-Mn-REPORT.md` → DONE. The implementer never self-certifies.
 
+**Pre-M1 scaffold** lived in the forge (`frontend-pedagogy/forge/mondrian-project/scaffold/`). At M1 it was copied into `packages/tokens/`, `packages/matrix/export/`, `.nvmrc`, and CODEOWNERS — there is no `scaffold/` directory in this product repo.
+
 ## One-sentence claims
 
 - **Product:** a kiosk-first and handheld editor where a measured Mondrian
-  composition enters an A4/digital surface at its original ratio, the containing
-  frame is corner-resized (free aspect, liquid-fill), predefined variations apply,
+  composition starts at its native aspect, then the containing frame is
+  corner-resized (free aspect) so the pattern **liquid-fills** the frame
+  (D-30); format chips maximise in paper (D-31); predefined variations apply;
   and the visitor saves SVG/HTML/CSV/PNG and prints—every source number
   preserved and every visitor change reproducible, offline, with no server.
 - **Engineering:** immutable work data plus separate surface/state contracts;
@@ -54,9 +59,9 @@ Closing: each phase → VERIFYING → `PHASE-Mn-COLD-REVIEW.md` → amend if nee
 
 | Step | Deliverable | Status |
 | --- | --- | --- |
-| M0 | Decisions ratified, probes, private communications, reference works + rights | VERIFYING |
-| M1 | Repo from `git init`, Astro 7 + Svelte probe, `packages/editor`, CI/Pages, Git/PR/AI contract (D-25 CODEOWNERS) | BLOCKED (M0) |
-| M2 | Andrzejewski primitives, SVG+Grid render plan, catalog generator, surface/state/`variationId`, conformance, reference work | BLOCKED (M1) |
+| M0 | Decisions ratified, probes, private communications, reference works + rights | **DONE** (27 Oct 2026 — owner flip after F1–F6 triage) |
+| M1 | Repo from `git init`, Astro 7 + Svelte probe, `packages/editor`, CI/Pages, Git/PR/AI contract (D-25 CODEOWNERS) | **DONE** (27 Oct 2026 — cold FAIL F1–F3 triage closed; owner flip) |
+| M2 | Andrzejewski primitives, SVG+Grid render plan, catalog generator, surface/state/`variationId`, conformance, reference work | **READY** |
 | M3 | Product shell, gallery CSS Grid miniatures, About story/About Us/method | BLOCKED (M2) |
 | M4 | Classical analyzer + line weights + evaluation (Python lane) | BLOCKED (M2) |
 | M5 | API JSON + HTML/CSS and SVG preview; no public runtime calls | BLOCKED (M2; M4 for `/analyze`) |
@@ -65,57 +70,52 @@ Closing: each phase → VERIFYING → `PHASE-Mn-COLD-REVIEW.md` → amend if nee
 | M8 | Corpus: references 2–3 + one work per student (parallel lane) | BLOCKED (M2) |
 | M9 | Declaration, pseudonymisation, defence, brief EN/ES, dataset, abstract | BLOCKED (M7, M8) |
 
-## Trigger readiness (27 Oct 2026)
+## Trigger readiness (27 Oct 2026 — evening)
 
 | Gate | State |
 | --- | --- |
-| Decisions D-01…D-29 | Adopted / ratified (D-29 = About GSAP ScrollTrigger parallax) |
-| Product contract | [`MVP-PRODUCT-SPEC.md`](MVP-PRODUCT-SPEC.md) matches Addendum B + D-26 |
-| Student seats + task specs | [`TEAM-ASSIGNMENTS.md`](TEAM-ASSIGNMENTS.md) |
-| Real starter code | [`scaffold/`](scaffold/) (export self-check green) |
-| M0 | Still **VERIFYING** — cold review must close before M1 `git init` |
-| Product repo | **Do not create** until M1 is explicitly started |
+| Decisions D-01…D-32 | Adopted / ratified (through D-32 SVG study ≠ photo) |
+| Product contract | [`MVP-PRODUCT-SPEC.md`](MVP-PRODUCT-SPEC.md) matches Addendum B + D-26…D-32 |
+| Student seats + task specs | [`TEAM-ASSIGNMENTS.md`](TEAM-ASSIGNMENTS.md) — seats 1–4 assigned; 5–7 TBD |
+| Product repo | **Exists** — `ruvebal/mondrian-project`; cascade lives here |
+| Live Pages | https://ruvebal.github.io/mondrian-project/ → **200** |
+| M0 | **DONE** |
+| M1 | **DONE** — `main` protected; F1–F3 closed; seats 5–7 + letters remain ops (non-blocking) |
+| M2 | **READY** |
 
-## Live snapshot (26 Oct 2026 — M0 preflight; **updated 27 Oct 2026** D-21…D-26)
+## Live snapshot (27 Oct 2026 — M0 DONE; M1 DONE)
 
 | Fact | Value | Where checked |
 | --- | --- | --- |
-| Branch base | `mondrian-project-cascade` | `git branch --show-current`, 26 Oct 2026 |
-| Node / pnpm / Python (system) | **v24.22.1** (nvm default; D-28) / 10.30.0 / 3.14.7 | `node -v` 27 Oct 2026 after Oct security pin; Homebrew `node@22` uninstalled |
-| Python via uv (product pin) | **3.12.15** | `uv python install 3.12` + `uv run --python 3.12` (exit 0) |
-| `uv` installed | **yes: 0.13.5** | `uv --version`, 26 Oct 2026 |
-| Astro create dry-run | **`astro@^7.4.2`** (throwaway deleted); npm latest 7.4.2; Astro 6.4.8 still on registry | `pnpm create astro@latest`, 26 Oct 2026 |
-| `withastro/action@v6` | exists (tags `v6`…`v6.1.4`; default Node 24) | `gh api` tags + README, 26 Oct 2026 |
-| Andrzejewski paper grounding | 118 nodes, 202 entities, 73 relations; Athanor injection complete; scoped retrieval resolved full UUIDs/pages | [`grounding/ANDRZEJEWSKI-2010.md`](grounding/ANDRZEJEWSKI-2010.md) |
-| Bibliographic gate | DOI `10.1117/12.840558`; APA and node citations evaluator-safe at confidence 0.95 | Ahmes manual DOI dry-run + live Crossref verification + `query --cite --require-evaluator-safe` |
-| Remaining grounding limit | DevIAC GraphRAG cannot see the `scholar` library under its current vault root | Receipt records the fail-closed capability check; Athanor full-node retrieval succeeded |
-| Baseline 2026 newly available | container style queries, `@scope`, `field-sizing`, `contrast-color()`, `shape()`, anchor positioning (Jan 2026), `crisp-edges`, active view transition | web.dev/baseline/2026; MDN `anchor()` |
-| `if()`, `@function` | not Baseline; limited | web.dev/baseline/2026 (absent); State of CSS 2026 |
-| Astro current major | **7.4.2** (M0 dry-run); D-02 + **D-28** Astro 7 + `withastro/action@v6` + **Node ≥24.22.1** | npm view; nodejs.org Oct 2026 security releases; [`DECISIONS/D28-…`](DECISIONS/D28-2026-10-27-NODE-SECURITY-PIN.md) |
-| pnpm Python support | experimental, pnpm 12.4+; uv workspace shared env in 12.5 | pnpm.io/python; pnpm.io/blog/releases/12.5 |
-| Screen Wake Lock | Baseline 2025; HTTPS; released on hidden | MDN Screen Wake Lock API |
-| Keyboard Lock | Chrome/Edge only; Firefox/Safari false (BCD); Chrome Esc unlock ~2 s | MDN BCD `Keyboard.lock` + M0 report §4 — 26 Oct 2026 |
-| Prior DH work | Andrzejewski, Stork, Zhu, Spronk (2010) is Ahmes-resolved; other candidates remain discovery-only | [`grounding/ANDRZEJEWSKI-2010.md`](grounding/ANDRZEJEWSKI-2010.md) · [`grounding/PRIOR-ART-DISCOVERY.md`](grounding/PRIOR-ART-DISCOVERY.md) |
-| Mondrian voice corpus overnight | **DONE** 2026-10-26T01:47Z — 10/10 PROCESSED_OK + inject; morning cite repair → `(Mondrian 1986, …)` evaluator_safe on plastic means / equilibrium / Neo-Plastic nodes | [`grounding/CORPUS-OVERNIGHT.md`](grounding/CORPUS-OVERNIGHT.md) · [`morning status`](grounding/logs/morning-status-2026-10-26.md) |
-| Q-FA1 fractal Mondrian mode | **DONE** — geometry_only tree mode in fractal-architect 1.3.0; 3 pitch + 3 course SVGs/PNGs (release `2f46d8a42248a231`); Bountis DOI cite-safe; trees ≠ MVP corpus | [`WORK-QUEUE.md`](WORK-QUEUE.md) · [`assets/mondrian-tree/`](assets/mondrian-tree/) |
-| Q-FA2 visual asset kit | **DONE** — 41 assets; hand-rolled trees; preserved as A/B twin | [`assets/kit/`](assets/kit/) · [`WORK-QUEUE.md`](WORK-QUEUE.md) |
-| Q-FA3 kit-qfa1 twin | **DONE** — Q-FA1 trees (`dd7ac8a068d23bd8`); 35/41 hashes match Q-FA2; library versions in manifests | [`assets/INDEX.md`](assets/INDEX.md) · [`assets/KIT-DIFF.md`](assets/KIT-DIFF.md) |
-| D-21…D-25 stack/MVP amend | **adopted** 27 Oct 2026 — Astro+Svelte+SVG; build-time catalog; Addendum B; path-owned lanes | [`DECISIONS/D21-D25-2026-10-27-ASTRO-SVELTE-SVG-MVP.md`](DECISIONS/D21-D25-2026-10-27-ASTRO-SVELTE-SVG-MVP.md) |
-| D-30 liquid frame | **adopted** 27 Oct 2026 — free-aspect corners + liquid-fill; supersedes preserve-ratio MVP | [`DECISIONS/D30-…`](DECISIONS/D30-2026-10-27-LIQUID-FRAME-REFACTOR.md) |
-| D-31 format presets | **adopted** 27 Oct 2026 — aspect chips; maximise in printableArea; `fmt` in URL | [`DECISIONS/D31-…`](DECISIONS/D31-2026-10-27-FORMAT-ASPECT-PRESETS.md) |
-| D-32 SVG study ≠ photo | **adopted** 27 Oct 2026 — measured SVG study; no photo distribution; composition rights per-work | [`DECISIONS/D32-…`](DECISIONS/D32-2026-10-27-SVG-STUDY-NOT-PHOTO.md) |
-| D-32 SVG study ≠ photo | **adopted** 27 Oct 2026 — measured SVG study, not museum photo; composition rights still per-work | [`DECISIONS/D32-…`](DECISIONS/D32-2026-10-27-SVG-STUDY-NOT-PHOTO.md) |
-| `svelte` / `@astrojs/svelte` | **5.57.3** / **9.1.1** (peers `astro@^7`, `svelte@^5.43.6`) | `npm view`, 27 Oct 2026 |
-| FE I session table | S1–S13; no Jekyll/Astro/Bootstrap/Tailwind session; GSAP S11; Vite first at S27 | `web-foundations/docs/tracks/en/udit/2627-fei/index.md` |
-| Shared defence rubric | v2.0.3, frozen 2026-09-01, FE I row "any AI-assisted project" | `web-foundations/docs/evaluation/shared/ai-declaration-oral-defence-rubric/index.md` |
-| TTOD institutional letter template | exists; addressees: grado coordination, Full-Stack/Data-Science direction, ECSIT IP | `~/src/ttod/docs/research/institutional/SOLICITUD-AUTORIZACION-PEDAGOGICA-ES.md` |
-| Tao of HCD source | Spanish chapter, ten sections, parked for TTOD merge | `~/src/ttod/sources/tao-of-human-centered-design/{README,es}.md` |
+| Product branch | `main` @ `764967a` (tracks `origin/main`) | `git branch -vv`, 27 Oct 2026 |
+| Product remote | `git@github.com:ruvebal/mondrian-project.git` | `git remote -v` |
+| Pages home / contribute | **200** / **200** | `curl -sI` https://ruvebal.github.io/mondrian-project/{,/contribute/} |
+| Pages wrong path | **404** | `curl` `/this-path-does-not-exist` |
+| Svelte probe URL | `/probe/svelte/` (noindex; amend from spec `/_probe/`) | live 200; dist greps |
+| Public `/` island | **none** (no Probe / `client:load`) | dist `index.html` / `contribute/` |
+| Branch protection | **on** — ≥1 PR review + required check `check` (strict) | `gh api …/branches/main/protection`, 27 Oct 2026 evening |
+| Collaborators | `ruvebal` only (students not yet added) | `gh api …/collaborators` |
+| Node / pnpm / Python (system) | **v24.22.1** (nvm; D-28) / 10.30.0 / 3.14.7 | `node -v` 27 Oct 2026 |
+| Python via uv (product pin) | **3.12.15** | `uv run --python 3.12` |
+| `uv` installed | **yes: 0.13.5** | `uv --version` |
+| CI | green on latest `main` push (Node **24.22.1**) | `gh run list` 27 Oct |
+| Astro / Svelte | Astro 7 + `@astrojs/svelte` in `services/web` | package.json / probe |
+| Andrzejewski paper grounding | 118 nodes; Athanor injection complete; evaluator-safe cites | [`grounding/ANDRZEJEWSKI-2010.md`](grounding/ANDRZEJEWSKI-2010.md) |
+| Bibliographic gate | DOI `10.1117/12.840558`; evaluator_safe | Ahmes + Crossref |
+| Remaining grounding limit | DevIAC GraphRAG cannot see `scholar` under current vault root | fail-closed receipt |
+| Keyboard Lock | Chrome/Edge only; Firefox/Safari false | MDN BCD + M0 report §4 |
+| Mondrian voice corpus overnight | **DONE** | [`grounding/CORPUS-OVERNIGHT.md`](grounding/CORPUS-OVERNIGHT.md) |
+| Q-FA1…Q-FA4 | **DONE** (forge assets; trees ≠ MVP corpus) | forge `WORK-QUEUE.md` / `assets/` |
+| D-21…D-32 | **adopted** 27 Oct 2026 | [`DECISIONS/`](DECISIONS/) |
+| `svelte` / `@astrojs/svelte` (npm view) | **5.57.3** / **9.1.1** | 27 Oct 2026 |
+| FE I session table | S1–S13; GSAP S11 absorbed for `/about/` only (D-29); no Bootstrap/Tailwind/Vite in product | track index + D-06 |
+| Shared defence rubric | v2.0.3, frozen 2026-09-01 | web-foundations evaluation |
 
-## Where things go after M1
+## Where things live (post-M1 move)
 
-| Now | After M1 |
+| Surface | Location |
 | --- | --- |
-| This folder: INDEX, RATIONALE, CASCADE, PHASE-M*, PITCH, DECISIONS/ | Product repo `docs/DEV_PLAN/MONDRIAN/` (canonical) |
-| — | This folder keeps `PITCH.md` + an `INDEX.md` pointer |
-| `_private/` correspondence | Remains local and gitignored; never copied into the public product repo |
-| — | Student brief: product repo `docs/brief/` **and** `web-foundations` S13 lesson (M9) |
+| Canonical cascade | **This folder** — product repo `docs/DEV_PLAN/MONDRIAN/` |
+| Forge pointer | `web-atelier-udit/frontend-pedagogy/forge/mondrian-project/INDEX.md` (+ `PITCH.md`, `scaffold/`, `assets/`, `_private/`) |
+| `_private/` correspondence | Forge only (gitignored); never in the public product repo |
+| Student brief | Product `docs/brief/` **and** `web-foundations` S13 lesson — **M9 only** |

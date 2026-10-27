@@ -28,6 +28,20 @@ git worktree add ../mondrian-review-pr-12 origin/lane/<handle>-issue-12-<slug>
 
 ## Staged conflict exercise
 
-Before real PR waves, each student opens a short-lived branch that conflicts
-with a known `main` touch, resolves it locally, and pushes — practicing the
-CONTRIBUTING conflict rule without product risk.
+Runnable fixture (temp git repo — never touches product `main`):
+
+```bash
+make conflict-exercise
+# or: bash scripts/pr-review/fixtures/conflict-exercise.sh --auto-resolve
+```
+
+Student walk-through (leaves a real conflict to resolve by hand):
+
+```bash
+bash scripts/pr-review/fixtures/conflict-exercise.sh --demo
+# follow printed cd / edit / commit steps, then:
+bash scripts/pr-review/fixtures/conflict-exercise.sh --check /path/from/demo
+```
+
+Practices the CONTRIBUTING rule: resolve your own conflicts before real PR waves.
+`make check` runs `--auto-resolve` so CI proves the fixture still works.

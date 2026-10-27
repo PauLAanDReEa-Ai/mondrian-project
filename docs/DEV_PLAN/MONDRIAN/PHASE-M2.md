@@ -1,7 +1,7 @@
 # PHASE-M2: The contracts — source geometry, derived render plan, surface and state
 
 > **Track:** L0 contract, L1 first reference work, L2 geometry/state core. Freezes the spine every later phase depends on.
-> **Status:** BLOCKED (M1 DONE)
+> **Status:** READY — M1 DONE; open next (do not invert with other lanes).
 
 ## Goal
 

@@ -1,7 +1,7 @@
 # PHASE-M1: Repository from `git init` — monorepo skeleton, CI, Pages, contribution surface
 
 > **Track:** L3 skeleton, L6 process surface. Creates the product repository.
-> **Status:** BLOCKED (M0) — opens when M0 flips DONE after cold-review triage
+> **Status:** DONE — owner flip 27 Oct 2026 after cold-review FAIL triage (F1–F3 closed).
 
 ## Goal
 
@@ -87,7 +87,7 @@ Implement PHASE-M1 per docs/DEV_PLAN/MONDRIAN/PHASE-M1.md (source copy in the we
    astro.config with site + base from env (BASE defaults to "/mondrian-project") and the Svelte
    integration; one layout; src/pages/index.astro; src/pages/contribute.astro rendering
    CONTRIBUTING.md (import as content — do not duplicate text); 404.astro;
-   src/pages/_probe/svelte.astro (noindex) hydrating packages/editor Probe.svelte via client:load.
+   src/pages/probe/svelte.astro (noindex; shipped path — not `_probe/`) hydrating packages/editor Probe.svelte via client:load.
    Every link through a base-aware helper (write src/lib/url.ts, one function, tested).
 5. packages/matrix: package.json type module, exports ./src/index.js, vitest with one test that
    imports index; package.json must not list svelte. packages/editor: Svelte 5 package, one
@@ -137,7 +137,7 @@ Implement PHASE-M1 per docs/DEV_PLAN/MONDRIAN/PHASE-M1.md (source copy in the we
 - `node -v` on instructor + CI ≥ **v24.22.1**; `pnpm install` fails under older Node (`engine-strict`).
 - `pnpm install && pnpm check` exit 0; `uv sync && uv run pytest` exit 0 (collects ≥ 2 placeholder tests).
 - `.nvmrc` reads `24.22.1`; root `engines.node` is `>=24.22.1`.
-- `BASE=/mondrian-project pnpm --filter web build` exit 0; `/_probe/svelte/` HTML contains the hydrated Probe marker; `index.html` and `contribute/index.html` do not import `packages/editor` except via unused graph (fail the gate if they hydrate an island).
+- `BASE=/mondrian-project pnpm --filter web build` exit 0; `/probe/svelte/` HTML contains the hydrated Probe marker (shipped path; not `_probe/`); `index.html` and `contribute/index.html` do not import `packages/editor` except via unused graph (fail the gate if they hydrate an island).
 - After push: `curl -o /dev/null -w '%{http_code}' https://ruvebal.github.io/mondrian-project/` → `200`; `/contribute/` → `200`; a wrong path → the 404 page.
 - `README.md` contains a heading `## How to contribute` linking `CONTRIBUTING.md`; `CONTRIBUTING.md` names the D-25 path owners (Analyzer, Geometry contract, Shell, Editor, Design).
 - `packages/matrix/package.json` has no `svelte` dependency; `CODEOWNERS` maps the five surfaces.

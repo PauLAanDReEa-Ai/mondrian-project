@@ -5,11 +5,11 @@ Author: Rubén Vega Balbás, PhD · 26 October 2026
 
 # PHASE-M0 report
 
-**Status:** VERIFYING  
-**Date:** 2026-10-26  
+**Status:** DONE  
+**Date:** 2026-10-26 · **owner flip:** 2026-10-27  
 **Implementer:** Cursor agent (instructor machine / Tanit)  
-**Cold review:** filed [`PHASE-M0-COLD-REVIEW.md`](PHASE-M0-COLD-REVIEW.md) — initial verdict **FAIL** (F1). F1–F6 closed in triage (27 Oct 2026): F1 reproduction W×H+crop; F2 M1 status; F3 baseline wording; F4 §1 retitle (no `proposed` D-row); F5 inject proof = prior COMPLETED id + live search (re-inject skipped); F6 Core URL recorded as follow-redirects. Status stays **VERIFYING** until owner flips DONE.  
-**Cascade amended:** `MONDRIAN-CASCADE.md` (D-02 Astro 7; D-21…D-27; §1 retitle); `PHASE-M1.md`; `INDEX.md`; `PHASE-M0.md`; `grounding/ABOUT-MONDRIAN-VALUE.md`; `corpus/REFERENCE-WORKS.md` (+ SIGraDi RIS, Composition A / No. VI growth).
+**Cold review:** filed [`PHASE-M0-COLD-REVIEW.md`](PHASE-M0-COLD-REVIEW.md) — initial verdict **FAIL** (F1). F1–F6 closed in triage (27 Oct 2026): F1 reproduction W×H+crop; F2 M1 status; F3 baseline wording; F4 §1 retitle (no `proposed` D-row); F5 inject proof = prior COMPLETED id + live search (re-inject skipped); F6 Core URL recorded as follow-redirects. **Owner flipped DONE** 27 Oct 2026 after triage.  
+**Cascade amended:** `MONDRIAN-CASCADE.md` (D-02 Astro 7; D-21…D-32; §1 retitle); `PHASE-M1.md`; `INDEX.md`; `PHASE-M0.md`; `grounding/ABOUT-MONDRIAN-VALUE.md`; `corpus/REFERENCE-WORKS.md` (+ SIGraDi RIS, Composition A / No. VI growth).
 
 ---
 
@@ -138,6 +138,6 @@ EU PD for all three; US **unresolved** for public starter. Reproduction **pixel 
 3. Koçer coat repair optional; not on M1 critical path.  
 4. GraphRAG vault-root mismatch remains fail-closed for Cursor MCP.
 
-**Resume after cold review:** triage `PHASE-M0-COLD-REVIEW.md`; fix blockers; flip M0 → DONE; open M1.
+**Closed:** Owner flipped M0 → **DONE** 27 Oct 2026. M1 skeleton was already on `main` (process amendment recorded in INDEX / M1 report); remaining M1 leftovers = branch protection, cold review, seats 5–7, unsent letters.
 
-**Implementer claim:** Acceptance checks for M0 content are believed met; **status stays VERIFYING** — implementer does not self-certify DONE.
+**Owner claim:** Acceptance met; cold-review blockers closed; M0 is **DONE**.

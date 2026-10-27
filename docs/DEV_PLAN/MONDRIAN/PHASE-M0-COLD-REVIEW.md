@@ -190,4 +190,4 @@ No phase exit-gate script / full product suite applies (M0 is pre-repo). No modu
 
 **Also 27 Oct (owner):** SIGraDi 2021 RIS + conference URL in receipt/REFERENCE-WORKS; growth candidates Composition A (2216×2204) and Tate No. VI (992×1000); grow-later pointer to Commons Category talk:Paintings by Piet Mondrian.
 
-**M0 status remains VERIFYING.** Owner may flip DONE. Do not start M1 until then.
+**M0 → DONE** (owner flip 27 Oct 2026). M1 skeleton had already shipped on `main` before the flip — recorded as a process amendment in INDEX / `PHASE-M1-REPORT.md`; do not rewind. Close M1 leftovers (protection, cold review) before opening M2.

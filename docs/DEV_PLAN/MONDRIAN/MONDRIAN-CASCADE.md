@@ -1,10 +1,9 @@
 <!--
 Mondrian Project — technical-director face. Orchestrator for PHASE-M0…M9.
-Author: Rubén Vega Balbás, PhD · 25 October 2026 · amended 27 October 2026 (D-21…D-29).
+Author: Rubén Vega Balbás, PhD · 25 October 2026 · amended 27 October 2026 (D-21…D-32; M0 DONE; M1 DONE).
 Pattern: ~/src/.cursor/skills/cascade-forge/SKILL.md (INDEX + orchestrator + phase files + cold review + report).
-This pack is authored in web-atelier-udit/frontend-pedagogy/forge/mondrian-project/ and MOVES into the product
-repository at M1 (docs/DEV_PLAN/MONDRIAN/). After M1 the copy in the product repo is canonical; this folder keeps
-PITCH.md, the rationale, and a pointer.
+Canonical home: product repo docs/DEV_PLAN/MONDRIAN/ (moved at M1).
+Forge keeps PITCH.md + INDEX pointer + scaffold/assets/_private.
 -->
 
 # Mondrian Project — cascade (M0–M9)
@@ -49,7 +48,7 @@ Each row is an ADR in one line. M0 recorded each as `ratified` or `rejected` wit
 | **D-23 Computation topology** | Three paths, never conflated: (1) Python **build-time** catalog for preset buttons; (2) client Svelte/SVG for resize and cheap variations; (3) FastAPI POST for Phase-2 custom calculation **and** seed-based generate (D-26, last). No Python inside Astro. | GitHub Pages + offline PWA. Calling the API on every button would contradict D-09/D-10. | Phase 2 may add `POST /patterns/calculate` and `/patterns/generate` without moving them into the Astro app. |
 | **D-24 MVP interaction cut** | Print canvas + one containing frame + **free-aspect corner-resize** + **liquid-fill** + catalog works + predefined variations (D-30). **No** internal node/edge dragging, split/merge, fraction `refit` solver, or runtime backend. | Addendum B amended by D-30: the joke is refactoring Mondrian via the frame. Node dragging remains Phase 2. | Never for MVP; Phase 2 is a later cascade, not an M6 scope creep. |
 | **D-25 Cohort git surfaces** | Path-owned CODEOWNERS: Analyzer (`packages/analyzer`, `works/python`, `services/api`); shared contract (`schema`, `packages/matrix`) dual-reviewed; Shell (Astro pages except create/kiosk); Editor (`packages/editor` + create/kiosk); Design (tokens). Svelte stops at `packages/editor`. Seats **1–7** mapped in [`TEAM-ASSIGNMENTS.md`](TEAM-ASSIGNMENTS.md). | One monorepo (D-01) with merge-safe lanes (D-19). Mixing Svelte and schema in one PR is how the bottleneck explodes. | Department requires per-student repos → D-01 fallback (forks + upstream PRs), same layout. |
-| **D-26 Export / QR / generative** | MVP export = client SVG + **standalone HTML** (SVG embedded) + CSV/PNG; QR encodes **recipe URL** only (full HTML+SVG in QR rejected — capacity ≈3 KB). FastAPI Phase-2 **last** feature = `POST /patterns/generate` (complexity, density, colorimetry, seed) → schema-valid algorithmic study. Token barrel `packages/tokens/`. Scaffold under [`scaffold/`](scaffold/). | No server persistence on Pages; visitor must own a file or a URL. Generative Mondrian is not a preset button. | Exhibition requires true offline HTML-in-QR → only for toy SVGs under ~2 KB with proven device support; never default. |
+| **D-26 Export / QR / generative** | MVP export = client SVG + **standalone HTML** (SVG embedded) + CSV/PNG; QR encodes **recipe URL** only (full HTML+SVG in QR rejected — capacity ≈3 KB). FastAPI Phase-2 **last** feature = `POST /patterns/generate` (complexity, density, colorimetry, seed) → schema-valid algorithmic study. Token barrel `packages/tokens/` (copied from forge `scaffold/` at M1). | No server persistence on Pages; visitor must own a file or a URL. Generative Mondrian is not a preset button. | Exhibition requires true offline HTML-in-QR → only for toy SVGs under ~2 KB with proven device support; never default. |
 
 **Decision status (26 Oct 2026 — M0):** D-01…D-20 **`ratified`**. Evidence: [`PHASE-M0-REPORT.md`](PHASE-M0-REPORT.md) § Decisions. Cascade amended that day for **D-02 Astro 7** (was Astro 6).
 
@@ -87,10 +86,10 @@ Each row is an ADR in one line. M0 recorded each as `ratified` or `rejected` wit
 
 | Step | File | Deliverable | Gate (first word is the status token) |
 | --- | --- | --- | --- |
-| 0 | [PHASE-M0.md](PHASE-M0.md) | D-01…D-20 decided; Ahmes→Athanor grounding receipt (Andrzejewski **and** voice corpus under Athanor `mondrian-project` — see [`grounding/CORPUS-OVERNIGHT.md`](grounding/CORPUS-OVERNIGHT.md)); toolchain probes; private institutional communications; reference works + rights | VERIFYING — report filed; cold review pending ([`PHASE-M0-REPORT.md`](PHASE-M0-REPORT.md)) |
-| — | [WORK-QUEUE.md](WORK-QUEUE.md) | Parallel non-blocking items (e.g. **Q-FA1** fractal-architect Mondrian tree mode + pitch/course backgrounds). Does not invert M0–M9. | Item-local gates only |
-| 1 | [PHASE-M1.md](PHASE-M1.md) | Repository from `git init`: monorepo, Astro 7 + `@astrojs/svelte` probe, `packages/editor` stub, CI/Pages, Git/PR contract with D-25 CODEOWNERS, cascade move | BLOCKED — Pages 200; JS/Python checks green; Svelte probe hydrates; public `/` has no island; protected main; branch/amend/conflict/AI-log contracts tested |
-| 2 | [PHASE-M2.md](PHASE-M2.md) | Andrzejewski-compatible `Work` primitives; render plan serialising to SVG **and** CSS Grid; `SurfaceSpec`/`CompositionState`/`Recipe` including `variationId`; catalog generator; measured reference; conformance | BLOCKED — validators and JS/Python derivations agree; SVG and Grid consumers share plan JSON; catalog emits original + variation artefacts; recipe round-trips; liquid-fill + free-aspect frame invariants hold (D-30) |
+| 0 | [PHASE-M0.md](PHASE-M0.md) | D-01…D-20 decided; Ahmes→Athanor grounding receipt (Andrzejewski **and** voice corpus under Athanor `mondrian-project` — see [`grounding/CORPUS-OVERNIGHT.md`](grounding/CORPUS-OVERNIGHT.md)); toolchain probes; private institutional communications; reference works + rights | **DONE** — [`PHASE-M0-REPORT.md`](PHASE-M0-REPORT.md); cold review triage F1–F6 closed; owner flip 27 Oct 2026 |
+| — | [WORK-QUEUE.md](WORK-QUEUE.md) | Parallel non-blocking items (Q-FA1…Q-FA4 **DONE**). Does not invert M0–M9. | Item-local gates only |
+| 1 | [PHASE-M1.md](PHASE-M1.md) | Repository from `git init`: monorepo, Astro 7 + `@astrojs/svelte` probe, `packages/editor` stub, CI/Pages, Git/PR contract with D-25 CODEOWNERS, cascade move | **DONE** — Pages 200; CI green; probe hydrates; no public island; `main` protected; F1–F3 triage closed; [`PHASE-M1-REPORT.md`](PHASE-M1-REPORT.md) · [`PHASE-M1-COLD-REVIEW.md`](PHASE-M1-COLD-REVIEW.md) |
+| 2 | [PHASE-M2.md](PHASE-M2.md) | Andrzejewski-compatible `Work` primitives; render plan serialising to SVG **and** CSS Grid; `SurfaceSpec`/`CompositionState`/`Recipe` including `variationId`; catalog generator; measured reference; conformance | **READY** — validators and JS/Python derivations agree; SVG and Grid consumers share plan JSON; catalog emits original + variation artefacts; recipe round-trips; liquid-fill + free-aspect frame invariants hold (D-30) |
 | 3 | [PHASE-M3.md](PHASE-M3.md) | Product shell: start, gallery CSS Grid miniatures, About scroll story, About Us, method; **no** Svelte island on these routes | BLOCKED — no-JS/reduced-motion About is complete; gallery/reference frame pass fit, a11y and base-path tests |
 | 4 | [PHASE-M4.md](PHASE-M4.md) | Classical analyzer: image → normalized points, rectangles and explicit lines in `work.yml`; evaluation; TensorFlow only as extension | BLOCKED — output validates; point/rectangle/line errors reported separately; no neural score in MVP |
 | 5 | [PHASE-M5.md](PHASE-M5.md) | FastAPI analysis service: source JSON, derived HTML/CSS **and SVG** preview, `/analyze`; semantic snapshot against Astro; **no** public runtime calls | BLOCKED — source primitives and derived plan equal Astro; public build has no API dependency; Playwright later asserts no Pages→API fetch |
@@ -102,12 +101,13 @@ Each row is an ADR in one line. M0 recorded each as `ratified` or `rejected` wit
 **Parallel lanes.** M8 (corpus) runs from the moment M2 closes, alongside M3–M7, because measuring does not depend on rendering. M4–M5 (Python lane) may run alongside M3 and M6 once M2 is DONE, because the schema is frozen there. Everything else is strictly ordered. Only one phase per lane is IN_PROGRESS at a time.
 
 **Calendar hooks (FE I 2026–27 session order, not dates):** M0–M1 before S9
-(modules). M2 at S9. M3 across S10–S12 (linting and trends). GSAP remains an
-S11 exercise and is not absorbed. The Svelte island is taught by the M1
-starter (Editor lane), not by a new FE I session — same honesty as Astro
-(D-06 still true for Bootstrap/Tailwind as *course* frameworks). M6 recalls
-S5's container queries for chrome, not for stretching the painting. M7
-follows S12. M8 is continuous. Defence is S13.
+(modules). M2 at S9. M3 across S10–S12 (linting and trends). **GSAP is
+absorbed for `/about/` parallax only** (D-29 / D-06 / D-18) — S11 evidence
+inside the integrator; no GSAP on editor/kiosk/gallery. Bootstrap and Tailwind
+remain *not* absorbed (no S1–S13 product row). The Svelte island is taught by
+the M1 starter (Editor lane), not by a new FE I session — same honesty as
+Astro. M6 recalls S5's container queries for chrome, not for stretching the
+painting. M7 follows S12. M8 is continuous. Defence is S13.
 
 ---
 
@@ -115,7 +115,7 @@ follows S12. M8 is continuous. Defence is S13.
 
 ```text
 Implement the Mondrian Project cascade per docs/DEV_PLAN/MONDRIAN/MONDRIAN-CASCADE.md
-(before M1 completes: frontend-pedagogy/forge/mondrian-project/MONDRIAN-CASCADE.md in web-atelier-udit).
+in the product repo (ruvebal/mondrian-project). Forge INDEX is a pointer only.
 
 ## Context
 - Product/why: MONDRIAN-RATIONALE.md. Origin: PITCH.md (amended by cascade §7).
