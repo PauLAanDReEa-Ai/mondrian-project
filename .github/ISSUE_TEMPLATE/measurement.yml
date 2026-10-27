@@ -1,0 +1,26 @@
+name: Measurement
+description: Hand-measured work record
+title: "[measure] "
+labels: ["measurement"]
+body:
+  - type: input
+    id: work
+    attributes:
+      label: Work title / slug
+    validations:
+      required: true
+  - type: textarea
+    id: source
+    attributes:
+      label: Catalogue + reproduction
+      description: Named catalogue dimensions; reproduction pixel size and crop
+    validations:
+      required: true
+  - type: dropdown
+    id: rights
+    attributes:
+      label: Rights status
+      options:
+        - EU PD / US unresolved
+        - EU PD / US PD
+        - unresolved — do not publish starter

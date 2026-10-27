@@ -1,0 +1,24 @@
+name: Task
+description: Lane work item
+title: "[task] "
+labels: ["task"]
+body:
+  - type: input
+    id: seat
+    attributes:
+      label: Seat / lane
+      placeholder: "1 Analyzer / 6 Editor / …"
+    validations:
+      required: true
+  - type: textarea
+    id: spec
+    attributes:
+      label: Spec
+      description: Acceptance in one short list
+    validations:
+      required: true
+  - type: input
+    id: phase
+    attributes:
+      label: Cascade phase
+      placeholder: M2 / M6 / …

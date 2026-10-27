@@ -1,0 +1,27 @@
+# Path owners (D-25). Seats 5–7 placeholders until assigned.
+
+# Seat 1 — Analyzer
+/packages/analyzer/ @ATIaas
+/packages/works/python/ @ATIaas
+
+# Seat 2 — API
+/services/api/ @diegomartinezh
+
+# Shared geometry (dual)
+/packages/works/schema/ @ATIaas @diegomartinezh
+/packages/matrix/ @ATIaas @diegomartinezh
+
+# Seats 3–5 — Shell & Story
+/services/web/src/pages/about/ @medinaxd29
+/services/web/src/pages/gallery/ @Yassin-Skirej
+/services/web/src/pages/method/ @Yassin-Skirej
+/services/web/src/pages/about-us/ @HANDLE_SEAT_5
+/services/web/src/pages/declaration/ @HANDLE_SEAT_5
+/services/web/src/pages/contribute/ @HANDLE_SEAT_5
+/services/web/src/pages/es/ @HANDLE_SEAT_5
+
+# Seats 6–7 — Editor / Design
+/packages/editor/ @HANDLE_SEAT_6 @HANDLE_SEAT_7
+/packages/tokens/ @HANDLE_SEAT_7
+/services/web/src/pages/create/ @HANDLE_SEAT_6 @HANDLE_SEAT_7
+/services/web/src/pages/kiosk/ @HANDLE_SEAT_6 @HANDLE_SEAT_7
