@@ -11,4 +11,14 @@ describe("withBase", () => {
   it("handles bare root base", () => {
     expect(withBase("/contribute/", "/")).toBe("/contribute/");
   });
+
+  it("never glues base to favicon without a slash", () => {
+    // Regression: `${base}favicon.svg` with BASE_URL=/mondrian-project → 404
+    expect(withBase("/favicon.svg", "/mondrian-project")).toBe(
+      "/mondrian-project/favicon.svg",
+    );
+    expect(withBase("/favicon.svg", "/mondrian-project/")).toBe(
+      "/mondrian-project/favicon.svg",
+    );
+  });
 });

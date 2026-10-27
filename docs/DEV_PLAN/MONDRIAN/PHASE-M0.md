@@ -1,7 +1,7 @@
 # PHASE-M0: Preflight — grounding, decisions, probes, letters, corpus
 
 > **Track:** no product code. Grounding, decisions, toolchain probes, institutional communications, reference corpus and rights.
-> **Status:** VERIFYING
+> **Status:** DONE
 
 ## Goal
 

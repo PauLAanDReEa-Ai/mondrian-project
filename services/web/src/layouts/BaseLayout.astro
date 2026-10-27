@@ -1,5 +1,6 @@
 ---
 import "@mondrian/tokens";
+import { withBase } from "../lib/url";
 
 interface Props {
   title: string;
@@ -8,6 +9,8 @@ interface Props {
 
 const { title, noindex = false } = Astro.props;
 const base = import.meta.env.BASE_URL;
+const homeHref = withBase("/", base);
+const faviconHref = withBase("/favicon.svg", base);
 ---
 <!doctype html>
 <html lang="en">
@@ -16,11 +19,11 @@ const base = import.meta.env.BASE_URL;
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     {noindex && <meta name="robots" content="noindex" />}
     <title>{title}</title>
-    <link rel="icon" type="image/svg+xml" href={`${base}favicon.svg`} />
+    <link rel="icon" type="image/svg+xml" href={faviconHref} />
   </head>
   <body>
     <header>
-      <a href={base}>Liquid Mondrian</a>
+      <a href={homeHref}>Liquid Mondrian</a>
     </header>
     <main>
       <slot />

@@ -39,7 +39,7 @@ Svelte stays in `packages/editor`. Schema/matrix PRs need Analyzer and Editor hu
 
 ## Plan before code
 
-Link your `docs/plans/<handle>/` note in the PR. Expect **one defended REJECT** per semester on an assisted suggestion. Coding assistants ≠ analyzer ML. Shared summative instrument: AI declaration / oral defence rubric v2.0.3.
+Link your `docs/plans/<handle>/` note in the PR. Expect **one defended REJECT** per semester on an assisted suggestion. Coding assistants ≠ analyzer ML. Shared summative instrument: [AI declaration / oral defence rubric v2.0.3](https://ruvebal.github.io/web-atelier-udit/evaluation/shared/ai-declaration-oral-defence-rubric/).
 
 ## AI on PRs
 
