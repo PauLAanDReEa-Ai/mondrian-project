@@ -1,0 +1,14 @@
+:root {
+  --mp-font-sans: "IBM Plex Sans", "Segoe UI", system-ui, sans-serif;
+  --mp-font-mono: "IBM Plex Mono", ui-monospace, monospace;
+  --mp-font-display: "IBM Plex Sans", system-ui, sans-serif;
+
+  --mp-text-xs: 0.75rem;
+  --mp-text-sm: 0.875rem;
+  --mp-text-md: 1rem;
+  --mp-text-lg: 1.25rem;
+  --mp-text-xl: 1.75rem;
+
+  --mp-leading-tight: 1.2;
+  --mp-leading-normal: 1.5;
+}

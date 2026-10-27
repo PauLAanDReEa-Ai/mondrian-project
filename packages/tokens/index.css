@@ -1,0 +1,11 @@
+/**
+ * Mondrian Project — CSS token barrel (D-26.4).
+ * Apps import only this file: `@import "@mondrian/tokens";` or a relative path.
+ * Do not put component rules here. Seat 7 owns this package.
+ */
+
+@import "./color.css";
+@import "./space.css";
+@import "./type.css";
+@import "./motion.css";
+@import "./elevation.css";

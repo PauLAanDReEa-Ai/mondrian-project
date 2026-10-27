@@ -1,0 +1,136 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://mondrian-project.local/schemas/work.schema.json",
+  "title": "MondrianWork",
+  "description": "Measured (or Phase-2 generated) neoplastic composition. Adapted from Andrzejewski et al. 2010 grid-point representation. Final field freeze is M2; this draft is the teaching contract.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["id", "kind", "canvas", "points", "planes", "lines", "provenance", "rights"],
+  "properties": {
+    "id": {
+      "type": "string",
+      "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$",
+      "description": "Stable slug; measured works use work id; generated works use gen- prefix."
+    },
+    "kind": {
+      "type": "string",
+      "enum": ["measured", "algorithmic"],
+      "description": "algorithmic = Phase-2 seed generation (D-26); never silent."
+    },
+    "title": { "type": "string" },
+    "canvas": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["width", "height", "unit"],
+      "properties": {
+        "width": { "type": "number", "exclusiveMinimum": 0 },
+        "height": { "type": "number", "exclusiveMinimum": 0 },
+        "unit": { "type": "string", "enum": ["normalized", "mm", "px"] }
+      }
+    },
+    "points": {
+      "type": "array",
+      "minItems": 4,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["id", "x", "y"],
+        "properties": {
+          "id": { "type": "string" },
+          "x": { "type": "number", "minimum": 0, "maximum": 1 },
+          "y": { "type": "number", "minimum": 0, "maximum": 1 }
+        }
+      }
+    },
+    "planes": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["id", "role", "x0", "y0", "x1", "y1"],
+        "properties": {
+          "id": { "type": "string" },
+          "role": {
+            "type": "string",
+            "enum": ["red", "yellow", "blue", "black", "white", "gray"]
+          },
+          "x0": { "type": "number", "minimum": 0, "maximum": 1 },
+          "y0": { "type": "number", "minimum": 0, "maximum": 1 },
+          "x1": { "type": "number", "minimum": 0, "maximum": 1 },
+          "y1": { "type": "number", "minimum": 0, "maximum": 1 }
+        }
+      }
+    },
+    "lines": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["id", "orientation", "center", "extent", "thickness"],
+        "properties": {
+          "id": { "type": "string" },
+          "orientation": { "type": "string", "enum": ["h", "v"] },
+          "center": { "type": "number", "minimum": 0, "maximum": 1 },
+          "extent": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["start", "end"],
+            "properties": {
+              "start": { "type": "number", "minimum": 0, "maximum": 1 },
+              "end": { "type": "number", "minimum": 0, "maximum": 1 }
+            }
+          },
+          "thickness": {
+            "type": "number",
+            "exclusiveMinimum": 0,
+            "maximum": 0.2,
+            "description": "Relative thickness vs canvas short side."
+          }
+        }
+      }
+    },
+    "provenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["method"],
+      "properties": {
+        "method": {
+          "type": "string",
+          "enum": ["manual-measure", "classical-analyzer", "seed-generate"]
+        },
+        "sourceWork": { "type": "string" },
+        "measuredBy": { "type": "string" },
+        "notes": { "type": "string" },
+        "generation": {
+          "type": "object",
+          "description": "Required when kind=algorithmic (Phase 2).",
+          "additionalProperties": false,
+          "properties": {
+            "complexity": { "type": "number", "minimum": 0, "maximum": 1 },
+            "density": { "type": "number", "minimum": 0, "maximum": 1 },
+            "colorimetry": { "type": "object" },
+            "seed": { "type": "string" }
+          }
+        }
+      }
+    },
+    "rights": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["credit", "license"],
+      "properties": {
+        "credit": {
+          "type": "string",
+          "description": "Visible study-after credit; algorithmic studies must say so."
+        },
+        "license": { "type": "string" },
+        "disclaimer": { "type": "string" }
+      }
+    },
+    "uncertainty": {
+      "type": "object",
+      "additionalProperties": true
+    }
+  }
+}

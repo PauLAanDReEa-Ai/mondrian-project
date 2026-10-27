@@ -1,0 +1,45 @@
+[project]
+name = "mondrian-project"
+version = "0.0.0"
+description = "Mondrian Project Python workspace"
+requires-python = "==3.12.*"
+dependencies = [
+    "pytest>=8.3",
+    "mondrian-works",
+    "mondrian-analyzer",
+    "mondrian-api",
+]
+
+[tool.uv]
+package = false
+
+[tool.uv.sources]
+mondrian-works = { workspace = true }
+mondrian-analyzer = { workspace = true }
+mondrian-api = { workspace = true }
+
+[tool.uv.workspace]
+members = [
+    "packages/works/python",
+    "packages/analyzer",
+    "services/api",
+]
+
+[tool.ruff]
+line-length = 88
+target-version = "py312"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP"]
+
+[tool.mypy]
+python_version = "3.12"
+strict = true
+packages = ["mondrian_works", "mondrian_analyzer", "mondrian_api"]
+
+[tool.pytest.ini_options]
+testpaths = [
+    "packages/works/python/tests",
+    "packages/analyzer/tests",
+    "services/api/tests",
+]

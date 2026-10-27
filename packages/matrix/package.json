@@ -1,0 +1,17 @@
+{
+  "name": "@mondrian/matrix",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "exports": {
+    ".": "./src/index.js"
+  },
+  "scripts": {
+    "test": "vitest run",
+    "build": "node -e \"console.log('matrix: no build step')\"",
+    "lint": "node -e \"console.log('matrix: lint deferred')\""
+  },
+  "devDependencies": {
+    "vitest": "^3.2.4"
+  }
+}

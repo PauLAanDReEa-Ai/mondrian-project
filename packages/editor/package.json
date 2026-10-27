@@ -1,0 +1,24 @@
+{
+  "name": "@mondrian/editor",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "exports": {
+    ".": "./src/index.js",
+    "./Probe.svelte": "./src/Probe.svelte"
+  },
+  "scripts": {
+    "test": "vitest run",
+    "build": "node -e \"console.log('editor: consumed by Astro')\"",
+    "lint": "node -e \"console.log('editor: lint deferred')\""
+  },
+  "peerDependencies": {
+    "svelte": "^5.43.6"
+  },
+  "devDependencies": {
+    "@testing-library/svelte": "^5.2.8",
+    "jsdom": "^26.1.0",
+    "svelte": "^5.57.3",
+    "vitest": "^3.2.4"
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "name": "mondrian-project",
+  "private": true,
+  "version": "0.0.0",
+  "description": "Liquid Mondrian — cohort monorepo (FE I 2026–27)",
+  "packageManager": "pnpm@10.30.0",
+  "engines": {
+    "node": ">=24.22.1"
+  },
+  "scripts": {
+    "build": "pnpm -r run build",
+    "test": "pnpm -r run test",
+    "lint": "pnpm -r run lint --if-present",
+    "format": "prettier --write .",
+    "check": "pnpm run lint && pnpm run test && pnpm run build"
+  },
+  "devDependencies": {
+    "prettier": "^3.6.2"
+  },
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "esbuild"
+    ]
+  }
+}

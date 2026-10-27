@@ -1,0 +1,28 @@
+/**
+ * Neoplastic-facing UI chrome — not painting fills.
+ * Painting roles (red/yellow/blue/black/white) come from work JSON + relative HSL (D-07).
+ */
+:root {
+  --mp-color-canvas: #f4f2ed;
+  --mp-color-ink: #121212;
+  --mp-color-muted: #5c5c5c;
+  --mp-color-line: #0a0a0a;
+  --mp-color-focus: #1a5cff;
+  --mp-color-danger: #b00020;
+  --mp-color-ok: #0b6e4f;
+
+  /* Role tokens for chrome chips (map to work roles in the editor) */
+  --mp-role-red: hsl(0 85% 45%);
+  --mp-role-yellow: hsl(50 95% 50%);
+  --mp-role-blue: hsl(220 80% 45%);
+  --mp-role-black: hsl(0 0% 8%);
+  --mp-role-white: hsl(0 0% 98%);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --mp-color-canvas: #161616;
+    --mp-color-ink: #f2f2f2;
+    --mp-color-muted: #a0a0a0;
+  }
+}

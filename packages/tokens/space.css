@@ -1,0 +1,13 @@
+:root {
+  --mp-space-1: 0.25rem;
+  --mp-space-2: 0.5rem;
+  --mp-space-3: 0.75rem;
+  --mp-space-4: 1rem;
+  --mp-space-5: 1.5rem;
+  --mp-space-6: 2rem;
+  --mp-space-7: 3rem;
+
+  --mp-touch-min: 44px;
+  --mp-frame-handle: 12px;
+  --mp-print-margin-default: 12mm;
+}

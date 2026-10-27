@@ -1,0 +1,12 @@
+:root {
+  --mp-ease-standard: cubic-bezier(0.2, 0, 0, 1);
+  --mp-duration-fast: 120ms;
+  --mp-duration-normal: 240ms;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --mp-duration-fast: 0ms;
+    --mp-duration-normal: 0ms;
+  }
+}
