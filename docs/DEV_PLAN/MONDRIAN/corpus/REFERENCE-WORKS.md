@@ -64,15 +64,87 @@ Commons/Wikidata URL, pixel W×H, crop rectangle, D-12 exclusion check, EU/US
 rights row — then a slug in this file. Prefer promoting into M8 student corpus
 slots rather than silently replacing the M0 three.
 
-## Rights
+## Rights — photograph vs measured SVG study (D-32)
+
+**What we publish:** SVG (and CSS Grid) **geometric studies** — digital
+abstractions of measured construction proportions — credited *study after*
+the named work. **Not** photographs or scans of the original painting
+(D-32). Measuring may use a reproduction outside git; that file is never
+committed or hotlinked.
+
+| Question | Answer |
+| --- | --- |
+| Does skipping photos change the legal picture? | **Yes for the photo layer.** Museum/photographer reproduction rights are not engaged by the distributed artefact. |
+| Does it clear composition rights entirely? | **No.** If the painting is still in copyright, a faithful structural SVG can still be argued as a derivative in some jurisdictions. EU-PD Mondrian + our study is the MVP path; other artists need their own rights rows. |
+| What do we license (D-11)? | **Our** code (MIT) and **our** measurements / studies / prose (CC BY-NC-SA 4.0) — not ownership of Mondrian’s (or Moss’s) authorship. |
 
 Mondrian died **1 Feb 1944**.
 
 | Work | EU status | US status | Notes |
 | --- | --- | --- | --- |
-| M0 three + growth candidates (paintings) | **Public domain** in the EU since **1 Jan 2015** (life + 70) | **unresolved** for the public Pages starter | US term for foreign published works is publication-dependent (URAA / 95-year clock). Do **not** treat EU PD as worldwide. Holtzman Trust / museum reproduction licences may still govern **photos** even when the painting is PD. Public starter waits on a per-work US + reproduction clearance (pitch §13); measuring does not. |
+| M0 three + Mondrian growth candidates | **Public domain** in the EU since **1 Jan 2015** (life + 70) | **unresolved** for the public Pages starter | US term is publication-dependent. Do **not** treat EU PD as worldwide. Holtzman Trust / museum licences may still govern **photos**; we do not ship photos (D-32). Public starter waits on per-work US clearance (pitch §13); measuring does not. |
+| Sibling surfaces (Moss, etc.) | See table below — often **still in term** | unresolved | About / historiography OK; Pages catalog only after rights row clears |
 
-Who recorded rights rows: instructor (M0, 26 Oct 2026); growth candidates noted 27 Oct 2026.
+Who recorded rights rows: instructor (M0, 26 Oct 2026); growth candidates 27 Oct; historiography + D-32 27 Oct 2026.
+
+---
+
+## Historiography notes (teaching stack — 27 Oct 2026)
+
+Prompted by public discussion of women artists sidelined in abstraction
+narratives (af Klint / Moss / Sobel). Use on `/about/` or seminar — **not**
+as a claim that every named artist is an MVP catalog texture.
+
+### Distinctions to keep
+
+1. **Priority ≠ contact.** Hilma af Klint explored abstraction before
+   Kandinsky; that does not imply he knew her work.
+2. **Moss ≠ “Mondrian’s whole language.”** The precise claim is the
+   **double line**: Kunstsammlung NRW states Moss tested it in **1930** and
+   Mondrian began using it in **1932**. Some essays place Moss’s published
+   double-line works in **1931** (Abstraction-Création) — record the
+   museum page *and* the essay dates; do not collapse them into a reel hook.
+3. **Sobel / Pollock.** Greenberg’s 1961 *Art and Culture* revision of
+   “‘American-Type’ Painting” reports that Pollock admitted Sobel’s works
+   made an impression — while still labelling her “primitive” / “housewife”.
+4. **Stories are not identical** (limited theosophical circulation → 1986
+   visibility for af Klint; wartime loss + Tate refusals for Moss;
+   Guggenheim then domesticating label for Sobel).
+5. **Nochlin 1971:** recovering names is necessary but not enough; change
+   how institutions make “great artists.”
+
+### Bibliography to bring
+
+| Role | Citation |
+| --- | --- |
+| Canon critique | Linda Nochlin, “Why Have There Been No Great Women Artists?” (1971); also in *Women, Art, and Power* |
+| af Klint | Guggenheim, *Hilma af Klint: Paintings for the Future* (2018–19) cat.; Iris Müller-Westermann; LACMA *The Spiritual in Art* (1986) as visibility landmark |
+| Moss / double line | [Kunstsammlung NRW — Mondrian / Marlow Moss](https://www.kunstsammlung.de/en/mondrian/chapter05); Tate, *Marlow Moss: Space, Movement, Light*; Stedelijk Studies / Lucy Howarth on Moss; Blotkamp on Mondrian’s adoption of the double line |
+| Sobel | Clement Greenberg, “‘American-Type’ Painting,” in *Art and Culture* (Beacon, 1961), ~p. 218; Gail Levin, *Woman’s Art Journal* 26, no. 1 (2005); Sandra Zalman, *WAJ* 36, no. 2 (2015); MoMA *Milky Way* (1945) |
+| Method (optional) | Griselda Pollock on feminist art-historical method; Carel Blotkamp, *Mondrian: The Art of Destruction* |
+
+### Sibling artists as **surfaces** (corpus growth — orthogonal grids)
+
+MVP textures need D-12 orthogonal black armature + planar colour. Prefer
+these as **measured SVG studies** (same D-32 model), not drip/all-over.
+
+| Artist | Role as surface | EU term note (life+70, check before publish) | Product use |
+| --- | --- | --- | --- |
+| **Marlow Moss** | Double-line neoplastic; best “second texture” beside Mondrian | d. 1958 → EU PD **1 Jan 2029** — **in copyright until then** | About now; catalog after clearance / expiry |
+| **Sophie Taeuber-Arp** | Rectilinear compositions | d. 1943 → EU PD since **2014** | Strong measure candidate when catalogue + US row ready |
+| **Charmion von Wiegand** | Mondrian circle, NY grids | 20th c. — check death/term | Growth / seminar |
+| **Verena Loewensberg** | Zurich Concrete colour planes | check term | Growth |
+| **Aurélie Nemours** | Hard geometric fields | check term | Growth |
+| **Lygia Clark / Lygia Pape** | Neo-concrete planes (expand beyond NL/Paris) | check term | Growth / About |
+| **Anni Albers** | Grid as weave — module grid story | check term | About / method; optional textile-module measure |
+
+**Narrative / About only (wrong partition for liquid-fill MVP):** Hilma af
+Klint (spiritual diagrams); **Janet Sobel** (all-over drip); later Op /
+hard-edge (Riley, Herrera) until a separate schema lane exists.
+
+**Product implication:** Mondrian remains the M0 measured set; promoting
+**one Moss (when lawful) + one Taeuber-Arp** as sibling textures is how the
+selector itself retells the history — not a single-genius shelf.
 
 ## 2010 Wisconsin dataset (Andrzejewski et al.)
 

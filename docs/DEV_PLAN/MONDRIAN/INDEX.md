@@ -23,6 +23,7 @@ Lives here until PHASE-M1 moves the pack into the product repository (docs/DEV_P
 | About GSAP parallax | [`DECISIONS/D29-2026-10-27-ABOUT-GSAP-PARALLAX.md`](DECISIONS/D29-2026-10-27-ABOUT-GSAP-PARALLAX.md) | `/about/` ScrollTrigger parallax (S11); reduced-motion kill; no GSAP on editor/kiosk. |
 | Liquid frame refactor | [`DECISIONS/D30-2026-10-27-LIQUID-FRAME-REFACTOR.md`](DECISIONS/D30-2026-10-27-LIQUID-FRAME-REFACTOR.md) | Free-aspect corners; pattern **liquid-fills** the frame (same fractions → new Mondrian). Supersedes preserve-ratio MVP. |
 | Format aspect presets | [`DECISIONS/D31-2026-10-27-FORMAT-ASPECT-PRESETS.md`](DECISIONS/D31-2026-10-27-FORMAT-ASPECT-PRESETS.md) | Aspect chips + maximise-in-paper; game = texture → format → variations → version. |
+| SVG study ≠ photo | [`DECISIONS/D32-2026-10-27-SVG-STUDY-NOT-PHOTO.md`](DECISIONS/D32-2026-10-27-SVG-STUDY-NOT-PHOTO.md) | Distributed artefact = measured SVG study, not museum photo; composition rights still per-work. |
 | Cohort seats | [`TEAM-ASSIGNMENTS.md`](TEAM-ASSIGNMENTS.md) | Seats 1–2 backend, 3–5 storytelling, 6–7 app UI; student task specs; CODEOWNERS mapping. |
 | Pre-M1 scaffold | [`scaffold/`](scaffold/) | Token CSS barrel, `work.schema.json` draft, HTML export helpers (+ self-check), generate-request schema, CODEOWNERS example, **`.nvmrc` 24.22.1** + engines (D-28). |
 | Technical director | [`MONDRIAN-CASCADE.md`](MONDRIAN-CASCADE.md) | D-01…D-26, ordered programme with falsifiable gates, master paste, hard constraints, layer map, closing protocol, resume rule, amendments to the pitch, target repository layout. |
@@ -102,6 +103,8 @@ Closing: each phase → VERIFYING → `PHASE-Mn-COLD-REVIEW.md` → amend if nee
 | D-21…D-25 stack/MVP amend | **adopted** 27 Oct 2026 — Astro+Svelte+SVG; build-time catalog; Addendum B; path-owned lanes | [`DECISIONS/D21-D25-2026-10-27-ASTRO-SVELTE-SVG-MVP.md`](DECISIONS/D21-D25-2026-10-27-ASTRO-SVELTE-SVG-MVP.md) |
 | D-30 liquid frame | **adopted** 27 Oct 2026 — free-aspect corners + liquid-fill; supersedes preserve-ratio MVP | [`DECISIONS/D30-…`](DECISIONS/D30-2026-10-27-LIQUID-FRAME-REFACTOR.md) |
 | D-31 format presets | **adopted** 27 Oct 2026 — aspect chips; maximise in printableArea; `fmt` in URL | [`DECISIONS/D31-…`](DECISIONS/D31-2026-10-27-FORMAT-ASPECT-PRESETS.md) |
+| D-32 SVG study ≠ photo | **adopted** 27 Oct 2026 — measured SVG study; no photo distribution; composition rights per-work | [`DECISIONS/D32-…`](DECISIONS/D32-2026-10-27-SVG-STUDY-NOT-PHOTO.md) |
+| D-32 SVG study ≠ photo | **adopted** 27 Oct 2026 — measured SVG study, not museum photo; composition rights still per-work | [`DECISIONS/D32-…`](DECISIONS/D32-2026-10-27-SVG-STUDY-NOT-PHOTO.md) |
 | `svelte` / `@astrojs/svelte` | **5.57.3** / **9.1.1** (peers `astro@^7`, `svelte@^5.43.6`) | `npm view`, 27 Oct 2026 |
 | FE I session table | S1–S13; no Jekyll/Astro/Bootstrap/Tailwind session; GSAP S11; Vite first at S27 | `web-foundations/docs/tracks/en/udit/2627-fei/index.md` |
 | Shared defence rubric | v2.0.3, frozen 2026-09-01, FE I row "any AI-assisted project" | `web-foundations/docs/evaluation/shared/ai-declaration-oral-defence-rubric/index.md` |

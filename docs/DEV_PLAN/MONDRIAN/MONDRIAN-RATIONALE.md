@@ -264,7 +264,12 @@ Visitor data on the kiosk: **counts only** (sessions started, rounds completed, 
 ## 10. What this is not
 
 - Not a portfolio. The student's voice lives in the measurement notes, the Δ sentence, the design system, and the defence.
-- Not a Mondrian reproduction site. No photographs in the repository; every study carries the "geometric study after …" credit and the rotation disclaimer.
+- Not a Mondrian reproduction site. No photographs in the repository. The public
+  artefact is a **measured SVG geometric study** (construction proportions as
+  planes/lines), not a photo clone — D-32. That avoids photographer/museum
+  reproduction rights on the distributed file; it does **not** erase composition
+  rights for works still in copyright. Every study carries the "geometric study
+  after …" credit and the rotation disclaimer.
 - Not a React project. React is semester 2. Astro is the static host; one Svelte 5 island hydrates the editor routes only; `packages/matrix` ships zero framework code.
 - Not a research project waiting for approval. It is a teaching activity with a research notice, on the four conditions.
 - Not a Bootstrap/Tailwind/Vite ladder. Those are no longer evidenced by the semester-1 integrator; the cascade records that as a decision the department sees (D-06).
