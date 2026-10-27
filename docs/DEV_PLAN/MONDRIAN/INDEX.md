@@ -87,10 +87,11 @@ Closing: each phase → VERIFYING → `PHASE-Mn-COLD-REVIEW.md` → amend if nee
 
 | Fact | Value | Where checked |
 | --- | --- | --- |
-| Product branch | `main` @ `764967a` (tracks `origin/main`) | `git branch -vv`, 27 Oct 2026 |
+| Product branch | `main` @ `620f00a` (PR #1 M1 close) | `git log -1`, 27 Oct 2026 |
 | Product remote | `git@github.com:ruvebal/mondrian-project.git` | `git remote -v` |
 | Pages home / contribute | **200** / **200** | `curl -sI` https://ruvebal.github.io/mondrian-project/{,/contribute/} |
 | Pages wrong path | **404** | `curl` `/this-path-does-not-exist` |
+| Favicon (D-base) | **200** at `/mondrian-project/favicon.svg` (glued path 404) | live curl after PR #1 deploy |
 | Svelte probe URL | `/probe/svelte/` (noindex; amend from spec `/_probe/`) | live 200; dist greps |
 | Public `/` island | **none** (no Probe / `client:load`) | dist `index.html` / `contribute/` |
 | Branch protection | **on** — ≥1 PR review + required check `check` (strict) | `gh api …/branches/main/protection`, 27 Oct 2026 evening |
