@@ -10,7 +10,7 @@
   "scripts": {
     "build": "pnpm -r run build",
     "test": "pnpm -r run test",
-    "lint": "pnpm -r run lint --if-present",
+    "lint": "pnpm -r --if-present run lint",
     "format": "prettier --write .",
     "check": "pnpm run lint && pnpm run test && pnpm run build"
   },
