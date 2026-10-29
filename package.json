@@ -12,6 +12,7 @@
     "test": "pnpm -r run test",
     "lint": "pnpm -r --if-present run lint",
     "format": "prettier --write .",
+    "develop": "pnpm --filter @mondrian/web run dev",
     "check": "pnpm run lint && pnpm run test && pnpm run build"
   },
   "devDependencies": {
