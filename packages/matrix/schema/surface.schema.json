@@ -1,0 +1,41 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://mondrian-project.local/schemas/surface.schema.json",
+  "title": "SurfaceSpec",
+  "description": "Printable paper/sticker surface (MVP-PRODUCT-SPEC §3).",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["preset", "width", "height", "unit", "orientation", "margins"],
+  "properties": {
+    "preset": {
+      "type": "string",
+      "enum": [
+        "sticker-50",
+        "sticker-70",
+        "sticker-100x70",
+        "a6",
+        "a5",
+        "a4",
+        "custom"
+      ]
+    },
+    "width": { "type": "number", "exclusiveMinimum": 0 },
+    "height": { "type": "number", "exclusiveMinimum": 0 },
+    "unit": { "type": "string", "enum": ["mm"] },
+    "orientation": {
+      "type": "string",
+      "enum": ["portrait", "landscape", "square"]
+    },
+    "margins": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["top", "right", "bottom", "left"],
+      "properties": {
+        "top": { "type": "number", "minimum": 0, "maximum": 1 },
+        "right": { "type": "number", "minimum": 0, "maximum": 1 },
+        "bottom": { "type": "number", "minimum": 0, "maximum": 1 },
+        "left": { "type": "number", "minimum": 0, "maximum": 1 }
+      }
+    }
+  }
+}

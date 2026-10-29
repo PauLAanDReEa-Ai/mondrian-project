@@ -12,6 +12,7 @@
     "lint": "node -e \"console.log('matrix: lint deferred')\""
   },
   "devDependencies": {
-    "vitest": "^3.2.4"
+    "vitest": "^3.2.4",
+    "yaml": "^2.9.1"
   }
 }

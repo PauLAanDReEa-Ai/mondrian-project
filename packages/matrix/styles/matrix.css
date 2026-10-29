@@ -1,0 +1,78 @@
+/* Role → colour via custom properties. Lines use --black, never a literal. */
+
+@property --theta {
+  syntax: "<angle>";
+  inherits: true;
+  initial-value: 0deg;
+}
+
+:root {
+  --swatch-red-h: 8;
+  --swatch-red-s: 82%;
+  --swatch-red-l: 48%;
+  --swatch-yellow-h: 48;
+  --swatch-yellow-s: 88%;
+  --swatch-yellow-l: 55%;
+  --swatch-blue-h: 220;
+  --swatch-blue-s: 70%;
+  --swatch-blue-l: 38%;
+  --black: #111;
+  --white: #f7f7f7;
+  --gray: #9a9a9a;
+  --line-weight-scale: 1;
+  --theta: 0deg;
+}
+
+.plane[data-role="red"] {
+  fill: hsl(
+    from hsl(var(--swatch-red-h) var(--swatch-red-s) var(--swatch-red-l))
+      calc(h + var(--theta)) s l
+  );
+  background: hsl(
+    from hsl(var(--swatch-red-h) var(--swatch-red-s) var(--swatch-red-l))
+      calc(h + var(--theta)) s l
+  );
+}
+
+.plane[data-role="yellow"] {
+  fill: hsl(
+    from hsl(var(--swatch-yellow-h) var(--swatch-yellow-s) var(--swatch-yellow-l))
+      calc(h + var(--theta)) s l
+  );
+  background: hsl(
+    from hsl(var(--swatch-yellow-h) var(--swatch-yellow-s) var(--swatch-yellow-l))
+      calc(h + var(--theta)) s l
+  );
+}
+
+.plane[data-role="blue"] {
+  fill: hsl(
+    from hsl(var(--swatch-blue-h) var(--swatch-blue-s) var(--swatch-blue-l))
+      calc(h + var(--theta)) s l
+  );
+  background: hsl(
+    from hsl(var(--swatch-blue-h) var(--swatch-blue-s) var(--swatch-blue-l))
+      calc(h + var(--theta)) s l
+  );
+}
+
+.plane[data-role="black"] {
+  fill: var(--black);
+  background: var(--black);
+}
+
+.plane[data-role="white"] {
+  fill: var(--white);
+  background: var(--white);
+}
+
+.plane[data-role="gray"] {
+  fill: var(--gray);
+  background: var(--gray);
+}
+
+.line {
+  fill: var(--black);
+  background: var(--black);
+  /* thickness comes from derived geometry — do not multiply again */
+}

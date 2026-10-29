@@ -1,11 +1,14 @@
 # packages/works
 
-Measured neoplastic compositions and their schema.
+Measured neoplastic compositions and their schema (M2).
 
 | Layer | Path | Role |
 | --- | --- | --- |
-| **L0** | `schema/` | JSON Schema for `work.yml` (Andrzejewski-compatible primitives) |
-| **L1** | `works/<slug>/` | One measured work per student + reference corpus |
-| **Python** | `python/` | Shared installable helpers + catalog CLI (M2+) |
+| **L0** | `schema/` | JSON Schema 2020-12 — Andrzejewski §3.2 primitives |
+| **L1** | `works/<slug>/` | Measured works (`work.yml` + `MEASUREMENT.md`) |
+| **Fixtures** | `fixtures/` | `valid.yml` + one-corruption broken cases |
+| **Python** | `python/` | Pydantic mirror + derive / vary / catalog |
 
-Empty until M2. Do not invent proportions.
+Reference work 1: `works/kunsthaus-1930-rbby/` (provisional measurement).
+
+Do not invent proportions. Derived tracks never land in `work.yml`.

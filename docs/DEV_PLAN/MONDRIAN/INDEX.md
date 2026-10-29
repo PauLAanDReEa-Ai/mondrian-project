@@ -2,6 +2,7 @@
 Mondrian Project — cascade pack index (two faces: product owner / technical director).
 Author: Rubén Vega Balbás, PhD · 25 October 2026 · amended 27 October 2026
   (D-21…D-32; M0 DONE; M1 DONE; M2 READY).
+  Amended 28 October 2026: flag quote 1920 + teach-next.
 Canonical home: product repo docs/DEV_PLAN/MONDRIAN/ (moved at M1).
 Forge pointer: web-atelier-udit/frontend-pedagogy/forge/mondrian-project/INDEX.md
 -->
@@ -12,6 +13,24 @@ Forge pointer: web-atelier-udit/frontend-pedagogy/forge/mondrian-project/INDEX.m
 **Author:** Rubén Vega Balbás, PhD · `ruvebal@crea-comm.net`
 **Readers:** department / research group / instructor → rationale first; implementing agent → cascade second.
 **Canonical path:** `~/projects/ruvebal/scholar/udit/courses-repos/mondrian-project/docs/DEV_PLAN/MONDRIAN/` · remote `ruvebal/mondrian-project`.
+
+## Flag quote (board / About)
+
+> **La Plastique nouvelle met ses rapports en équilibre esthétique et exprime par là l'harmonie nouvelle.**
+>
+> — *Le Néoplasticisme*. Paris: Éditions de l'Effort Moderne (Léonce Rosenberg), 1920.
+
+Full anchor + expansion: [`grounding/FLAG-QUOTE-1920.md`](grounding/FLAG-QUOTE-1920.md) · imprint lock: [`grounding/FIRST-SOURCES-1920-NEOPLASTICISM.md`](grounding/FIRST-SOURCES-1920-NEOPLASTICISM.md).
+
+## Teach next (29 Oct 2026 class)
+
+| | |
+| --- | --- |
+| **Open with** | Flag quote on the board (French) + imprint · one sentence: *rapports* = the ratios the app liquid-fills |
+| **Programme step** | **M2 READY** — start contracts (`PHASE-M2.md`): schema · SVG+Grid plan · first catalog work |
+| **Do not start** | M3–M9 (blocked on M2); do not invent `(Mondrian 1920)` author-date |
+| **Live demo** | https://ruvebal.github.io/mondrian-project/ · all 7 seats on [`TEAM-ASSIGNMENTS.md`](TEAM-ASSIGNMENTS.md) (5–7 provisional draw) |
+| **If time left** | Seat 1–2 skim Andrzejewski grounding; Seat 3 hears flag → About scene spine |
 
 ## How to read this pack
 
@@ -30,7 +49,7 @@ Forge pointer: web-atelier-udit/frontend-pedagogy/forge/mondrian-project/INDEX.m
 | Cohort seats | [`TEAM-ASSIGNMENTS.md`](TEAM-ASSIGNMENTS.md) | Seats 1–2 backend, 3–5 storytelling, 6–7 app UI; student task specs; CODEOWNERS mapping. |
 | Technical director | [`MONDRIAN-CASCADE.md`](MONDRIAN-CASCADE.md) | D-01…D-32, ordered programme with falsifiable gates, master paste, hard constraints, layer map, closing protocol, resume rule, amendments to the pitch, repository layout. |
 | Private correspondence | `_private/` (gitignored; forge only) | Student preflight and department/ECSIT emails. Only status/dates enter tracked reports; addresses, replies and signed material remain private. |
-| Grounding | [`grounding/ANDRZEJEWSKI-2010.md`](grounding/ANDRZEJEWSKI-2010.md) · [`JSON`](grounding/ANDRZEJEWSKI-2010.json) · [`prior-art queue`](grounding/PRIOR-ART-DISCOVERY.md) · [`corpus overnight`](grounding/CORPUS-OVERNIGHT.md) · [`phase GraphRAG queries`](grounding/GRAPHRAG-PHASE-QUERIES.md) · [`About value`](grounding/ABOUT-MONDRIAN-VALUE.md) | Ahmes extraction, Athanor injection/retrieval, full node/page anchors, limits, unresolved gates; overnight primary/secondary Mondrian corpus under Athanor slug `mondrian-project`. |
+| Grounding | [`FLAG-QUOTE-1920`](grounding/FLAG-QUOTE-1920.md) · [`FIRST-SOURCES-1920`](grounding/FIRST-SOURCES-1920-NEOPLASTICISM.md) · [`ANDRZEJEWSKI-2010`](grounding/ANDRZEJEWSKI-2010.md) · [`JSON`](grounding/ANDRZEJEWSKI-2010.json) · [`prior-art`](grounding/PRIOR-ART-DISCOVERY.md) · [`corpus overnight`](grounding/CORPUS-OVERNIGHT.md) · [`GraphRAG queries`](grounding/GRAPHRAG-PHASE-QUERIES.md) · [`About value`](grounding/ABOUT-MONDRIAN-VALUE.md) | Flag quote + 1920 imprint; Andrzejewski geometry; overnight voice corpus under Athanor slug `mondrian-project`. |
 | Origin | [`PITCH.md`](PITCH.md) | The 22 Oct decision document: matrix, hue formula, frame contract, art-historical contract, rights, 50 risks. Still authoritative where the cascade §7 does not amend it. |
 | AI grading sufficiency | [`AI-EVALUATION-SUFFICIENCY-REVIEW.md`](AI-EVALUATION-SUFFICIENCY-REVIEW.md) | Instructor-only: spine vs operational gaps vs TTOD close-out; what to add before M1 templates freeze. |
 | AI operating contract | [`AI-CRITICAL-OPERATING-ADDENDUM.md`](AI-CRITICAL-OPERATING-ADDENDUM.md) | Required PR log, human/assistant verification boundary, formative checkpoint and instructor signs; shared rubric remains the only summative instrument. |
@@ -61,7 +80,7 @@ Closing: each phase → VERIFYING → `PHASE-Mn-COLD-REVIEW.md` → amend if nee
 | --- | --- | --- |
 | M0 | Decisions ratified, probes, private communications, reference works + rights | **DONE** (27 Oct 2026 — owner flip after F1–F6 triage) |
 | M1 | Repo from `git init`, Astro 7 + Svelte probe, `packages/editor`, CI/Pages, Git/PR/AI contract (D-25 CODEOWNERS) | **DONE** (27 Oct 2026 — cold FAIL F1–F3 triage closed; owner flip) |
-| M2 | Andrzejewski primitives, SVG+Grid render plan, catalog generator, surface/state/`variationId`, conformance, reference work | **READY** |
+| M2 | Andrzejewski primitives, SVG+Grid render plan, catalog generator, surface/state/`variationId`, conformance, reference work | **VERIFYING** ([handoff](PHASE-M2-HANDOFF.md)) |
 | M3 | Product shell, gallery CSS Grid miniatures, About story/About Us/method | BLOCKED (M2) |
 | M4 | Classical analyzer + line weights + evaluation (Python lane) | BLOCKED (M2) |
 | M5 | API JSON + HTML/CSS and SVG preview; no public runtime calls | BLOCKED (M2; M4 for `/analyze`) |
@@ -70,18 +89,20 @@ Closing: each phase → VERIFYING → `PHASE-Mn-COLD-REVIEW.md` → amend if nee
 | M8 | Corpus: references 2–3 + one work per student (parallel lane) | BLOCKED (M2) |
 | M9 | Declaration, pseudonymisation, defence, brief EN/ES, dataset, abstract | BLOCKED (M7, M8) |
 
-## Trigger readiness (27 Oct 2026 — evening)
+## Trigger readiness (28 Oct 2026 — evening; teach 29 Oct)
 
 | Gate | State |
 | --- | --- |
 | Decisions D-01…D-32 | Adopted / ratified (through D-32 SVG study ≠ photo) |
 | Product contract | [`MVP-PRODUCT-SPEC.md`](MVP-PRODUCT-SPEC.md) matches Addendum B + D-26…D-32 |
-| Student seats + task specs | [`TEAM-ASSIGNMENTS.md`](TEAM-ASSIGNMENTS.md) — seats 1–4 assigned; 5–7 TBD |
+| Flag quote 1920 | **LOCKED** — [`grounding/FLAG-QUOTE-1920.md`](grounding/FLAG-QUOTE-1920.md) |
+| First source imprint | *Le Néoplasticisme* Effort Moderne 1920 — [`FIRST-SOURCES-1920`](grounding/FIRST-SOURCES-1920-NEOPLASTICISM.md) |
+| Student seats + task specs | [`TEAM-ASSIGNMENTS.md`](TEAM-ASSIGNMENTS.md) — all 7 seats filled (5–7 random 29 Oct; reorder OK) |
 | Product repo | **Exists** — `ruvebal/mondrian-project`; cascade lives here |
 | Live Pages | https://ruvebal.github.io/mondrian-project/ → **200** |
 | M0 | **DONE** |
-| M1 | **DONE** — `main` protected; F1–F3 closed; seats 5–7 + letters remain ops (non-blocking) |
-| M2 | **READY** |
+| M1 | **DONE** — `main` protected; F1–F3 closed; letters remain ops (non-blocking) |
+| M2 | **VERIFYING** — handoff filed; cold review next |
 
 ## Live snapshot (27 Oct 2026 — M0 DONE; M1 DONE)
 

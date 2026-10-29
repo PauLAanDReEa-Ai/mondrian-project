@@ -220,6 +220,14 @@ The old `/studies/` route becomes `/gallery/`; `/play/` becomes `/create/`.
 
 ## 6. About: the story to scroll
 
+**Epigraph (flag quote — French primary, imprint 1920):**
+
+> La Plastique nouvelle met ses rapports en équilibre esthétique et exprime par là l'harmonie nouvelle.
+>
+> — *Le Néoplasticisme*. Paris: Éditions de l'Effort Moderne (Léonce Rosenberg), 1920.
+
+Anchor: [`grounding/FLAG-QUOTE-1920.md`](grounding/FLAG-QUOTE-1920.md).
+
 The story has seven short scenes, each useful without animation:
 
 1. **A painting is measured** — original canvas, points, rectangles and lines.

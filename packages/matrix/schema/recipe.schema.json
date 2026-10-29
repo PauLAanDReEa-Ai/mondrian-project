@@ -1,0 +1,17 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://mondrian-project.local/schemas/recipe.schema.json",
+  "title": "Recipe",
+  "description": "Portable visitor state: surface + compositionState. URL serializes this — never SVG or full work JSON (D-27).",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["surface", "compositionState"],
+  "properties": {
+    "surface": {
+      "$ref": "https://mondrian-project.local/schemas/surface.schema.json"
+    },
+    "compositionState": {
+      "$ref": "https://mondrian-project.local/schemas/composition-state.schema.json"
+    }
+  }
+}

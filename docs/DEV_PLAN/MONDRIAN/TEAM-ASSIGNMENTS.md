@@ -2,6 +2,7 @@
 Mondrian Project — seven-seat cohort map and student task specs (not the product brief).
 Author: Rubén Vega Balbás, PhD · 27 October 2026
 Handles are assigned in M0/M1; this file is the lane contract.
+Amended 29 Oct 2026: seats 5–7 random draw (reorder later if needed).
 -->
 
 # Team assignments — cohort of 7
@@ -17,9 +18,9 @@ Seats below are **path ownership**, not “you only touch that folder.”
 
 ### Handles (sow-tonight cohort → Mondrian seats)
 
-Assigned 27 Oct 2026 from
-`~/src/web-qa-toolkit/cohorts/sow-tonight/cohort.json`. Remaining cohort
-members fill seats **5–7** later.
+Seats **1–4** assigned 27 Oct 2026; seats **5–7** random shuffle 29 Oct 2026
+from `~/src/web-qa-toolkit/cohorts/sow-tonight/cohort.json`. Reorder later if
+needed — this draw is provisional, not locked.
 
 | Seat | GitHub handle | Cohort id | Pages (if any) |
 | --- | --- | --- | --- |
@@ -27,9 +28,9 @@ members fill seats **5–7** later.
 | **2** API + contract | [`diegomartinezh`](https://github.com/diegomartinezh/FE_Atelier) | 3 | https://diegomartinezh.github.io/FE_Atelier/ |
 | **3** About story | [`medinaxd29`](https://github.com/medinaxd29/An-lisis-Dise-o-Web-) | 2 | https://medinaxd29.github.io/An-lisis-Dise-o-Web-/sow/ |
 | **4** Gallery & method | [`Yassin-Skirej`](https://github.com/Yassin-Skirej/front-end-1) | 7 | *(empty in cohort.json)* |
-| **5** About-us / i18n | *TBD* — candidates: `galarp2005`, `PauLAanDReEa-Ai`, `itzy-4Qunn7` | 1 / 4 / 6 | — |
-| **6** Editor | *TBD* | — | — |
-| **7** Export / PWA / tokens | *TBD* | — | — |
+| **5** About-us / i18n | [`itzy-4Qunn7`](https://github.com/itzy-4Qunn7/SOW_practica_1) | 6 | https://itzy-4qunn7.github.io/SOW_practica_1/ |
+| **6** Editor | [`galarp2005`](https://github.com/galarp2005/Front-End-I) | 1 | https://galarp2005.github.io/Front-End-I/ |
+| **7** Export / PWA / tokens | [`PauLAanDReEa-Ai`](https://github.com/PauLAanDReEa-Ai/pagina-web-front-end) | 4 | https://paulaandreea-ai.github.io/pagina-web-front-end/sow/ |
 
 ---
 

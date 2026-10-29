@@ -30,7 +30,8 @@ vector snippets.
 
 | Priority | Source | Buys the project |
 | --- | --- | --- |
-| P0 | Collected writings (1986) + Neoplasticismo PT | Verbatim Neo-Plastic doctrine for About scenes 1–3, 5–6 |
+| **P0 flag** | *Le Néoplasticisme* (Paris: Effort Moderne / Rosenberg, **1920**) — imprint only | **Project flag quote** + primary French voice — [`FLAG-QUOTE-1920.md`](FLAG-QUOTE-1920.md) |
+| P0 | Collected writings (1986) + Neoplasticismo PT | Evaluator-safe doctrine for other About scenes 1–3, 5–6 |
 | P1 | Fallahzadeh et al. 2018 | Bridge from measurable relations → “equilibrium / living rhythm” without claiming Mondrian painted algorithms |
 | P1 | Noll 1966 | Method honesty: human vs machine judgements on *Composition with Lines* |
 | P2 | St Louis 1974 bulletin | Seed prose for one measured reference work |
@@ -50,9 +51,10 @@ After `logs/overnight-receipt-*.md` exists, run
 
 | About scene | Needed idea | Primary hit (coat · node · p.) | Secondary only if… | Public form |
 | --- | --- | --- | --- | --- |
-| 1 Painting | Neo-Plastic programme | `⟨mondrian_piet_…_3d25e683⟩ · nodo 9165c3df-2fd1-5775-a037-e6b3ac946067 · p. 154` — Neo-Plastic neither decorative nor geometric painting (evaluator_safe) | — | `(Mondrian 1986, 154)` + short quote |
+| **Epigraph / flag** | Rapports · équilibre | `⟨le_neoplasticisme_mondrian_1920_01f3300f⟩ · nodo 06184a3b-fb54-58aa-826a-78eae35c89a6 · page_index 7` | — | Imprint 1920 + [`FLAG-QUOTE-1920.md`](FLAG-QUOTE-1920.md) |
+| 1 Painting | Neo-Plastic programme · rectangular planes | Same coat · nodes `78ad4e44-…`→`06184a3b-…` · page_index 7 (expansion) · *or* 1986 `9165c3df-…` p.154 if evaluator_safe required | 1986 if Chicago author-date mandatory | Imprint 1920 · or `(Mondrian 1986, 154)` |
 | 2 Measurement | Construction / determination | _still thin — keep searching / Pomiès metaphor only_ | Pomiès if metaphor only | |
-| 3 Ratios | Equilibrium / rhythm | `⟨…3d25e683⟩ · nodo 82650d3e-ab9e-52b0-8f88-8290502bf233 · p. 192` — “Their rhythm creates dynamic equilibrium.” (evaluator_safe) | Fallahzadeh if expanding | `(Mondrian 1986, 192)` |
+| 3 Ratios | Equilibrium / rhythm | **Flag** (1920) first · else `⟨…3d25e683⟩ · nodo 82650d3e-… · p. 192` | Fallahzadeh if expanding | Imprint 1920 · or `(Mondrian 1986, 192)` |
 | 4 CSS Grid | Pedagogical plane | — | never force a historical quote | Instructor |
 | 5 Colour | Primaries vs non-colours | `⟨…3d25e683⟩ · nodo 540238ff-d135-55d0-8e81-bc715df396f7 · p. 143` — rectangular plane/prism in primary colours and non-colour (evaluator_safe) | — | `(Mondrian 1986, 143)` |
 | 6 Transformation | Hue study breaks doctrine | _pending Doesburg / colour-fixed primary hit_ | Doesburg secondary | |

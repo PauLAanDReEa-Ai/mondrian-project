@@ -2,7 +2,11 @@
 
 A cohort-built touch web app: measure neoplastic compositions after Mondrian, reframe them (liquid fill), apply mathematical variations, and take a personal version away as URL, print, or file. Front-End I integrator for UDIT 2026–27.
 
-**Live:** https://ruvebal.github.io/mondrian-project/ (after first Pages deploy)
+**Live site:** https://ruvebal.github.io/mondrian-project/  
+**Repository:** https://github.com/ruvebal/mondrian-project
+
+> La Plastique nouvelle met ses rapports en équilibre esthétique et exprime par là l'harmonie nouvelle.  
+> — *Le Néoplasticisme*. Paris: Éditions de l'Effort Moderne (Léonce Rosenberg), 1920.
 
 ## How to contribute
 
@@ -15,6 +19,12 @@ Read [CONTRIBUTING.md](CONTRIBUTING.md) and the in-app [/contribute/](https://ru
 | Shell | About, gallery, method, about-us |
 | Editor | Svelte+SVG island, create/kiosk |
 | Design | Tokens, export, print, PWA |
+
+## Redeploy Pages
+
+```bash
+gh workflow run "Deploy Pages" --ref main
+```
 
 ## Licences
 

@@ -1,0 +1,58 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://mondrian-project.local/schemas/composition-state.schema.json",
+  "title": "CompositionState",
+  "description": "Visitor customization separate from immutable work.yml (MVP §3, D-30 liquid-fill).",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "workId",
+    "formatId",
+    "variationId",
+    "frame",
+    "theta",
+    "paletteMode",
+    "reflectX",
+    "reflectY",
+    "lineWeightScale",
+    "fitMode"
+  ],
+  "properties": {
+    "workId": { "type": "string", "minLength": 1 },
+    "formatId": {
+      "type": "string",
+      "enum": ["original", "1-1", "5-4", "4-5", "16-9", "9-16", "custom"]
+    },
+    "variationId": {
+      "type": "string",
+      "enum": [
+        "original",
+        "mirror-h",
+        "mirror-v",
+        "rotate-180",
+        "invert-contrast",
+        "invert-rank",
+        "complement",
+        "reciprocal",
+        "equalize"
+      ]
+    },
+    "frame": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["x", "y", "width", "height"],
+      "properties": {
+        "x": { "type": "number", "minimum": 0, "maximum": 1 },
+        "y": { "type": "number", "minimum": 0, "maximum": 1 },
+        "width": { "type": "number", "exclusiveMinimum": 0, "maximum": 1 },
+        "height": { "type": "number", "exclusiveMinimum": 0, "maximum": 1 }
+      }
+    },
+    "theta": { "type": "number", "minimum": 0, "maximum": 360 },
+    "paletteMode": { "type": "string", "enum": ["direct", "inverted"] },
+    "reflectX": { "type": "boolean" },
+    "reflectY": { "type": "boolean" },
+    "lineWeightScale": { "type": "number", "minimum": 0.25, "maximum": 2 },
+    "fitMode": { "type": "string", "const": "liquid-fill" }
+  }
+}
