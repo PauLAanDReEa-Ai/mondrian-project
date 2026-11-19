@@ -25,12 +25,13 @@ jobs:
           node -v
           node -e "const [M,m,p]=process.versions.node.split('.').map(Number); if(M<24||(M===24&&m===22&&p<1)) process.exit(1)"
 
-      - run: pnpm install --frozen-lockfile
-      - run: pnpm check
-
       - uses: astral-sh/setup-uv@v5
         with:
           python-version: "3.12"
 
       - run: uv sync
       - run: uv run pytest
+
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm check
+      - run: pnpm --filter @mondrian/web run check

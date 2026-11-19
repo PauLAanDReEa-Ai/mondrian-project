@@ -61,7 +61,7 @@ needed — this draw is provisional, not locked.
 | B1-T1 | Implement `derive_render_plan` in Python identical to JS fixtures (SVG + CSS Grid serialisation). | M2 |
 | B1-T2 | Catalog CLI writes `public/patterns/<id>.json|.svg` and variation artefacts; CI invokes it before Astro build. | M2 |
 | B1-T3 | Classical analyzer: points / planes / lines → `work.yml` draft with uncertainty fields; evaluation report against labelled cells. | M4 |
-| B1-T4 | Closed-form weight variations (`invert_rank`, `complement`, `reciprocal`, `equalize`) with sum-to-frame invariant tests. | M2/M4 |
+| B1-T4 | Closed-form weight variations (`invert-rank`, `complement`, `reciprocal`, `equalize`): document formulas in schema README, implement in Python `vary.py`, re-enable in `catalog.VARIATIONS` + composition-state enum; conformance must prove each artefact ≠ `original`. **Omitted from M2 MVP** (D-21 / cold F3). | M4 |
 | B1-T5 | Personal measured work under `packages/works/<slug>/` with rights + method notes. | M8 |
 
 **Starter already in pack:** schema draft + catalog sketch under `scaffold/`.

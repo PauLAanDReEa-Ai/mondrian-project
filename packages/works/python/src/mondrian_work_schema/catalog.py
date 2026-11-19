@@ -9,16 +9,15 @@ from typing import Any
 from .derive import derive_render_plan
 from .vary import vary
 
+# MVP catalog (M2 triage F3 / D-21): geometric + invert-contrast only.
+# Weight remaps (invert-rank / complement / reciprocal / equalize) deferred to
+# seat B1-T4 until closed-form area-share formulas ship in schema README.
 VARIATIONS = [
     "original",
     "mirror-h",
     "mirror-v",
     "rotate-180",
     "invert-contrast",
-    "invert-rank",
-    "complement",
-    "reciprocal",
-    "equalize",
 ]
 
 

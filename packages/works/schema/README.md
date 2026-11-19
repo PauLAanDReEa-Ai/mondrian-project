@@ -32,6 +32,20 @@ Roles: red / yellow / blue / black / white (+ optional gray extension).
 Non-chromatic roles never rotate with `--theta`. Lines are black overlays
 (`z=1`), not inferred from black planes.
 
+## Catalog variations (MVP)
+
+| Id | Effect | Where |
+| --- | --- | --- |
+| `original` | Measured work | catalog |
+| `mirror-h` / `mirror-v` | Reflect partition | JS + Python |
+| `rotate-180` | Both mirrors | JS + Python |
+| `invert-contrast` | Role flip (red↔blue, black↔white); edges unchanged | JS + Python |
+
+**Deferred (B1-T4):** `invert-rank`, `complement`, `reciprocal`, `equalize` —
+closed-form remaps of measured visible-cell area shares only. D-21 forbids
+shipping identity stubs. Do not re-enable in `catalog.VARIATIONS` until formulas
+are written here and conformance proves each artefact differs from `original`.
+
 ## Out of scope
 
 Material colour variation, brush texture, generation, authenticity scoring.

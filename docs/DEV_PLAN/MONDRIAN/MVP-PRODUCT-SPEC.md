@@ -55,8 +55,8 @@ there is a physical printable area; it is not the headline of the game.
    aspect freely → `fmt=custom`; pattern liquid-fills. Format chips are a
    shortcut to common ratios; they do **not** replace corners. Internal
    dividers are not dragged (MVP).
-5. Apply **variations** (mirrors, rotate 180°, invert rank / complement /
-   reciprocal / equalize, invert contrast) and colour controls (hue,
+5. Apply **variations** (mirrors, rotate 180°, invert contrast; weight remaps
+   invert-rank / complement / reciprocal / equalize deferred to B1-T4) and colour controls (hue,
    palette inversion, line-weight). These compose on the current fill.
    Reset → original texture + `fmt=original` + maximised native frame.
 6. Compare with the original (press-and-hold).

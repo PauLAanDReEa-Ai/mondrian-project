@@ -173,10 +173,10 @@ unchanged):
 | Original | Restore the measured work | catalog |
 | Mirror horizontal / vertical | Reflect partition | JS + Python (must agree) |
 | Rotate 180° | Both mirrors | JS + Python |
-| Invert visual rank | Reverse visual-weight order | Python catalog artefact |
-| Complement weights | Dominant ↔ subordinate areas | Python catalog artefact |
-| Reciprocal weights | Strongly emphasise formerly light areas | Python catalog artefact |
-| Equalize | Move target weights toward equal distribution | Python catalog artefact |
+| Invert visual rank | Reverse visual-weight order | **Deferred B1-T4** (omitted M2 — no stubs) |
+| Complement weights | Dominant ↔ subordinate areas | **Deferred B1-T4** |
+| Reciprocal weights | Strongly emphasise formerly light areas | **Deferred B1-T4** |
+| Equalize | Move target weights toward equal distribution | **Deferred B1-T4** |
 | Invert contrast | Geometry unchanged; colour/value/texture emphasis flips | JS + Python (HSL involution already specified) |
 | Pattern variant = another catalog work | Alternative measured composition | catalog |
 

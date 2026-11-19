@@ -16,9 +16,15 @@ export function vary(work, variationId) {
       return mirror(mirror(work, "x"), "y");
     case "invert-contrast":
       return invertContrast(work);
+    case "invert-rank":
+    case "complement":
+    case "reciprocal":
+    case "equalize":
+      throw new Error(
+        `weight variation "${variationId}" omitted from MVP (D-21 / M2 F3)`,
+      );
     default:
-      // Weight ops loaded from catalog artefacts — identity here
-      return structuredClone(work);
+      throw new Error(`unknown variationId "${variationId}"`);
   }
 }
 

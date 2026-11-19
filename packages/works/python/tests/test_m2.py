@@ -49,6 +49,16 @@ def test_vary_involution() -> None:
 
 def test_catalog(tmp_path: Path) -> None:
     paths = write_catalog(VALID, tmp_path)
-    assert len(paths) >= 18
+    # 5 MVP variations × (json + svg)
+    assert len(paths) == 10
     data = json.loads((tmp_path / f"{VALID['id']}.json").read_text())
     assert data["coordinateSpace"] == "normalized-0-1"
+    original = (tmp_path / f"{VALID['id']}.json").read_bytes()
+    mirror = (tmp_path / f"{VALID['id']}--mirror-h.json").read_bytes()
+    assert original != mirror
+    assert not (tmp_path / f"{VALID['id']}--invert-rank.json").exists()
+
+
+def test_weight_variations_omitted() -> None:
+    with pytest.raises(ValueError, match="omitted from MVP"):
+        vary(VALID, "invert-rank")

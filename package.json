@@ -13,12 +13,15 @@
     "lint": "pnpm -r --if-present run lint",
     "format": "prettier --write .",
     "develop": "pnpm --filter @mondrian/web run dev",
-    "check": "pnpm run lint && pnpm run test && pnpm run build"
+    "catalog": "uv run python scripts/emit_catalog.py",
+    "conformance": "bash scripts/conformance.sh",
+    "check": "pnpm run catalog && pnpm run lint && pnpm run test && pnpm run build && pnpm run conformance"
   },
   "devDependencies": {
     "ajv": "^8.20.0",
     "prettier": "^3.6.2",
-    "yaml": "^2.9.1"
+    "yaml": "^2.9.1",
+    "zod": "4.6.7"
   },
   "pnpm": {
     "onlyBuiltDependencies": [

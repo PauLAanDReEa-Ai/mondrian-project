@@ -8,7 +8,9 @@
   },
   "scripts": {
     "dev": "astro dev",
-    "build": "astro build && node scripts/assert-favicon-base.mjs",
+    "prebuild": "node scripts/assert-works-collection.mjs && pnpm --dir ../.. run catalog",
+    "build": "astro build && node scripts/assert-favicon-base.mjs && node scripts/assert-patterns.mjs",
+    "check": "astro check",
     "preview": "astro preview",
     "test": "vitest run",
     "lint": "node -e \"console.log('web: lint deferred')\""
@@ -19,9 +21,11 @@
     "@mondrian/tokens": "workspace:*",
     "astro": "^7.4.2",
     "svelte": "^5.57.3",
-    "yaml": "^2.9.1"
+    "yaml": "^2.9.1",
+    "zod": "4.6.7"
   },
   "devDependencies": {
+    "@astrojs/check": "^0.9.6",
     "typescript": "^5.9.3",
     "vitest": "^3.2.4"
   }

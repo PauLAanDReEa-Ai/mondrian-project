@@ -5,7 +5,7 @@ Author: implementation agent · 29 October 2026
 
 # PHASE-M2 handoff (VERIFYING)
 
-**Status:** implementation complete for cold review — **do not treat as DONE** until `PHASE-M2-COLD-REVIEW.md` closes blocking findings.
+**Status:** superseded — cold FAIL triage closed 7 Nov 2026; M2 **DONE** per [`PHASE-M2-REPORT.md`](PHASE-M2-REPORT.md).
 
 ## What shipped
 
