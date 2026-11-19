@@ -35,6 +35,13 @@ jobs:
           node-version: "24.22.1"
           cache: pnpm
 
+      # Web prebuild emits public/patterns via `uv run` (scripts/emit_catalog.py).
+      # The Pages runner has no system uv; without this step the build dies at prebuild.
+      - uses: astral-sh/setup-uv@v5
+        with:
+          python-version: "3.12"
+
+      - run: uv sync
       - run: pnpm install --frozen-lockfile
 
       # D-36: production is served at root, where a hardcoded "/gallery/" would work by accident.
