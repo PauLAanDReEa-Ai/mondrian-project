@@ -1,0 +1,77 @@
+/* Study frame — inline SVG from shared render plan (D-38) */
+
+@scope (.study) {
+  :scope {
+    /* inline-size only: `size` + min-height made 100cqb = 0 (paper collapsed). */
+    container-type: inline-size;
+    container-name: study;
+    display: grid;
+    place-items: center;
+    width: 100%;
+    min-height: min(70dvh, 36rem);
+    background: color-mix(in srgb, var(--mp-color-ink) 4%, var(--mp-color-canvas));
+  }
+
+  .study__stage {
+    width: min(100%, 100cqi);
+    display: grid;
+    place-items: center;
+    padding: 0.75rem;
+    box-sizing: border-box;
+  }
+
+  .study__paper {
+    --study-max: min(70dvh, 36rem);
+    aspect-ratio: var(--paper-ratio, 1);
+    width: min(100%, calc(var(--paper-ratio, 1) * var(--study-max)));
+    height: auto;
+    max-height: var(--study-max);
+    background: var(--nx-color-paper);
+    box-shadow: 0 0 0 1px color-mix(in srgb, var(--mp-color-ink) 18%, transparent);
+    container-type: inline-size;
+    container-name: paper;
+    position: relative;
+  }
+
+  .study__frame {
+    position: absolute;
+    inset: var(--frame-inset, 4%);
+    display: grid;
+    --theta: 0deg;
+    --theta-num: 0;
+  }
+
+  .study__svg {
+    width: 100%;
+    height: 100%;
+    min-height: 0;
+  }
+
+  .study__svg > svg {
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.study-caption {
+  max-width: 42rem;
+  margin: 1rem auto 0;
+  font-size: 0.95rem;
+  line-height: 1.45;
+  color: var(--mp-color-muted);
+}
+
+.study-caption strong {
+  color: var(--mp-color-ink);
+  font-weight: 500;
+}
+
+.study.gallery-mini {
+  min-height: 12rem;
+}
+
+.study.gallery-mini .study__paper {
+  --study-max: 12rem;
+  width: min(100%, calc(var(--paper-ratio, 1) * var(--study-max)));
+}

@@ -56,6 +56,8 @@ def test_catalog(tmp_path: Path) -> None:
     original = (tmp_path / f"{VALID['id']}.json").read_bytes()
     mirror = (tmp_path / f"{VALID['id']}--mirror-h.json").read_bytes()
     assert original != mirror
+    stems = {p.name for p in paths}
+    assert f"{VALID['id']}--invert-rank.json" not in stems
     assert not (tmp_path / f"{VALID['id']}--invert-rank.json").exists()
 
 

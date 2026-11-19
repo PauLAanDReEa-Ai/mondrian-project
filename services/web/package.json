@@ -9,23 +9,28 @@
   "scripts": {
     "dev": "astro dev",
     "prebuild": "node scripts/assert-works-collection.mjs && pnpm --dir ../.. run catalog",
-    "build": "astro build && node scripts/assert-favicon-base.mjs && node scripts/assert-patterns.mjs",
+    "build": "astro build && node scripts/assert-favicon-base.mjs && node scripts/assert-patterns.mjs && node ../../scripts/assert-works-count.mjs && node scripts/assert-dist-links.mjs",
     "check": "astro check",
     "preview": "astro preview",
     "test": "vitest run",
+    "test:e2e": "pnpm exec playwright test",
     "lint": "node -e \"console.log('web: lint deferred')\""
   },
   "dependencies": {
     "@astrojs/svelte": "^9.1.1",
     "@mondrian/editor": "workspace:*",
+    "@mondrian/mark-canvas": "workspace:*",
+    "@mondrian/matrix": "workspace:*",
+    "@mondrian/neoplastic": "workspace:*",
     "@mondrian/tokens": "workspace:*",
     "astro": "^7.4.2",
+    "gsap": "3.13.0",
     "svelte": "^5.57.3",
-    "yaml": "^2.9.1",
-    "zod": "4.6.7"
+    "yaml": "^2.9.1"
   },
   "devDependencies": {
     "@astrojs/check": "^0.9.6",
+    "@playwright/test": "1.56.1",
     "typescript": "^5.9.3",
     "vitest": "^3.2.4"
   }

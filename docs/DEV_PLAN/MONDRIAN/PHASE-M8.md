@@ -1,7 +1,7 @@
 # PHASE-M8: Corpus — one measured work per student, reviewed, rights-checked
 
 > **Track:** L1 corpus. **Parallel lane** from M2 DONE to the end of term. Every student, every lane.
-> **Status:** READY (M2 DONE 7 Nov 2026; parallel corpus lane)
+> **Status:** READY / OPEN — CORPUS index + issue seeds 9 Nov 2026; cohort measures. See [`PHASE-M8-SCAFFOLD.md`](PHASE-M8-SCAFFOLD.md).
 
 ## Goal
 
@@ -83,6 +83,6 @@ tooling, triage checks and the report.
 
 ## Risks
 
-- Students pick famous excluded works → triage checklist; the brief (M9) repeats the exclusions.
+- Students pick famous excluded works → triage checklist; the brief (M9) repeats the exclusions. Named wrong-partition specimen: Hilma af Klint *Ser III No. 5* (see [`corpus/REFERENCE-WORKS.md`](corpus/REFERENCE-WORKS.md) § Limit cases) — refuse at issue open, do not invent a slug under `works/`.
 - Rights unresolved for a chosen work → the work stays in a `pending-rights/` folder excluded from the build until resolved; it still counts for the student's measurement grade (teaching) but not for publication.
 - Measurement eats the term (pitch risk 43) → time-box per work in the issue; precision recorded.

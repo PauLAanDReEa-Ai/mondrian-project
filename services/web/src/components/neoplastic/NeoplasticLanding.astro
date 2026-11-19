@@ -1,0 +1,165 @@
+---
+/**
+ * Neoplastix landing composition (D-37). The page layout is itself a neoplastic grid:
+ * columns 50fr 35fr 27fr are the first row of Duijvestijn's squared square (50 + 35 + 27 = 112);
+ * the black gaps are the armature. The art plane is a slot so each lab version swaps only it.
+ */
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import WelcomeCard from "./WelcomeCard.astro";
+import { minimalPartitionSVG } from "@mondrian/neoplastic/svg";
+import { withBase } from "../../lib/url";
+import { landingVariants } from "../../data/landing-variants";
+import "../../styles/neoplastic-landing.css";
+
+interface Props {
+  title?: string;
+  /** Lab version id ("v1"…); omit on the canonical landing. */
+  variant?: string;
+  noindex?: boolean;
+  /** Layout flavour for the art plane: "grid" (cell) or "bleed" (full-bleed behind the grid). */
+  layout?: "grid" | "bleed";
+}
+
+const { title = "Neoplastix: rectangles in balance", variant, noindex = false, layout = "grid" } = Astro.props;
+const base = import.meta.env.BASE_URL;
+const href = (p: string) => withBase(p, base);
+const mark = minimalPartitionSVG({ unit: 16, line: 2.5 }).replace("<svg ", '<svg class="np-bar__mark" aria-hidden="true" focusable="false" ');
+const v = variant ? landingVariants.find((x) => x.id === variant) : undefined;
+const i = v ? landingVariants.indexOf(v) : -1;
+const prev = i > 0 ? landingVariants[i - 1] : undefined;
+const next = i >= 0 && i < landingVariants.length - 1 ? landingVariants[i + 1] : undefined;
+---
+<BaseLayout title={v ? `${v.name} · Landing lab · Neoplastix` : title} bare noindex={noindex || !!v}>
+  <div class:list={["np", `np--${layout}`]} data-np-hero>
+    <a class="np-skip" href="#np-title">Skip to content</a>
+    <header class="np-bar">
+      <a class="np-bar__home" href={href("/")} aria-label="Neoplastix home">
+        <Fragment set:html={mark} />
+        <span>Neoplastix</span>
+      </a>
+      <nav class="np-bar__nav" aria-label="Primary">
+        <a href={href("/gallery/")}>Gallery</a>
+        <a href={href("/about/")}>About</a>
+        <a href={href("/method/")}>Method</a>
+        <a href={href("/create/kunsthaus-1930-rbby/")}>Create</a>
+        <a
+          class="np-bar__repo"
+          href="https://github.com/ruvebal/mondrian-project"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Mondrian Project on GitHub"
+        >
+          <svg viewBox="0 0 16 16" width="20" height="20" aria-hidden="true">
+            <path
+              fill="currentColor"
+              d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8"
+            />
+          </svg>
+        </a>
+      </nav>
+    </header>
+
+    {v && (
+      <nav class="np-lab" aria-label="Landing lab">
+        <a href={href("/lab/landing/")}>Landing lab</a>
+        <span aria-current="page">{v.id} · {v.name}</span>
+        <span class="np-lab__pager">
+          {prev && <a href={href(`/lab/landing/${prev.id}/`)} rel="prev">← {prev.id}</a>}
+          {next && <a href={href(`/lab/landing/${next.id}/`)} rel="next">{next.id} →</a>}
+        </span>
+      </nav>
+    )}
+
+    {layout === "bleed" && <div class="np-bleed"><slot name="art" /></div>}
+
+    <section class="np-grid" aria-labelledby="np-title">
+      {layout === "grid" && <div class="np-cell np-cell--art"><slot name="art" /></div>}
+
+      <div class="np-cell np-cell--title">
+        <p class="np-kicker">Mondrian Project · FE I · UDIT</p>
+        <h1 id="np-title" class="np-title">Neoplastix</h1>
+        <p class="np-subtitle">
+          Measure a composition. Hold its ratios in balance. Take your own version away.
+        </p>
+      </div>
+
+      <div class="np-cell np-cell--flag">
+        <blockquote class="np-flag" lang="fr">
+          <p>La Plastique nouvelle met ses rapports en équilibre esthétique et exprime par là l'harmonie nouvelle.</p>
+        </blockquote>
+        <p class="np-flag__cite"><i>Le Néoplasticisme</i>. Paris: L'Effort Moderne, 1920.</p>
+      </div>
+
+      <div class="np-cell np-cell--act">
+        <ul class="np-actions" aria-label="Start here">
+          <li><a href={href("/gallery/")}>See the studies</a></li>
+          <li><a href={href("/create/kunsthaus-1930-rbby/")}>Make a version</a></li>
+          <li><a href={href("/about/")}>How it works</a></li>
+          <li><a href={href("/contribute/")}>Contribute</a></li>
+        </ul>
+      </div>
+
+      <div class="np-cell np-cell--welcome">
+        <WelcomeCard />
+      </div>
+
+      <div class="np-cell np-cell--math">
+        <p class="np-math__figure"><span>21</span> squares. None equal. One square.</p>
+        <p class="np-math__note">
+          The field is Duijvestijn's squared square (1978): the lowest-order square tiled by
+          unequal squares. Every white plane can open into the whole.
+        </p>
+        <slot name="math-note" />
+        <a class="np-math__link" href={href("/lab/landing/")}>Landing lab: six versions</a>
+      </div>
+    </section>
+
+    <section class="np-band" aria-label="About this site">
+      <div>
+        <h2>What this is</h2>
+        <p>
+          Neoplastix is the visitor product; Mondrian Project is the FE I cohort programme.
+          Studies are measured SVG "after Mondrian", never photographs of paintings.
+        </p>
+      </div>
+      <div>
+        <h2>Browse</h2>
+        <ul>
+          <li><a href={href("/assignments/")}>Assignments by seat</a></li>
+          <li><a href={href("/method/")}>Method</a></li>
+          <li><a href={href("/design/tokens/")}>Design tokens</a></li>
+          <li><a href="https://github.com/ruvebal/mondrian-project" rel="noopener">Repository</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>The rule of the field</h2>
+        <p>
+          Only the white ground opens; colour planes stay whole. New planes arrive by orthogonal
+          wipe, never by blending. Mathematics, not a claim about Mondrian's own proportions.
+        </p>
+      </div>
+    </section>
+
+    <footer class="np-footer">
+      <p>Geometric studies after Mondrian · FE I / UDIT · Neoplastix</p>
+      <a
+        class="np-footer__repo"
+        href="https://github.com/ruvebal/mondrian-project"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Mondrian Project on GitHub"
+      >
+        <svg viewBox="0 0 16 16" width="20" height="20" aria-hidden="true">
+          <path
+            fill="currentColor"
+            d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8"
+          />
+        </svg>
+      </a>
+    </footer>
+  </div>
+</BaseLayout>
+
+<script>
+  import "../../scripts/neoplastic-field.js";
+</script>

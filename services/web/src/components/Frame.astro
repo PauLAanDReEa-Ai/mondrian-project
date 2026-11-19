@@ -1,0 +1,28 @@
+---
+import type { WorkDoc } from "../lib/work-plan";
+import { planFromWork, swatchCssVars } from "../lib/work-plan";
+import { renderSvg } from "@mondrian/matrix";
+
+interface Props {
+  work: WorkDoc;
+  compact?: boolean;
+  paperRatio?: number;
+}
+
+const { work, compact = false, paperRatio } = Astro.props;
+const plan = planFromWork(work);
+const svg = renderSvg(plan);
+const ratio =
+  paperRatio ??
+  (work.canvas.width > 0 ? work.canvas.width / work.canvas.height : 1);
+const label = `Geometric study after ${work.title} (${work.year})`;
+---
+<figure class:list={["study", compact && "gallery-mini"]} style={swatchCssVars(work)}>
+  <div class="study__stage">
+    <div class="study__paper" style={`--paper-ratio: ${ratio}`}>
+      <div class="study__frame" data-study-frame>
+        <div class="study__svg" data-study-svg set:html={svg} aria-label={label} />
+      </div>
+    </div>
+  </div>
+</figure>

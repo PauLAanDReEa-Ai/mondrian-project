@@ -1,4 +1,4 @@
-# PHASE-M6: Liquid Mondrian editor — Svelte island, SVG canvas, catalog variations, save and print
+# PHASE-M6: Neoplastix editor — Svelte island, SVG canvas, catalog variations, save and print
 
 > **Track:** L2b editor island + L3 `/create/`. Owned by the Editor, Print & Kiosk lane.
 > **Status:** BLOCKED (M3 DONE)
@@ -11,6 +11,23 @@ is the print stage; **format chips** (D-31) maximise the frame in
 printableArea; liquid-fill (D-30); free-aspect corners → `fmt=custom`;
 catalog variations; live **URL Recipe** (`fmt` included); Print giveaway.
 Inline SVG in a Svelte 5 island. No internal edge drag. No FastAPI.
+Gallery/shell also SVG-only ([D-38](DECISIONS/D38-2026-11-11-SVG-ONLY-PLANE-CLIP.md)).
+
+## Micro-interactions (from SVG master session)
+
+Steal the **master idea**, not the showreel stack
+(`web-atelier` [SVG Animation Master Session](https://ruvebal.github.io/web-atelier-udit/lessons/en/web-animations/svg-master-session/)):
+
+| Bring | Editor use |
+| --- | --- |
+| Who owns time / space / pixels | Svelte owns chrome state; SVG owns pixels; CSS owns `--theta` / fills |
+| Native first (CSS / WAAPI) | Handle hover/focus, chip press, theta scrub — no GSAP in editor (D-29 = About only) |
+| Reduced-motion + no-JS | Attract (M7) and chrome motion under `prefers-reduced-motion: no-preference` only (TTOD-AA §2 — reduce must win specificity) |
+| Scroll / deep link | One `html { scroll-padding-top }` from header token (TTOD-AA §2 · D-36 H10) |
+| Facet / path click games | **Forbidden** on measured planes/lines (Addendum B). Gamify frame, format chips, variation, theta, compare, **clip chips** |
+| Rive / Lottie / Three / Canvas 2.5D | Landing mark only — never inside the painting |
+
+**Plane clip lab (U6-T7 / D-38):** chips apply `clip.shape` ∈ {`rect`,`circle`,`triangle`} to AABB planes via `<rect>` + `<clipPath>`. Pedagogical silhouette (why Ser III No. 5 cannot be neoplastic YAML) — not a corpus ingest path.
 
 ## Deliverables
 
@@ -27,7 +44,7 @@ Inline SVG in a Svelte 5 island. No internal edge drag. No FastAPI.
 - Catalog / texture: load `/patterns/<id>.json` — no LAN API. Variations:
   original, mirror H/V, rotate 180°, invert contrast (weight remaps when B1-T4 ships).
 - Pedagogical extras: hue; palette inversion; line-weight; undo, reset,
-  press-and-hold compare.
+  press-and-hold compare; **plane clip chips** (rect/circle/triangle).
 - Pointer capture on frame corners; ≥44 px targets. Format chips **and**
   free corner-drag are both MVP; chips shortcut common ratios, corners
   keep arbitrary free format (`fmt=custom`).
@@ -115,6 +132,12 @@ Implement PHASE-M6 per docs/DEV_PLAN/MONDRIAN/PHASE-M6.md.
 - Live URL: after hue, invert, variation, preset, and corner-drag end, the
   address-bar query deep-equals in-memory Recipe without a save step; reload
   restores every field; query stays under 2 KB; no `svg=` / work-JSON blob.
+- Recipe tolerance (D-36, [`LOCATORS.md`](LOCATORS.md) key table): every key's *missing* and *invalid*
+  row has a test; unknown keys are ignored and dropped on re-serialise; invalid values clamp and the live
+  region announces the adjustment; no input blanks the stage. A golden file of recipe URLs written at M6
+  VERIFYING must parse to the same state in every later release (append-only keys/ids).
+- Copy link / QR origin = `PUBLIC_CANONICAL_ORIGIN` (`https://neoplastix.crea-comm.net`); a test fails if
+  `github.io`, `localhost` or a LAN IP appears in a generated share URL.
 - All interactive targets ≥ 44×44 CSS px (Playwright bounding-box sweep).
 - axe 0 critical/serious on `/create/<slug>/`; keyboard-only and preset-only
   users can complete the journey without dragging.

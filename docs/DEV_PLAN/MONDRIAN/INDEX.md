@@ -1,9 +1,8 @@
 <!--
 Mondrian Project — cascade pack index (two faces: product owner / technical director).
 Author: Rubén Vega Balbás, PhD · 25 October 2026 · amended 27 October 2026
-  (D-21…D-32; M0 DONE; M1 DONE; M2 DONE 7 Nov 2026).
+  (D-21…D-32; M0 DONE; M1 DONE; M2 DONE 8 Nov 2026).
   Amended 28 October 2026: flag quote 1920 + teach-next.
-  Amended 7 November 2026: M2 cold FAIL triage → DONE.
 Canonical home: product repo docs/DEV_PLAN/MONDRIAN/ (moved at M1).
 Forge pointer: web-atelier-udit/frontend-pedagogy/forge/mondrian-project/INDEX.md
 -->
@@ -23,15 +22,16 @@ Forge pointer: web-atelier-udit/frontend-pedagogy/forge/mondrian-project/INDEX.m
 
 Full anchor + expansion: [`grounding/FLAG-QUOTE-1920.md`](grounding/FLAG-QUOTE-1920.md) · imprint lock: [`grounding/FIRST-SOURCES-1920-NEOPLASTICISM.md`](grounding/FIRST-SOURCES-1920-NEOPLASTICISM.md).
 
-## Teach next (post–M2 DONE · 7 Nov 2026)
+## Teach next (29 Oct 2026 class)
 
 | | |
 | --- | --- |
 | **Open with** | Flag quote on the board (French) + imprint · one sentence: *rapports* = the ratios the app liquid-fills |
-| **Programme step** | **M3 READY** — product shell (`PHASE-M3.md`): gallery CSS Grid · About · method |
-| **Do not start** | M6 editor until M3 shell exists; do not invent `(Mondrian 1920)` author-date; do not quote ref-1 geometry as accepted (still `proposal`) |
-| **Live demo** | https://ruvebal.github.io/mondrian-project/ · seats on [`TEAM-ASSIGNMENTS.md`](TEAM-ASSIGNMENTS.md) |
-| **If time left** | Seat 1–2: B1-T4 weight remaps are **deferred** (M4); Seat 3: About scene spine |
+| **Programme step** | **M3 scaffold DONE** — Wave A seats polish shell; M4/M8 OPEN for cohort |
+| **Product marque** | **Neoplastix** ([D-33](DECISIONS/D33-2026-11-09-NEOPLASTIX-MARQUE.md)) · programme remains Mondrian Project · live `https://neoplastix.crea-comm.net` |
+| **Do not start** | Instructor agent finishing seat-graded analyzer/measurements; do not invent `(Mondrian 1920)` author-date |
+| **Live demo** | https://neoplastix.crea-comm.net/ · seats on [`TEAM-ASSIGNMENTS.md`](TEAM-ASSIGNMENTS.md) |
+| **If time left** | Seat 1–2 skim Andrzejewski grounding; Seat 3 hears flag → About scene spine |
 
 ## How to read this pack
 
@@ -47,7 +47,14 @@ Full anchor + expansion: [`grounding/FLAG-QUOTE-1920.md`](grounding/FLAG-QUOTE-1
 | Liquid frame refactor | [`DECISIONS/D30-2026-10-27-LIQUID-FRAME-REFACTOR.md`](DECISIONS/D30-2026-10-27-LIQUID-FRAME-REFACTOR.md) | Free-aspect corners; pattern **liquid-fills** the frame (same fractions → new Mondrian). Supersedes preserve-ratio MVP. |
 | Format aspect presets | [`DECISIONS/D31-2026-10-27-FORMAT-ASPECT-PRESETS.md`](DECISIONS/D31-2026-10-27-FORMAT-ASPECT-PRESETS.md) | Aspect chips + maximise-in-paper; game = texture → format → variations → version. |
 | SVG study ≠ photo | [`DECISIONS/D32-2026-10-27-SVG-STUDY-NOT-PHOTO.md`](DECISIONS/D32-2026-10-27-SVG-STUDY-NOT-PHOTO.md) | Distributed artefact = measured SVG study, not museum photo; composition rights still per-work. |
-| Cohort seats | [`TEAM-ASSIGNMENTS.md`](TEAM-ASSIGNMENTS.md) | Seats 1–2 backend, 3–5 storytelling, 6–7 app UI; student task specs; CODEOWNERS mapping. |
+| Neoplastix marque | [`DECISIONS/D33-2026-11-09-NEOPLASTIX-MARQUE.md`](DECISIONS/D33-2026-11-09-NEOPLASTIX-MARQUE.md) | Visitor product = Neoplastix; programme/repo stay Mondrian Project this AY; Athanor slug unchanged. |
+| Style tokens | [`DECISIONS/D34-2026-11-10-STYLE-TOKEN-TYPOGRAPHY.md`](DECISIONS/D34-2026-11-10-STYLE-TOKEN-TYPOGRAPHY.md) · [`../../style/TOKEN-SYSTEM.md`](../../style/TOKEN-SYSTEM.md) · [`../../style/De_Stijl_Typography_Report.md`](../../style/De_Stijl_Typography_Report.md) · [`../../style/OPEN-TYPE-ALTERNATIVES.md`](../../style/OPEN-TYPE-ALTERNATIVES.md) | Barrel `packages/tokens/`; Van Doesburg / Futura / Neue Haas / Univers; OFL classroom stacks; form radius 0; Seat 7 preview. |
+| Favicon + Canvas 2.5D | [`DECISIONS/D35-2026-11-10-FAVICON-CANVAS-25D.md`](DECISIONS/D35-2026-11-10-FAVICON-CANVAS-25D.md) | Canonical `brand/mark.svg`; favicon family; `@mondrian/mark-canvas`; landing hero field + foveal mark. |
+| Locators, origin, edge | [`DECISIONS/D36-2026-11-10-LOCATORS-ORIGIN-EDGE.md`](DECISIONS/D36-2026-11-10-LOCATORS-ORIGIN-EDGE.md) · [`LOCATORS.md`](LOCATORS.md) | **Accepted 10 Nov 2026.** Lessons from TTOD Phase AA, re-probed here: owned origin only on stickers/QR, append-only recipe, locale-neutral printed paths, edge honesty on Pages, registry walked by tests. H1 closed by PR #8 (`BASE=/` live; re-probed 10 Nov 2026 afternoon). |
+| Neoplastic landing | [`DECISIONS/D37-2026-11-10-NEOPLASTIC-LANDING-SQUARED-SQUARE.md`](DECISIONS/D37-2026-11-10-NEOPLASTIC-LANDING-SQUARED-SQUARE.md) | **Proposed.** Duijvestijn squared-square fractal field; minimal Mondrian partition favicon (MAP n = 3); landing grid 50fr 35fr 27fr; six lab versions at `/lab/landing/`; studio skill `neoplasticizer`. |
+| SVG-only + plane clip | [`DECISIONS/D38-2026-11-11-SVG-ONLY-PLANE-CLIP.md`](DECISIONS/D38-2026-11-11-SVG-ONLY-PLANE-CLIP.md) | **Adopted 11 Nov 2026.** Product UI = SVG only (no CSS Grid paint); optional `clip.shape` circle/triangle on AABB planes; Ser III No. 5 remains refuse. |
+| TTOD Phase AA checklist | [`TTOD-AA-LESSONS-2026-11-11.md`](TTOD-AA-LESSONS-2026-11-11.md) | **Owner checklist (not a cascade phase).** Gates via [`ISSUE-SEEDS`](ISSUE-SEEDS.md) § TTOD-AA, [`LOCATORS`](LOCATORS.md) live walk, M7 SW rules, cascade §5 closing. D-36 already holds locator lessons. |
+| Cohort seats | [`TEAM-ASSIGNMENTS.md`](TEAM-ASSIGNMENTS.md) · [`STUDENT-ASSIGNMENT-LIST.md`](STUDENT-ASSIGNMENT-LIST.md) · [`ISSUE-SEEDS.md`](ISSUE-SEEDS.md) | Seats 1–7; waves; paste-ready issue titles. |
 | Technical director | [`MONDRIAN-CASCADE.md`](MONDRIAN-CASCADE.md) | D-01…D-32, ordered programme with falsifiable gates, master paste, hard constraints, layer map, closing protocol, resume rule, amendments to the pitch, repository layout. |
 | Private correspondence | `_private/` (gitignored; forge only) | Student preflight and department/ECSIT emails. Only status/dates enter tracked reports; addresses, replies and signed material remain private. |
 | Grounding | [`FLAG-QUOTE-1920`](grounding/FLAG-QUOTE-1920.md) · [`FIRST-SOURCES-1920`](grounding/FIRST-SOURCES-1920-NEOPLASTICISM.md) · [`ANDRZEJEWSKI-2010`](grounding/ANDRZEJEWSKI-2010.md) · [`JSON`](grounding/ANDRZEJEWSKI-2010.json) · [`prior-art`](grounding/PRIOR-ART-DISCOVERY.md) · [`corpus overnight`](grounding/CORPUS-OVERNIGHT.md) · [`GraphRAG queries`](grounding/GRAPHRAG-PHASE-QUERIES.md) · [`About value`](grounding/ABOUT-MONDRIAN-VALUE.md) | Flag quote + 1920 imprint; Andrzejewski geometry; overnight voice corpus under Athanor slug `mondrian-project`. |
@@ -81,30 +88,29 @@ Closing: each phase → VERIFYING → `PHASE-Mn-COLD-REVIEW.md` → amend if nee
 | --- | --- | --- |
 | M0 | Decisions ratified, probes, private communications, reference works + rights | **DONE** (27 Oct 2026 — owner flip after F1–F6 triage) |
 | M1 | Repo from `git init`, Astro 7 + Svelte probe, `packages/editor`, CI/Pages, Git/PR/AI contract (D-25 CODEOWNERS) | **DONE** (27 Oct 2026 — cold FAIL F1–F3 triage closed; owner flip) |
-| M2 | Andrzejewski primitives, SVG+Grid render plan, catalog generator, surface/state/`variationId`, conformance, reference work | **DONE** (7 Nov 2026 — [report](PHASE-M2-REPORT.md)) |
-| M3 | Product shell, gallery CSS Grid miniatures, About story/About Us/method | **READY** |
-| M4 | Classical analyzer + line weights + evaluation (Python lane) | **READY** (parallel with M3) |
+| M2 | Andrzejewski primitives, SVG+Grid render plan, catalog generator, surface/state/`variationId`, conformance, reference work | **DONE** (8 Nov 2026 — [`REPORT`](PHASE-M2-REPORT.md) · [`COLD`](PHASE-M2-COLD-REVIEW.md)) |
+| M3 | Product shell, gallery CSS Grid miniatures, About story/About Us/method | **DONE (scaffold)** 9 Nov 2026 — Wave A polish = seats 3–5/7 |
+| M4 | Classical analyzer + line weights + evaluation (Python lane) | **OPEN** scaffold ([`PHASE-M4-SCAFFOLD`](PHASE-M4-SCAFFOLD.md)) |
 | M5 | API JSON + HTML/CSS and SVG preview; no public runtime calls | BLOCKED (M4 for `/analyze`) |
-| M6 | Svelte+SVG editor: frame, catalog variations, export, calibrated print | BLOCKED (M3) |
+| M6 | Svelte+SVG editor: frame, catalog variations, export, calibrated print | **READY** (shell scaffold DONE; seat 6) |
 | M7 | Kiosk/PWA + QR handoff + real touch device | BLOCKED (M6) |
-| M8 | Corpus: references 2–3 + one work per student (parallel lane) | **READY** (parallel from M2 DONE) |
+| M8 | Corpus: references 2–3 + one work per student (parallel lane) | **OPEN** scaffold ([`PHASE-M8-SCAFFOLD`](PHASE-M8-SCAFFOLD.md)) |
 | M9 | Declaration, pseudonymisation, defence, brief EN/ES, dataset, abstract | BLOCKED (M7, M8) |
 
-## Trigger readiness (7 Nov 2026 — M2 DONE)
+## Trigger readiness (28 Oct 2026 — evening; teach 29 Oct)
 
 | Gate | State |
 | --- | --- |
 | Decisions D-01…D-32 | Adopted / ratified (through D-32 SVG study ≠ photo) |
-| Product contract | [`MVP-PRODUCT-SPEC.md`](MVP-PRODUCT-SPEC.md) matches Addendum B + D-26…D-32; weight remaps deferred B1-T4 |
+| Product contract | [`MVP-PRODUCT-SPEC.md`](MVP-PRODUCT-SPEC.md) matches Addendum B + D-26…D-32 |
 | Flag quote 1920 | **LOCKED** — [`grounding/FLAG-QUOTE-1920.md`](grounding/FLAG-QUOTE-1920.md) |
 | First source imprint | *Le Néoplasticisme* Effort Moderne 1920 — [`FIRST-SOURCES-1920`](grounding/FIRST-SOURCES-1920-NEOPLASTICISM.md) |
-| Student seats + task specs | [`TEAM-ASSIGNMENTS.md`](TEAM-ASSIGNMENTS.md) — all 7 seats filled (5–7 provisional; reorder OK) |
+| Student seats + task specs | [`TEAM-ASSIGNMENTS.md`](TEAM-ASSIGNMENTS.md) — all 7 seats filled (5–7 random 29 Oct; reorder OK) |
 | Product repo | **Exists** — `ruvebal/mondrian-project`; cascade lives here |
-| Live Pages | https://ruvebal.github.io/mondrian-project/ → **200** (redeploy after M2 catalog wiring) |
+| Live Pages | https://neoplastix.crea-comm.net/ → **200** (legacy github.io redirects) |
 | M0 | **DONE** |
-| M1 | **DONE** |
-| M2 | **DONE** — cold FAIL F1–F4/F7 closed; report filed |
-| M3 / M4 / M8 | **READY** (parallel lanes per cascade §2) |
+| M1 | **DONE** — `main` protected; F1–F3 closed; letters remain ops (non-blocking) |
+| M2 | **DONE** — cold FAIL F1–F5 triage closed; M3 READY |
 
 ## Live snapshot (27 Oct 2026 — M0 DONE; M1 DONE)
 
@@ -113,6 +119,8 @@ Closing: each phase → VERIFYING → `PHASE-Mn-COLD-REVIEW.md` → amend if nee
 | Product branch | `main` @ `620f00a` (PR #1 M1 close) | `git log -1`, 27 Oct 2026 |
 | Product remote | `git@github.com:ruvebal/mondrian-project.git` | `git remote -v` |
 | Pages home / contribute | **200** / **200** | `curl -sI` https://ruvebal.github.io/mondrian-project/{,/contribute/} |
+| **Re-probe 10 Nov 2026 (after PR #8)** | LOCATORS walk on `neoplastix.crea-comm.net`: `/ /gallery/ /about/ /about-us/ /method/ /contribute/` **200**; `/about` **301** → `/about/`; `/nope` **404**; `/probe/svelte/` noindex; github.io recipe URL **301** with query kept. Not yet on main: `/declaration/ /kiosk/ /assignments/ /design/tokens/ /site.webmanifest` (**404**, ship with D-34/D-35 PR); `/robots.txt`, sitemap, canonical: absent (D-36 H6); landing still links github.io (fixed by D-37 PR) | `curl` loop, LOCATORS §Routes |
+| **Re-probe 10 Nov 2026** | github.io **301 →** `neoplastix.crea-comm.net` (custom domain set, HTTPS enforced); domain serves HTML but `/mondrian-project/_astro/*.css`, brand, favicon, nav → **404** (`BASE` not flipped) | D-36 H1 · `gh api …/pages` |
 | Pages wrong path | **404** | `curl` `/this-path-does-not-exist` |
 | Favicon (D-base) | **200** at `/mondrian-project/favicon.svg` (glued path 404) | live curl after PR #1 deploy |
 | Svelte probe URL | `/probe/svelte/` (noindex; amend from spec `/_probe/`) | live 200; dist greps |

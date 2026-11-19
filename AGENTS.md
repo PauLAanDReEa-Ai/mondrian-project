@@ -1,17 +1,17 @@
 # AGENTS.md — Mondrian Project
 
 **Format:** [AGENTS.md](https://github.com/agentsmd/agents.md) · tool-agnostic  
-**Product:** Liquid Mondrian (visitor marque) · repo `ruvebal/mondrian-project`  
-**Cascade:** `docs/DEV_PLAN/MONDRIAN/`
+**Product:** Neoplastix (visitor marque; live `https://neoplastix.crea-comm.net`) · programme/repo `ruvebal/mondrian-project`  
+**Cascade:** `docs/DEV_PLAN/MONDRIAN/` · naming [D-33](docs/DEV_PLAN/MONDRIAN/DECISIONS/D33-2026-11-09-NEOPLASTIX-MARQUE.md)
 
 ## Dev environment
 
-| Tool | Pin |
-| --- | --- |
-| Node | **≥24.22.1** (`.nvmrc`) — refuse ≤20 and unpatched 22.22.x / 24.22.0 |
-| pnpm | via `packageManager` field; `engine-strict=true` |
-| Python | **3.12** via `uv` (`.python-version`) |
-| Astro | 7.x in `services/web` |
+| Tool   | Pin                                                                  |
+| ------ | -------------------------------------------------------------------- |
+| Node   | **≥24.22.1** (`.nvmrc`) — refuse ≤20 and unpatched 22.22.x / 24.22.0 |
+| pnpm   | via `packageManager` field; `engine-strict=true`                     |
+| Python | **3.12** via `uv` (`.python-version`)                                |
+| Astro  | 7.x in `services/web`                                                |
 
 ```bash
 cd ~/projects/ruvebal/scholar/udit/courses-repos/mondrian-project
@@ -19,7 +19,7 @@ nvm use   # or fnm use
 pnpm install
 pnpm check
 uv sync && uv run pytest
-BASE=/mondrian-project pnpm --filter @mondrian/web build
+BASE=/ SITE=https://neoplastix.crea-comm.net pnpm --filter @mondrian/web build
 ```
 
 ## Verification before claiming done

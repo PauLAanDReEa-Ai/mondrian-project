@@ -1,6 +1,6 @@
 <!--
 Mondrian Project — technical-director face. Orchestrator for PHASE-M0…M9.
-Author: Rubén Vega Balbás, PhD · 25 October 2026 · amended 27 October 2026 (D-21…D-32; M0 DONE; M1 DONE) · amended 7 November 2026 (M2 DONE).
+Author: Rubén Vega Balbás, PhD · 25 October 2026 · amended 27 October 2026 (D-21…D-32; M0 DONE; M1 DONE).
 Pattern: ~/src/.cursor/skills/cascade-forge/SKILL.md (INDEX + orchestrator + phase files + cold review + report).
 Canonical home: product repo docs/DEV_PLAN/MONDRIAN/ (moved at M1).
 Forge keeps PITCH.md + INDEX pointer + scaffold/assets/_private.
@@ -77,8 +77,23 @@ Each row is an ADR in one line. M0 recorded each as `ratified` or `rejected` wit
 **Decision status (27 Oct 2026 — owner amend, pre-M1):** D-31 **`adopted`**. Evidence: [`DECISIONS/D31-2026-10-27-FORMAT-ASPECT-PRESETS.md`](DECISIONS/D31-2026-10-27-FORMAT-ASPECT-PRESETS.md).
 
 | **D-32 SVG study ≠ photo** | Public artefact = measured SVG / Grid **study after** the work; never museum photos. Improves photo-rights posture; composition rights still per-work (EU PD Mondrian MVP; siblings may stay pending). | Pitch §13 + owner clarification 27 Oct. | US or estate claim on a specific study → pull that slug from Pages until cleared. |
+| **D-33 Neoplastix marque** | Visitor product = **Neoplastix** (live `https://neoplastix.crea-comm.net`; Path A cutover 10 Nov 2026). Programme/repo remain **Mondrian Project** / `ruvebal/mondrian-project` this AY. Athanor slug `mondrian-project` unchanged. Vanity `.io`/`.art` deferred. | Owner §9 locks 9 Nov 2026; D4 amended; Pages cutover 10 Nov 2026. | `@neoplastix` scope wait on Wave A (P5); Lilith Path B optional later. |
+| **D-34 Style tokens** | Barrel `packages/tokens/` (+ `form.css`); type roles Architype Van Doesburg / Futura / Neue Haas Grotesk / Univers; chrome `--nx-radius-chrome: 0`; painting fills stay D-07. Seat 7 owns preview. | Typography report + 1920 imprint grounding (FIRST-SOURCES §6.3–6.4). | Foundry license before claiming Architype webfont live. |
+| **D-35 Favicon + Canvas 2.5D** | Canonical `brand/mark.svg`; deterministic favicon family; `@mondrian/mark-canvas` (parse SVG rects); landing field + foveal mark; `setCameraPaused` coordination. | canvas-25d-content-hero skill · token palette. | Tune amplitudes only; do not redraw mark geometry. |
+| **D-36 Locators, origin, edge** | Owned origin only (`https://neoplastix.crea-comm.net`) in printed/copied/canonical URLs; path = work, query = Recipe, fragment = position; recipe keys/ids **append-only**, unknown ignored, invalid clamped + announced, absent `v` = 1; locale never in printed paths; always-slash; edge honesty on Pages; [`LOCATORS.md`](LOCATORS.md) registry walked by tests and live probes. | TTOD Phase AA lessons re-probed here 10 Nov 2026: **H1 P0 half cutover** (domain live, `BASE` not flipped → CSS/nav 404), H2–H11. | Owned shortener domain, or a Phase 2 breaking recipe → `v=2` with a v1 reader. |
+| **D-37 Neoplastic landing** | Hero = Duijvestijn order-21 squared square as a fractal (only white planes open; orthogonal wipes, no colour blending); mark/favicon = minimal Mondrian partition (MAP n = 3, defect 2); landing grid `50fr 35fr 27fr`; six noindex lab versions. Mathematics as homage, never as Mondrian's measured proportions. | `neoplasticizer` skill · `packages/neoplastic` tests · OEIS A276523 | D-35 mark preferred → revert favicon only |
 
 **Decision status (27 Oct 2026 — owner amend):** D-32 **`adopted`**. Evidence: [`DECISIONS/D32-2026-10-27-SVG-STUDY-NOT-PHOTO.md`](DECISIONS/D32-2026-10-27-SVG-STUDY-NOT-PHOTO.md). Product repo already exists (`ruvebal/mondrian-project`); keep cascade docs in sync there.
+
+**Decision status (9 Nov 2026 — owner):** D-33 **`adopted`**. Evidence: [`DECISIONS/D33-2026-11-09-NEOPLASTIX-MARQUE.md`](DECISIONS/D33-2026-11-09-NEOPLASTIX-MARQUE.md).
+
+**Decision status (10 Nov 2026 — owner):** D-34 **`adopted`**. Evidence: [`DECISIONS/D34-2026-11-10-STYLE-TOKEN-TYPOGRAPHY.md`](DECISIONS/D34-2026-11-10-STYLE-TOKEN-TYPOGRAPHY.md) · [`../../style/TOKEN-SYSTEM.md`](../../style/TOKEN-SYSTEM.md).
+
+**Decision status (10 Nov 2026 — owner):** D-36 **`accepted`**. Evidence: [`DECISIONS/D36-2026-11-10-LOCATORS-ORIGIN-EDGE.md`](DECISIONS/D36-2026-11-10-LOCATORS-ORIGIN-EDGE.md). H1 (deploy `SITE`/`BASE` flip) is an ops action independent of adopting the rest.
+
+**Decision status (10 Nov 2026 — agent proposal):** D-37 **`proposed`** — awaiting owner on the PR. Evidence: [`DECISIONS/D37-2026-11-10-NEOPLASTIC-LANDING-SQUARED-SQUARE.md`](DECISIONS/D37-2026-11-10-NEOPLASTIC-LANDING-SQUARED-SQUARE.md).
+
+**Decision status (10 Nov 2026 — owner):** D-35 **`adopted`**. Evidence: [`DECISIONS/D35-2026-11-10-FAVICON-CANVAS-25D.md`](DECISIONS/D35-2026-11-10-FAVICON-CANVAS-25D.md).
 
 ---
 
@@ -89,13 +104,13 @@ Each row is an ADR in one line. M0 recorded each as `ratified` or `rejected` wit
 | 0 | [PHASE-M0.md](PHASE-M0.md) | D-01…D-20 decided; Ahmes→Athanor grounding receipt (Andrzejewski **and** voice corpus under Athanor `mondrian-project` — see [`grounding/CORPUS-OVERNIGHT.md`](grounding/CORPUS-OVERNIGHT.md)); toolchain probes; private institutional communications; reference works + rights | **DONE** — [`PHASE-M0-REPORT.md`](PHASE-M0-REPORT.md); cold review triage F1–F6 closed; owner flip 27 Oct 2026 |
 | — | [WORK-QUEUE.md](WORK-QUEUE.md) | Parallel non-blocking items (Q-FA1…Q-FA4 **DONE**). Does not invert M0–M9. | Item-local gates only |
 | 1 | [PHASE-M1.md](PHASE-M1.md) | Repository from `git init`: monorepo, Astro 7 + `@astrojs/svelte` probe, `packages/editor` stub, CI/Pages, Git/PR contract with D-25 CODEOWNERS, cascade move | **DONE** — Pages 200; CI green; probe hydrates; no public island; `main` protected; F1–F3 triage closed; [`PHASE-M1-REPORT.md`](PHASE-M1-REPORT.md) · [`PHASE-M1-COLD-REVIEW.md`](PHASE-M1-COLD-REVIEW.md) |
-| 2 | [PHASE-M2.md](PHASE-M2.md) | Andrzejewski-compatible `Work` primitives; render plan serialising to SVG **and** CSS Grid; `SurfaceSpec`/`CompositionState`/`Recipe` including `variationId`; catalog generator; measured reference; conformance | **DONE** (7 Nov 2026) — [`PHASE-M2-REPORT.md`](PHASE-M2-REPORT.md); MVP catalog = geometric + invert-contrast (weight remaps → B1-T4) |
-| 3 | [PHASE-M3.md](PHASE-M3.md) | Product shell: start, gallery CSS Grid miniatures, About scroll story, About Us, method; **no** Svelte island on these routes | **READY** — no-JS/reduced-motion About is complete; gallery/reference frame pass fit, a11y and base-path tests |
-| 4 | [PHASE-M4.md](PHASE-M4.md) | Classical analyzer: image → normalized points, rectangles and explicit lines in `work.yml`; evaluation; TensorFlow only as extension | **READY** (parallel with M3) — output validates; point/rectangle/line errors reported separately; no neural score in MVP |
+| 2 | [PHASE-M2.md](PHASE-M2.md) | Andrzejewski-compatible `Work` primitives; render plan serialising to SVG **and** CSS Grid; `SurfaceSpec`/`CompositionState`/`Recipe` including `variationId`; catalog generator; measured reference; conformance | **DONE** — [`PHASE-M2-REPORT.md`](PHASE-M2-REPORT.md); cold FAIL F1–F5 triage closed; owner flip 8 Nov 2026 |
+| 3 | [PHASE-M3.md](PHASE-M3.md) | Product shell: start, gallery CSS Grid miniatures, About scroll story, About Us, method; **no** Svelte island on these routes | **DONE (scaffold)** — PR #5; Wave A polish student-owned; [`PHASE-M3-REPORT.md`](PHASE-M3-REPORT.md) |
+| 4 | [PHASE-M4.md](PHASE-M4.md) | Classical analyzer: image → normalized points, rectangles and explicit lines in `work.yml`; evaluation; TensorFlow only as extension | **OPEN** — CLI scaffold; seat 1 implements ([`PHASE-M4-SCAFFOLD.md`](PHASE-M4-SCAFFOLD.md)) |
 | 5 | [PHASE-M5.md](PHASE-M5.md) | FastAPI analysis service: source JSON, derived HTML/CSS **and SVG** preview, `/analyze`; semantic snapshot against Astro; **no** public runtime calls | BLOCKED (M4 for `/analyze`) — source primitives and derived plan equal Astro; public build has no API dependency; Playwright later asserts no Pages→API fetch |
-| 6 | [PHASE-M6.md](PHASE-M6.md) | MVP Svelte+SVG editor: texture + format chips (D-31 maximise) + liquid-fill + corners + variations + URL/print | BLOCKED (M3) — product spec §9 game journey passes; format maximise ⊆ printableArea; liquid-fill (D-30); offline; no FastAPI from the editor |
-| 7 | [PHASE-M7.md](PHASE-M7.md) | Kiosk + PWA: offline, wake, attract/idle, QR state handoff, real touch-device run | BLOCKED (M6) — offline reload; idle reset; QR recovers identical state on phone; device/date recorded |
-| 8 | [PHASE-M8.md](PHASE-M8.md) | **Parallel lane from M2:** two remaining references + one measured work per student, `MEASUREMENT.md` each, rights rows, peer-reviewed PRs | **READY** — total = cohort size + 3 references (10 for the current cohort), valid in all validators; provenance/rights complete; every student PR has one cross-lane approval |
+| 6 | [PHASE-M6.md](PHASE-M6.md) | MVP Svelte+SVG editor: texture + format chips (D-31 maximise) + liquid-fill + corners + variations + URL/print | **READY** — shell scaffold DONE; seat 6 owns island (create placeholder already on Pages) |
+| 7 | [PHASE-M7.md](PHASE-M7.md) | Kiosk + PWA: offline, wake, attract/idle, QR state handoff, real touch-device run | BLOCKED — offline reload; idle reset; QR recovers identical state on phone; device/date recorded |
+| 8 | [PHASE-M8.md](PHASE-M8.md) | **Parallel lane from M2:** two remaining references + one measured work per student, `MEASUREMENT.md` each, rights rows, peer-reviewed PRs | **OPEN** — CORPUS.md + issue seeds; cohort measures ([`PHASE-M8-SCAFFOLD.md`](PHASE-M8-SCAFFOLD.md)) |
 | 9 | [PHASE-M9.md](PHASE-M9.md) | Declaration, custody, defence, brief EN+ES, dataset, grounded synthesis and congress abstract | BLOCKED (M7 + M8) — shipped-product transcript exists; brief bilingual; pseudonymisation passes; synthesis cites evaluator-safe Ahmes nodes only |
 
 **Parallel lanes.** M8 (corpus) runs from the moment M2 closes, alongside M3–M7, because measuring does not depend on rendering. M4–M5 (Python lane) may run alongside M3 and M6 once M2 is DONE, because the schema is frozen there. Everything else is strictly ordered. Only one phase per lane is IN_PROGRESS at a time.
@@ -163,7 +178,9 @@ The implementer must not self-certify DONE.
   the frame.
 - Palette inversion is explicit and reversible; never browser `filter: invert()`.
 - A frame cannot leave its printable area; print accuracy is claimed only after calibration.
-- Every href/src goes through Astro's base-aware helpers; the Pages URL, not localhost, is the acceptance surface.
+- Every href/src goes through Astro's base-aware helpers; the **canonical origin** (`PUBLIC_CANONICAL_ORIGIN`, D-36), not localhost or github.io, is the acceptance surface. CI also builds under a dummy non-root base so a root deploy cannot hide a missing helper.
+- Printed and copied URLs name only the owned domain. Recipe keys and enumerated ids are append-only; an old recipe opens (clamped + announced) and never blanks the stage. Language never enters `/create/…` (D-36, [`LOCATORS.md`](LOCATORS.md)).
+- Live claims come from a probe of the LOCATORS registry dated in the report, not from a document's earlier status line.
 - No photographs or scans of paintings committed or hotlinked.
 - Public site never depends on the LAN API. Astro must not execute Python.
 - AI Review Logs distinguish human checks from assistant-run checks; assistants
@@ -198,7 +215,8 @@ A phase that writes to a layer it is not listed for is out of order. L0 changes 
 
 `BLOCKED → READY → IN_PROGRESS → VERIFYING → COLD_REVIEW → DONE` (with `PARTIAL` allowed in reports for long lanes M4 and M8).
 
-- **VERIFYING** means: the phase's own tests *and* `pnpm -r test`, `pnpm -r build`, `uv run pytest` across the repo are green; every touched module imports; Astro builds with zero warnings.
+- **VERIFYING** means: the phase's own tests *and* `pnpm -r test`, `pnpm -r build`, `uv run pytest` across the repo are green; every touched module imports; Astro builds with zero warnings. Re-probe [`LOCATORS.md`](LOCATORS.md) § How it is proven (including TTOD-AA P2 host-escape curls) and record the table in the report.
+- **TTOD-AA method (every Mn close)** — from [`TTOD-AA-LESSONS-2026-11-11.md`](TTOD-AA-LESSONS-2026-11-11.md) §3: write the exit gate before the code and commit it alone; falsify every new check (swap old code back, confirm fail, restore); look at your own screenshots; on a platform upgrade re-run earlier gates **unchanged** and refuse if a gate was edited to pass. Not a new phase — checklist only.
 - **Cold review**: a fresh session (Cursor Task `generalPurpose`, or the studio `cascade-cold-reviewer` subagent) that did not implement the phase, receiving only the runbook Acceptance, the diff, the suite transcript and §3's hard constraints. Output `PHASE-Mn-COLD-REVIEW.md` with `Fn` findings (severity, blocks DONE?, evidence, fix). Zero findings is still a filed document.
 - **Amend on surprise**: if a finding invalidates a downstream assumption (e.g. relative colour syntax missing on the kiosk device, Astro base-path behaviour, TensorFlow wheel availability), amend this orchestrator and every downstream `PHASE-M*.md` in the **same commit** as the report, and write "cascade amended: <paths>" in the report.
 - **Report**: `PHASE-Mn-REPORT.md`, status first, commands with exit codes, no hedge words.

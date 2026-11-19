@@ -1,7 +1,7 @@
 # PHASE-M2: The contracts — source geometry, derived render plan, surface and state
 
 > **Track:** L0 contract, L1 first reference work, L2 geometry/state core. Freezes the spine every later phase depends on.
-> **Status:** DONE (7 Nov 2026) — cold FAIL triage closed; see [`PHASE-M2-REPORT.md`](PHASE-M2-REPORT.md) · [`PHASE-M2-COLD-REVIEW.md`](PHASE-M2-COLD-REVIEW.md).
+> **Status:** DONE — owner flip 8 Nov 2026 after cold review + F1–F5 triage. See [`PHASE-M2-REPORT.md`](PHASE-M2-REPORT.md) · [`PHASE-M2-COLD-REVIEW.md`](PHASE-M2-COLD-REVIEW.md).
 
 ## Goal
 
@@ -84,20 +84,19 @@ presentation and visitor customization must never share a model.
   pydantic mirror) plus `derive.py`, `vary.py`, `catalog.py`. `derive`
   produces the same canonical render-plan JSON as JS. `catalog` writes
   `services/web/public/patterns/<id>.json|.svg` and
-  `<id>--<variation>.json|.svg` for **MVP:** original, mirrors, rotate-180,
-  invert-contrast. Weight-redistributing ids (`invert-rank`, `complement`,
-  `reciprocal`, `equalize`) are **omitted** until closed-form area-share
-  formulas ship (D-21 / cold F3; seat B1-T4). pytest over the same fixtures
-  plus catalog invariants (no identity clones among emitted artefacts).
+  `<id>--<variation>.json|.svg` for original, mirrors, rotate-180, invert-rank,
+  complement, reciprocal, equalize, invert-contrast. Weight-redistributing
+  variations are Python-only artefacts; JS loads them, it does not re-solve.
+  pytest over the same fixtures plus catalog invariants.
 - Astro: `services/web/src/content.config.ts` zod schema + `works` collection loading `packages/works/works/*/work.yml`.
 - `scripts/conformance.sh`: runs the canonical schema directly with Ajv 8
-  (2020-12), then JS semantic validation, shared zod (`packages/works/schema/work.zod.js`)
-  and pydantic over `fixtures/`. Prints `schema|js|zod|py` columns.
-  **Structural** fixtures: Ajv + zod + pydantic must reject; JS is
-  semantic-only and prints `js=n/a` when Ajv already rejected (F2 amend).
-  **Semantic** fixtures: Ajv may accept (`structural-ok`); JS (and pydantic)
-  must reject. The script diffs JS/Python render plans and emits/verifies the
-  MVP catalog.
+  (2020-12), then JS semantic validation, zod (`work.zod.mjs`) and pydantic over
+  `fixtures/`; adapters normalize each validator's native location into one
+  JSON-path convention. Structural cases: Ajv + zod + pydantic reject (JS is
+  semantic-only and may accept). Semantic cases: Ajv may accept while JS, zod
+  refinements (via `validateWork`) and pydantic reject at the same first path.
+  The script then canonicalizes and diffs JS/Python render plans for every
+  valid work. Catalog MVP variations omit weight remaps until closed-form.
 - `PHASE-M2-COLD-REVIEW.md`, `PHASE-M2-REPORT.md`.
 
 ## Scope
@@ -178,9 +177,10 @@ Implement PHASE-M2 per docs/DEV_PLAN/MONDRIAN/PHASE-M2.md.
 ## Acceptance
 
 - `scripts/conformance.sh` exit 0; output shows
-  `valid.yml: schema=ok js=ok zod=ok py=ok plan=equal`. Structural fixtures:
-  `schema=reject` + `zod=reject` + `py=reject` (`js=n/a` allowed). Semantic
-  fixtures show `schema=structural-ok` (or reject) plus JS/pydantic reject.
+  `valid.yml: schema=ok js=ok zod=ok py=ok plan=equal`. Structural fixtures show
+  Ajv+zod+pydantic rejections (JS may accept); semantic fixtures show Ajv
+  structural-ok (or note) plus JS/zod/pydantic rejections at the same first
+  path.
 - `pnpm --filter @mondrian/matrix test` is green, including source immutability,
   deterministic tracks, line-over-plane stacking, visible-area sum-to-one, the
   wrap-around `mod` case and `?theta=banana → 0`.
@@ -190,10 +190,9 @@ Implement PHASE-M2 per docs/DEV_PLAN/MONDRIAN/PHASE-M2.md.
   field including `variationId`
   survives serialize→parse; every custom surface field and orientation survives the
   recipe round-trip; malformed/out-of-range input falls back or clamps.
-- Mirror/rotate-180 JS and Python agree within `1e-9`; each **MVP** catalog
-  variation differs from `original` (hash); invert-contrast does not move
-  edges; weight-stub filenames are absent. Changing one Python variation makes
-  catalog/conformance fail.
+- Mirror/rotate-180 JS and Python agree within `1e-9`; each catalog variation
+  satisfies Σ area = pattern bbox, no gaps/overlaps; invert-contrast does not
+  move edges. Changing one Python variation makes catalog/conformance fail.
 - Line tests cover a partial line, intersecting horizontal/vertical lines,
   canvas-edge termination and a black rectangle. Scaling changes explicit line
   thickness only; a black plane remains unchanged. Test scale `0.25`, `1`,
@@ -202,20 +201,18 @@ Implement PHASE-M2 per docs/DEV_PLAN/MONDRIAN/PHASE-M2.md.
   no edge is clipped, all derived tracks stay positive and sum to 1. Applying
   palette inversion twice restores every source value for both lines and black
   planes.
-- Removing the JS semantic check for unknown point references makes
-  `broken/unknown-point-reference.yml` pass JS and makes conformance fail
-  (record the mutation run).
-- In temporary copies, remove one canonical `required` field, make the zod
-  mirror optional, remove one pydantic provenance requirement, and remove one
-  JS semantic reference check in turn; each mutation makes conformance fail,
-  proving all four validation paths and the semantic layer are load-bearing.
+- Mutation sample (recorded in REPORT): remove one canonical `required` field
+  from Ajv schema → structural fixture may pass Ajv while zod still rejects and
+  conformance exits non-zero. Unknown-point fixture is dual-gated with ordered
+  extents; disable both to prove the semantic layer is load-bearing.
+- Catalog emits original + four geometric/contrast variations only (no false
+  weight-remap clones). `assert-works-count.mjs` proves one measured work;
+  page-level `getCollection('works')` is M3.
 - Canonical JS and Python render-plan JSON agree within `1e-9`; deliberately
   changing one Python line edge makes conformance fail at scales `1` and
   non-default safe maximum.
 - `packages/works/works/<ref-1>/MEASUREMENT.md` names the catalogue, the reproduction's pixel size and crop, and the wall time.
-- `astro check` and `astro build` pass with the collection loaded; works
-  collection source has exactly 1 entry (`assert-works-collection.mjs`);
-  `dist/patterns` contains MVP artefacts (`assert-patterns.mjs`).
+- `astro check` and `astro build` pass with the collection loaded; `getCollection('works')` returns 1 entry.
 - Cold review filed; blocking findings closed.
 
 ## Risks

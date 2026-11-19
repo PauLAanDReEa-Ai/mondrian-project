@@ -7,6 +7,7 @@ Amended 29 Oct 2026: seats 5–7 random draw (reorder later if needed).
 
 # Team assignments — cohort of 7
 
+**Product marque:** Neoplastix · **Programme:** Mondrian Project · [`D-33`](DECISIONS/D33-2026-11-09-NEOPLASTIX-MARQUE.md)  
 **Product contract:** [`MVP-PRODUCT-SPEC.md`](MVP-PRODUCT-SPEC.md)  
 **Stack amend:** [`DECISIONS/D21-D25-2026-10-27-ASTRO-SVELTE-SVG-MVP.md`](DECISIONS/D21-D25-2026-10-27-ASTRO-SVELTE-SVG-MVP.md)  
 **Export / QR / generative:** [`DECISIONS/D26-2026-10-27-EXPORT-QR-GENERATIVE.md`](DECISIONS/D26-2026-10-27-EXPORT-QR-GENERATIVE.md)  
@@ -63,6 +64,7 @@ needed — this draw is provisional, not locked.
 | B1-T3 | Classical analyzer: points / planes / lines → `work.yml` draft with uncertainty fields; evaluation report against labelled cells. | M4 |
 | B1-T4 | Closed-form weight variations (`invert-rank`, `complement`, `reciprocal`, `equalize`): document formulas in schema README, implement in Python `vary.py`, re-enable in `catalog.VARIATIONS` + composition-state enum; conformance must prove each artefact ≠ `original`. **Omitted from M2 MVP** (D-21 / cold F3). | M4 |
 | B1-T5 | Personal measured work under `packages/works/<slug>/` with rights + method notes. | M8 |
+| B1-T6 | Document one **limit-case refuse** for the digitalization lane: Hilma af Klint *Ser III No. 5* (1920; HaK480) — abstract/geometric yet not H/V + rectangle partition. Note lives under corpus triage ([`corpus/REFERENCE-WORKS.md`](corpus/REFERENCE-WORKS.md) § Limit cases); no `work.yml`, no photo in git. | M4/M8 |
 
 **Starter already in pack:** schema draft + catalog sketch under `scaffold/`.
 
@@ -113,7 +115,7 @@ LAN service · M7 “no Pages→API” gate · Phase-2 generate (post-MVP).
 
 | ID | Spec | Phase |
 | --- | --- | --- |
-| S4-T1 | Gallery miniatures are **CSS Grid** from the shared render plan (not screenshots of SVG). | M3 |
+| S4-T1 | Gallery miniatures are **inline SVG** from the shared render plan (D-38; not CSS Grid cells, not screenshots). | M3 |
 | S4-T2 | `/method/` explains analyzer → schema → catalog build → uncertainty → rights. | M3 |
 | S4-T3 | Container queries reveal chrome/captions; painting study stays ratio-true. | M3 |
 | S4-T4 | Personal measured work. | M8 |
@@ -143,6 +145,7 @@ LAN service · M7 “no Pages→API” gate · Phase-2 generate (post-MVP).
 | U6-T4 | Internal dividers/junctions are **not** draggable (Addendum B / D-24). | M6 |
 | U6-T5 | Undo, reset, compare; **live URL sync** (every UI edit → query params); `localStorage` draft. | M6 |
 | U6-T6 | Personal measured work + defence of one interaction bound. | M8/M9 |
+| U6-T7 | Plane **clip** chips (`rect` / `circle` / `triangle`) via SVG `clipPath` on AABB planes (D-38). Silhouette lab only — never promote Ser III No. 5 (or other wrong-armature works) into `work.yml`. Micro-interactions per PHASE-M6 § Micro-interactions + svg-master-session. | M6 |
 
 ---
 
@@ -150,7 +153,7 @@ LAN service · M7 “no Pages→API” gate · Phase-2 generate (post-MVP).
 
 | ID | Spec | Phase |
 | --- | --- | --- |
-| U7-T1 | Own `packages/tokens/` barrel; no raw colours outside token files; shell + editor consume the barrel. | M1/M3 |
+| U7-T1 | Own `packages/tokens/` barrel (D-26.4 + **D-34**); type roles Van Doesburg / Futura / Neue Haas / Univers; form `radius: 0`; no raw colours outside token files; shell + editor consume `--nx-*`; student type-specimen preview per [`TOKEN-SYSTEM.md`](../../style/TOKEN-SYSTEM.md). | M1/M3 |
 | U7-T2 | Client export: SVG, **standalone HTML** (full-size SVG embedded), CSV, PNG-from-SVG. | M6 |
 | U7-T3 | QR = **recipe URL** only (D-26/D-27); never SVG or work JSON in query; keep MVP recipe query ≈150 chars. | M6/M7 |
 | U7-T4 | Paper presets (**sticker-50 default**); stage = silhouette; **Print** giveaway; `@page` per preset; calibrate 50 mm + 100 mm. | M6 |

@@ -2,7 +2,7 @@
   "name": "mondrian-project",
   "private": true,
   "version": "0.0.0",
-  "description": "Liquid Mondrian — cohort monorepo (FE I 2026–27)",
+  "description": "Neoplastix (Mondrian Project cohort) — FE I 2026–27",
   "packageManager": "pnpm@10.30.0",
   "engines": {
     "node": ">=24.22.1"
@@ -13,6 +13,7 @@
     "lint": "pnpm -r --if-present run lint",
     "format": "prettier --write .",
     "develop": "pnpm --filter @mondrian/web run dev",
+    "favicon:build": "node scripts/build-favicon-family.mjs",
     "catalog": "uv run python scripts/emit_catalog.py",
     "conformance": "bash scripts/conformance.sh",
     "check": "pnpm run catalog && pnpm run lint && pnpm run test && pnpm run build && pnpm run conformance"
@@ -21,7 +22,7 @@
     "ajv": "^8.20.0",
     "prettier": "^3.6.2",
     "yaml": "^2.9.1",
-    "zod": "4.6.7"
+    "zod": "3.25.76"
   },
   "pnpm": {
     "onlyBuiltDependencies": [

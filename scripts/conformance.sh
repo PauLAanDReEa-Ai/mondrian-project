@@ -9,8 +9,15 @@ import { readFileSync, readdirSync, writeFileSync, mkdirSync } from "node:fs";
 import { join } from "node:path";
 import { parse as parseYaml } from "yaml";
 import Ajv2020 from "ajv/dist/2020.js";
-import { validateWork, deriveRenderPlan, renderSvg } from "./packages/matrix/src/index.js";
-import { validateWorkZod } from "./packages/works/schema/work.zod.js";
+import {
+  validateWork,
+  deriveRenderPlan,
+  renderSvg,
+} from "./packages/matrix/src/index.js";
+import {
+  loadWorkZod,
+  firstZodPath,
+} from "./packages/works/schema/work.zod.mjs";
 
 const root = process.cwd();
 const schema = JSON.parse(
@@ -25,66 +32,61 @@ const stripFormats = (node) => {
 stripFormats(schema);
 const ajv = new Ajv2020({ allErrors: true, strict: false });
 const validateSchema = ajv.compile(schema);
+const workZod = await loadWorkZod();
 
 const fixturesDir = join(root, "packages/works/fixtures");
 const valid = parseYaml(readFileSync(join(fixturesDir, "valid.yml"), "utf8"));
 
-function cols(label, schemaOk, jsCol, zodOk, extra = "") {
+function zodResult(doc) {
+  const r = workZod.safeParse(doc);
+  if (r.success) return { ok: true, path: "" };
+  return { ok: false, path: firstZodPath(r.error) };
+}
+
+function checkDoc(label, doc, expect) {
+  const schemaOk = validateSchema(doc);
+  const js = validateWork(doc);
+  const zod = zodResult(doc);
   const schemaCol = schemaOk ? "ok" : "reject";
-  const zodCol = zodOk ? "ok" : "reject";
-  console.log(
-    `${label}: schema=${schemaCol} js=${jsCol} zod=${zodCol}${extra}`,
-  );
-}
-
-function checkValid(doc) {
-  const schemaOk = validateSchema(doc);
-  const js = validateWork(doc);
-  const zod = validateWorkZod(doc);
   const jsCol = js.ok ? "ok" : "reject";
-  cols("valid.yml", schemaOk, jsCol, zod.ok, js.ok ? "" : ` path=${js.path}`);
-  if (!(schemaOk && js.ok && zod.ok)) process.exitCode = 1;
-}
-
-/**
- * Structural: Ajv + zod must reject. JS is semantic-only → js=n/a when schema rejected.
- * (PHASE-M2 Acceptance amended M2 F2 triage.)
- */
-function checkStructural(label, doc) {
-  const schemaOk = validateSchema(doc);
-  const zod = validateWorkZod(doc);
-  const jsCol = schemaOk ? (validateWork(doc).ok ? "ok" : "reject") : "n/a";
-  cols(label, schemaOk, jsCol, zod.ok);
-  if (schemaOk || zod.ok) process.exitCode = 1;
-}
-
-function checkSemantic(label, doc) {
-  const schemaOk = validateSchema(doc);
-  const js = validateWork(doc);
-  const zod = validateWorkZod(doc);
-  const schemaCol = schemaOk ? "structural-ok" : "reject";
+  const zodCol = zod.ok ? "ok" : "reject";
+  const extra = [
+    !js.ok ? `jsPath=${js.path}` : "",
+    !zod.ok ? `zodPath=${zod.path}` : "",
+  ]
+    .filter(Boolean)
+    .join(" ");
   console.log(
-    `${label}: schema=${schemaCol} js=${js.ok ? "ok" : "reject"} zod=${zod.ok ? "ok" : "reject"} path=${js.path || zod.path || ""}`,
+    `${label}: schema=${schemaCol} js=${jsCol} zod=${zodCol}${extra ? " " + extra : ""}`,
   );
-  // Semantic cases must fail JS (geometry). Zod may accept structural shape.
-  if (js.ok) process.exitCode = 1;
+  if (expect === "all-ok") {
+    if (!(schemaOk && js.ok && zod.ok)) process.exitCode = 1;
+  } else if (expect === "structural") {
+    // Ajv + zod must reject; JS is semantic-only and may accept.
+    if (schemaOk || zod.ok) process.exitCode = 1;
+  } else if (expect === "semantic") {
+    if (!schemaOk) {
+      console.log(`  (note) schema rejected semantic case — still require js+zod reject`);
+    }
+    if (js.ok || zod.ok) process.exitCode = 1;
+  }
 }
 
-checkValid(valid);
+checkDoc("valid.yml", valid, "all-ok");
 
 for (const f of readdirSync(join(fixturesDir, "broken/structural"))) {
   if (!f.endsWith(".yml")) continue;
   const doc = parseYaml(
     readFileSync(join(fixturesDir, "broken/structural", f), "utf8"),
   );
-  checkStructural(`structural/${f}`, doc);
+  checkDoc(`structural/${f}`, doc, "structural");
 }
 for (const f of readdirSync(join(fixturesDir, "broken/semantic"))) {
   if (!f.endsWith(".yml")) continue;
   const doc = parseYaml(
     readFileSync(join(fixturesDir, "broken/semantic", f), "utf8"),
   );
-  checkSemantic(`semantic/${f}`, doc);
+  checkDoc(`semantic/${f}`, doc, "semantic");
 }
 
 const plan = deriveRenderPlan(valid, 1);
@@ -95,9 +97,10 @@ writeFileSync("/tmp/mondrian-m2/js-plan.json", JSON.stringify(plan));
 writeFileSync("/tmp/mondrian-m2/js-svg.svg", svg);
 NODE
 
+# pydantic + plan equality
 uv run python <<'PY'
-import json
 import hashlib
+import json
 from pathlib import Path
 import yaml
 from mondrian_work_schema import Work, derive_render_plan, write_catalog
@@ -148,6 +151,8 @@ if not close(js_plan, py_plan):
     for key in ('lineWeightScale', 'xTracks', 'yTracks'):
         if not close(js_plan[key], py_plan[key]):
             print('plan DIFF at', key)
+            print(' js', js_plan[key][:3] if isinstance(js_plan[key], list) else js_plan[key])
+            print(' py', py_plan[key][:3] if isinstance(py_plan[key], list) else py_plan[key])
             raise SystemExit(1)
     if len(js_plan['items']) != len(py_plan['items']):
         print('plan item count mismatch')
@@ -179,12 +184,15 @@ for p in paths:
         raise SystemExit(1)
     hashes[digest] = p.name
 
-banned = list(out.glob('*--invert-rank.*')) + list(out.glob('*--complement.*')) \
-    + list(out.glob('*--reciprocal.*')) + list(out.glob('*--equalize.*'))
+banned = (
+    list(out.glob('*--invert-rank.*'))
+    + list(out.glob('*--complement.*'))
+    + list(out.glob('*--reciprocal.*'))
+    + list(out.glob('*--equalize.*'))
+)
 if banned:
     print('banned weight stub artefacts present:', [b.name for b in banned])
     raise SystemExit(1)
 
-print('valid.yml: schema=ok js=ok zod=ok py=ok plan=equal')
 print('conformance: OK')
 PY
