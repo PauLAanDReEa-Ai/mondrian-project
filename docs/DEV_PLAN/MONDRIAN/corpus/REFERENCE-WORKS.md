@@ -9,8 +9,7 @@ Author: Rubén Vega Balbás, PhD · M0 26 October 2026 · amended 27 October 202
 **Status:** M0 selection recorded; hand measurement deferred to M2/M8 (time-boxed).  
 **Rule:** dimensions from a named catalogue; boundaries from a recorded
 reproduction (pixel size + crop) at measurement time — never by eye.  
-**Exclusions (D-12 / pitch §5):** lozenge, coloured-line, *Boogie Woogie*,
-multi-grey, and pre–neo-plastic / Cubist-transition works (e.g. 1914
+**Exclusions (D-12 / pitch §5):** lozenge, coloured-line, *Boogie Woogie*, and pre–neo-plastic / Cubist-transition works (e.g. 1914
 *Tableau no. 2 / Composition no. V*).
 
 ## Three works (M0 instructor set)
@@ -34,6 +33,7 @@ student (or an assistant) proposes “it looks measurable.”
 | --- | --- | --- | --- | --- |
 | Cubist-transition Mondrian | *(none)* | MoMA *Tableau no. 2 / Composition no. V* (1914) | Outside D-12 neo-plastic orthogonal black-armature scope | Documented reject only |
 | Spiritual geometry (wrong armature) | `hak-1920-ser-iii-5` | Hilma af Klint, *Ser III No. 5* (dated **18 Jan 1920**). Oil + graphite on canvas **38.5 × 29 cm**. Hilma af Klint Foundation archive **HaK480**. Cat. raisonné: Almqvist (ed.), *Hilma af Klint – Catalogue raisonné* vol. 5 *Geometric Series and Other Works 1917–1920* (2021), p. 115. Auction record (classroom identity gate, not a photo to commit): [Bukowskis lot](https://www.bukowskis.com/en/auctions/676/827-hilma-af-klint-ser-iii-no-5) | Circles, triangles, theosophical seal / cross symbols, and graphite notations — **not** an H/V black-line + rectangular-plane partition. Light/dark polarity and yellow/blue squares are spiritual diagram language, not neoplastic liquid-fill armature. Tempting edge case because it is small, geometric, and abstract. AABB colour patches alone are a Mondrian-ish lie about this silhouette. | **Limit case** — never catalog, never analyzer golden, never student M8 slug. **D-38 plane `clip`** (circle/triangle on AABB) is the editor **silhouette lab** so the class can see the lie without promoting HaK480 into the corpus. |
+| Non-orthogonal neoplasticism (diagonal armature) | `tate-1925-cc-vi` | [Theo van Doesburg](https://www.tate.org.uk/art/artists/theo-van-doesburg-1017) (1883–1931), *Counter-Composition VI* (*Contre-compositie*), 1925. Oil paint on canvas. Support **500 × 500 mm**; frame 690 × 691 × 80 mm.; ref. **T03374**. Tate page: [https://www.tate.org.uk/art/artworks/doesburg-counter-composition-vi-t03374](https://www.tate.org.uk/art/artworks/doesburg-counter-composition-vi-t03374) | Diagonal lines cross the frame — the armature is **not** an H/V orthogonal grid, so the D-12 partition into horizontal/vertical black lines + rectangular planes is unsound even though the work is neoplastic, abstract, and geometric. | **Limit case** — never catalog, never analyzer golden; named specimen for “neoplastic ≠ orthogonal.” |
 
 **Teaching sentence (Seat 1 / every M8 issue):** abstract + geometric ≠ schema-valid.
 *Ser III No. 5* is the named specimen for that sentence (same artist as C1 in
@@ -69,7 +69,13 @@ multi-grey) and a catalogue dimension row.
 | `gnam-1920-comp-a` | *Composition A* (*Grande composizione A con nero, rosso, grigio, giallo e blu*) · Commons [Category:Composition A (B105)](https://commons.wikimedia.org/wiki/Category:Composition_A_(B105)) | 1920 | **pending** museum sheet (Joosten B105) | Galleria Nazionale d'Arte Moderna e Contemporanea, Rome | [File:Composition_A_by_Piet_Mondrian_Galleria_Nazionale_d'Arte_Moderna_e_Contemporanea.jpg](https://commons.wikimedia.org/wiki/File:Composition_A_by_Piet_Mondrian_Galleria_Nazionale_d%27Arte_Moderna_e_Contemporanea.jpg) · upload `…/commons/c/c3/Composition_A_by_Piet_Mondrian_Galleria_Nazionale_d%27Arte_Moderna_e_Contemporanea.jpg` | **2216 × 2204** (Commons imageinfo; 2.75 MB) | full frame `0,0–2216,2204` | Early neoplastic; title names **grey** → D-12 multi-grey caution before measuring for MVP catalog |
 | `tate-1920-no-vi` | *No. VI / Composition No.II* · [Wikidata Q28554669](https://www.wikidata.org/wiki/Q28554669) | 1920 | **100.3 × 99.7 cm** (Wikidata P2048/P2049, centimetre) | Tate · `T00915` | [File:Piet_Mondriaan_-_No._VI_-_T00915_-_Tate.jpg](https://commons.wikimedia.org/wiki/File:Piet_Mondriaan_-_No._VI_-_T00915_-_Tate.jpg) · upload `…/commons/0/0e/Piet_Mondriaan_-_No._VI_-_T00915_-_Tate.jpg` | **992 × 1000** (Commons imageinfo; 57 KB) | full frame `0,0–992,1000` | Near-square; confirm D-12 orthogonal black-armature scope before promote |
 
-Recorded by: instructor / M0 agent · 2026-10-27 · imageinfo via Commons API (no photo stored in forge).
+**`tate-1920-no-vi`:** *No. VI / Composition
+No.II* — Piet Mondrian, *Composition in Grey, Red, Yellow and Blue*, 1920.
+Oil. Collection Tate Gallery, London (acc. `T00915`).
+Tate artwork page:
+[https://www.tate.org.uk/art/artworks/mondrian-no-vi-composition-no-ii-t00915](https://www.tate.org.uk/art/artworks/mondrian-no-vi-composition-no-ii-t00915).
+
+
 
 ### Grow the set later
 
@@ -108,6 +114,13 @@ Mondrian died **1 Feb 1944**.
 Who recorded rights rows: instructor (M0, 26 Oct 2026); growth candidates 27 Oct; historiography + D-32 27 Oct 2026.
 
 ---
+
+## Educative resources (20 Nov 2026)
+
+| Resource | URL | Use |
+| --- | --- | --- |
+| Tate — Introducing Piet Mondrian | https://www.tate.org.uk/art/artists/piet-mondrian-1651/introducing-piet-mondrian | Artist primer; classroom framing before measurement work |
+| Top Impressionists — Student guide: *Composition with Red, Yellow and Blue* | https://topimpressionists.com/en/art/student-guide/piet-mondrian-composition-with-red-yellow-and-blue-8XYS4L-en/ | # Teaching guide: Composition with Red, Yellow and Blue |
 
 ## Historiography notes (teaching stack — 27 Oct 2026)
 
