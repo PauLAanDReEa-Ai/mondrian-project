@@ -75,6 +75,12 @@ Oil. Collection Tate Gallery, London (acc. `T00915`).
 Tate artwork page:
 [https://www.tate.org.uk/art/artworks/mondrian-no-vi-composition-no-ii-t00915](https://www.tate.org.uk/art/artworks/mondrian-no-vi-composition-no-ii-t00915).
 
+| Provisional slug | Title / identity | Date | Catalogue (H × W) | Collection / inv. | Reproduction | Pixel W × H | Crop | Notes |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| `hdm-1919-checkerboard` | Piet Mondrian, *Composition, Checkerboard, Bright Colours* (*Composizione a scacchiera con colori chiari*, 1919). Oil. | 1919 | **pending** museum sheet (Haags Gemeentemuseum) | Haags Gemeentemuseum (Gemeentemuseum Den Haag) | [File:Piet_mondrian,_composizione_con_griglia_9,_composizione_a_scacchiera_con_colori_chiari,_1919,_01.jpg](https://commons.wikimedia.org/wiki/File:Piet_mondrian,_composizione_con_griglia_9,_composizione_a_scacchiera_con_colori_chiari,_1919,_01.jpg) · upload `…/commons/a/ad/Piet_mondrian%2C_composizione_con_griglia_9%2C_composizione_a_scacchiera_con_colori_chiari%2C_1919%2C_01.jpg` | **3708 × 3222** (Commons imageinfo; 5.2 MB) | full frame `0,0–3708,3222` | **Digitalization interest:** the chromatic palette (bright / pale tints, no black armature yet?) and the **format of the cells** — a regular checkerboard grid reads as a proto-pixel-art surface, the natural “grid-as-pixels” exemplar for the D-38 pixel-study lane. Verify D-12 scope (1919 transition period, armature colour) before promote. |
+
+Recorded by: instructor · 2026-11-20 · imageinfo via Commons API (no photo stored in forge).
+
 
 
 ### Grow the set later
