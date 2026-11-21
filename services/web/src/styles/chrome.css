@@ -1,3 +1,5 @@
+/* U7-T1 (Paula): Se actualizan los estilos de la interfaz para usar los tokens públicos --nx-* del paquete compartido. 
+El cambio hace que la interfaz consuma el sistema común y deja --mp-* únicamente como alias de compatibilidad. */
 /* Shell chrome — landmarks, nav, prose pages */
 
 .skip-link {
@@ -5,8 +7,8 @@
   left: 0.75rem;
   top: 0.75rem;
   transform: translateY(-200%);
-  background: var(--mp-color-ink);
-  color: var(--mp-color-canvas);
+  background: var(--nx-color-ink);
+  color: var(--nx-color-canvas);
   padding: 0.5rem 0.75rem;
   z-index: 100;
   text-decoration: none;
@@ -23,7 +25,7 @@
   justify-content: space-between;
   gap: 0.75rem 1.25rem;
   padding: 0.85rem 1.25rem;
-  border-bottom: 1px solid color-mix(in srgb, var(--mp-color-ink) 12%, transparent);
+  border-bottom: 1px solid color-mix(in srgb, var(--nx-color-ink) 12%, transparent);
   max-width: 72rem;
   margin-inline: auto;
 }
@@ -45,14 +47,14 @@
 
 .shell-nav a {
   text-decoration: none;
-  color: var(--mp-color-muted);
+  color: var(--nx-color-muted);
   font-size: 0.95rem;
 }
 
 .shell-nav a[aria-current="page"],
 .shell-nav a:hover,
 .shell-nav a:focus-visible {
-  color: var(--mp-color-ink);
+  color: var(--nx-color-ink);
   text-decoration: underline;
   text-underline-offset: 0.2em;
 }
@@ -71,8 +73,8 @@
   max-width: 72rem;
   margin-inline: auto;
   padding: 1rem 1.25rem 2rem;
-  color: var(--mp-color-muted);
-  font-size: var(--mp-text-sm, 0.875rem);
+  color: var(--nx-color-muted);
+  font-size: var(--nx-text-sm, 0.875rem);
 }
 
 .shell-footer p {
@@ -113,12 +115,12 @@
 .prose p,
 .prose li {
   line-height: 1.55;
-  color: color-mix(in srgb, var(--mp-color-ink) 92%, transparent);
+  color: color-mix(in srgb, var(--nx-color-ink) 92%, transparent);
 }
 
 .prose .lede {
   font-size: 1.1rem;
-  color: var(--mp-color-muted);
+  color: var(--nx-color-muted);
 }
 
 .card-grid {
@@ -131,14 +133,14 @@
 .work-card {
   display: block;
   text-decoration: none;
-  border: 1px solid color-mix(in srgb, var(--mp-color-ink) 14%, transparent);
+  border: 1px solid color-mix(in srgb, var(--nx-color-ink) 14%, transparent);
   padding: 0.75rem;
-  background: color-mix(in srgb, var(--mp-color-canvas) 92%, var(--mp-color-paper));
+  background: color-mix(in srgb, var(--nx-color-canvas) 92%, var(--nx-color-paper));
 }
 
 .work-card:hover,
 .work-card:focus-visible {
-  border-color: var(--mp-color-ink);
+  border-color: var(--nx-color-ink);
 }
 
 .work-card h2 {
@@ -149,7 +151,7 @@
 .work-card p {
   margin: 0;
   font-size: 0.85rem;
-  color: var(--mp-color-muted);
+  color: var(--nx-color-muted);
 }
 
 .btn-row {
@@ -166,18 +168,18 @@
   min-height: 2.75rem;
   padding: 0.55rem 1rem;
   text-decoration: none;
-  border: 1px solid var(--mp-color-ink);
+  border: 1px solid var(--nx-color-ink);
   font-weight: 500;
 }
 
 .btn--primary {
-  background: var(--mp-color-ink);
-  color: var(--mp-color-canvas);
+  background: var(--nx-color-ink);
+  color: var(--nx-color-canvas);
 }
 
 .btn--ghost {
   background: transparent;
-  color: var(--mp-color-ink);
+  color: var(--nx-color-ink);
 }
 
 .scaffold-banner {

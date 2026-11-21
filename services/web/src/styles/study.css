@@ -1,3 +1,5 @@
+/* U7-T1 (Paula): Este archivo se actualiza porque el área de estudio también debe consumir la API pública --nx-* del paquete compartido. 
+Se han sustituido los tokens --mp-* usados en el fondo, el papel, el marco, el SVG y los textos descriptivos para mantener el mismo lenguaje visual que el resto de la interfaz. */
 /* Study frame — inline SVG from shared render plan (D-38) */
 
 @scope (.study) {
@@ -9,7 +11,7 @@
     place-items: center;
     width: 100%;
     min-height: min(70dvh, 36rem);
-    background: color-mix(in srgb, var(--mp-color-ink) 4%, var(--mp-color-canvas));
+    background: color-mix(in srgb, var(--nx-color-ink) 4%, var(--nx-color-canvas));
   }
 
   .study__stage {
@@ -27,7 +29,7 @@
     height: auto;
     max-height: var(--study-max);
     background: var(--nx-color-paper);
-    box-shadow: 0 0 0 1px color-mix(in srgb, var(--mp-color-ink) 18%, transparent);
+    box-shadow: 0 0 0 1px color-mix(in srgb, var(--nx-color-ink) 18%, transparent);
     container-type: inline-size;
     container-name: paper;
     position: relative;
@@ -59,11 +61,11 @@
   margin: 1rem auto 0;
   font-size: 0.95rem;
   line-height: 1.45;
-  color: var(--mp-color-muted);
+  color: var(--nx-color-muted);
 }
 
 .study-caption strong {
-  color: var(--mp-color-ink);
+  color: var(--nx-color-ink);
   font-weight: 500;
 }
 
