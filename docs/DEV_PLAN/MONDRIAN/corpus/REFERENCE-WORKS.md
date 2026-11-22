@@ -34,6 +34,70 @@ student (or an assistant) proposes “it looks measurable.”
 | Cubist-transition Mondrian | *(none)* | MoMA *Tableau no. 2 / Composition no. V* (1914) | Outside D-12 neo-plastic orthogonal black-armature scope | Documented reject only |
 | Spiritual geometry (wrong armature) | `hak-1920-ser-iii-5` | Hilma af Klint, *Ser III No. 5* (dated **18 Jan 1920**). Oil + graphite on canvas **38.5 × 29 cm**. Hilma af Klint Foundation archive **HaK480**. Cat. raisonné: Almqvist (ed.), *Hilma af Klint – Catalogue raisonné* vol. 5 *Geometric Series and Other Works 1917–1920* (2021), p. 115. Auction record (classroom identity gate, not a photo to commit): [Bukowskis lot](https://www.bukowskis.com/en/auctions/676/827-hilma-af-klint-ser-iii-no-5) | Circles, triangles, theosophical seal / cross symbols, and graphite notations — **not** an H/V black-line + rectangular-plane partition. Light/dark polarity and yellow/blue squares are spiritual diagram language, not neoplastic liquid-fill armature. Tempting edge case because it is small, geometric, and abstract. AABB colour patches alone are a Mondrian-ish lie about this silhouette. | **Limit case** — never catalog, never analyzer golden, never student M8 slug. **D-38 plane `clip`** (circle/triangle on AABB) is the editor **silhouette lab** so the class can see the lie without promoting HaK480 into the corpus. |
 | Non-orthogonal neoplasticism (diagonal armature) | `tate-1925-cc-vi` | [Theo van Doesburg](https://www.tate.org.uk/art/artists/theo-van-doesburg-1017) (1883–1931), *Counter-Composition VI* (*Contre-compositie*), 1925. Oil paint on canvas. Support **500 × 500 mm**; frame 690 × 691 × 80 mm.; ref. **T03374**. Tate page: [https://www.tate.org.uk/art/artworks/doesburg-counter-composition-vi-t03374](https://www.tate.org.uk/art/artworks/doesburg-counter-composition-vi-t03374) | Diagonal lines cross the frame — the armature is **not** an H/V orthogonal grid, so the D-12 partition into horizontal/vertical black lines + rectangular planes is unsound even though the work is neoplastic, abstract, and geometric. | **Limit case** — never catalog, never analyzer golden; named specimen for “neoplastic ≠ orthogonal.” |
+| Soft-partition expressionism (gradients, translucency, curves) | `gugg-1923-comp-8` | Vasily Kandinsky (1866–1944), *Composición 8* (*Komposition 8*), July 1923. Oil on canvas **140 × 201 cm**. Solomon R. Guggenheim Museum, New York — Solomon R. Guggenheim Collection, donation, acc. **37.262**. [Wikidata Q19609199](https://www.wikidata.org/wiki/Q19609199) · [Commons file page](https://commons.wikimedia.org/wiki/File:Kandinsky_-_Composition_8,_July_1923.jpg) · upload `…/commons/8/80/Kandinsky_-_Composition_8%2C_July_1923.jpg` | **Every element is SVG-encodable, yet none fits D-12:** free curvilinear and elliptical forms (not rectangular liquid-fill planes), internal **gradients** and **translucent overlaps** (painterly colour mixing on a light ground), no orthogonal or diagonal armature to anchor the partition. Translating the *image* to SVG is a state-of-the-art vectorization + segmentation + alpha-estimation problem (see discussion below), not a D-12 measurement. | **Out of scope (discuss)** — never catalog under D-12. Candidate **second research lane** (its own contract, not an extension of this project's MVP); d. 1944 → EU **PD since 1 Jan 2015** (life+70); **US PD** (pre-1930 publication, published & renewed era — verify exact term at publish time) — but the **Guggenheim photograph** still needs its own rights check (D-32: we publish a study, not the photo) before any published artefact. |
+| Organic-geometry supremism (kinetic silhouette) | `malevich-1916-supremus-55` (collection pending confirmation) | Kazimir Malevich, *Supremus 55* (1916). Oil on canvas. [Commons file page](https://commons.wikimedia.org/wiki/File:Supremus_55_(Malevich,_1916).jpg) · upload `…/commons/b/b3/Supremus_55_%28Malevich%2C_1916%29.jpg` | Beyond a wrong armature: the vocabulary is **free floating forms without any grid** — circle, square, and above all the **black drop**, a kinetic distortion of the geometric form (a falling droplet). A natural SVG **mask / `clip`** can reproduce the silhouette, but the D-12 partition (orthogonal lines + rectangular liquid-fill planes) has no home for it; the drop encodes **motion**, which a static AABB/line schema cannot say. | **Out of scope (discuss)** — never catalog, never analyzer golden. Classroom move: read the drop as a **ceiling view of a 3-D scene** (a volume falling in space) so the class sees why a 2-D geometric schema is the wrong partition, not just a harder one. |
+
+**Brief discussion — `gugg-1923-comp-8` (added 22 Nov 2026).** *Is every element
+translatable to SVG?* **Yes — SVG is the wrong bottleneck here, so that fact is
+misleading.** Curves are béziers; internal gradients are `radialGradient` /
+`linearGradient`; translucency is `fill-opacity` and stacking order. What is
+actually hard is **recovering those parameters from a photograph of a
+140 × 201 cm oil painting** — a three-part state-of-the-art problem:
+
+1. **Segmentation** — finding the shape boundaries at all. D-12 works are
+   trivially separable (flat colour, sharp black lines); Kandinsky's edges are
+   **soft, blurred, or absent** (colour mixing into the ground). Current SOTA:
+   SAM 2 / segmentation-anything + super-resolution (SwinIR) to lift the
+   Commons raster (**3911 × 2849 px** for a 201 cm canvas ≈ 9.7 px/cm — usable,
+   but the soft edges are below reliable detection confidence on a single pass).
+   A *learning-free* path (GMM / k-means per region + watershed) is defensible
+   for a class, but its failure modes are exactly Kandinsky's soft edges — which
+   is itself a teachable result.
+2. **Translucency / alpha estimation** — this is the genuinely open part.
+   Where two semi-transparent glazes overlap, the observed colour is a **mixture**:
+   `C = a·C_top + (1−a)·C_bottom`. Solving for the per-pixel alpha *a* and the
+   hidden *C_bottom* is an **ill-posed inverse problem** (alpha matting —
+   closed-form / deep matting — is state of the art, but it needs a trimap and
+   still assumes known layer order). Kandinsky's stacked translucent ovals mean
+   **N unknowns per overlap region for 3 observed channels** — the layer count
+   is itself a hypothesis. This is research, not tooling.
+3. **Gradient estimation** — well-posed *if* the segment is already found
+   (fit a radial/linear field to the region's pixel colours); ill-posed *until*
+   segmentation is stable, because a gradient is only as good as its boundary.
+
+**Verdict for the project contract:** a Kandinsky case is **a complete
+independent research lane** (schema extension: curved outline + per-region
+gradient field + alpha/stack order + uncertainty per parameter), **not** an
+M8 student slot in this D-12 forge. The clean teaching move is to *keep it
+out-of-scope by name* and let the class see why the contract's scope check
+(date, armature, multi-grey) exists: it is the cheapest line that stands
+between a solvable problem (Mondrian) and an open research problem (Kandinsky).
+Contrast ladder now: Mondrian = flat/orthogonal (in scope) · van Doesburg =
+diagonal (out) · af Klint = symbolic (out) · Malevich = kinetic/3-D (out) ·
+**Kandinsky = painterly/translucent (out, and the only one whose *failure* is
+an unsolved inverse problem rather than a wrong vocabulary).**
+Reproduction (outside git): [Commons file](https://commons.wikimedia.org/wiki/File:Kandinsky_-_Composition_8,_July_1923.jpg),
+3911 × 2849 px (Commons imageinfo; 3.2 MB), full frame.
+
+**Brief discussion — `malevich-1916-supremus-55` (added 22 Nov 2026).** Is
+*Supremus 55* inside the analyzer's limits? **No — and the reason is richer
+than the af Klint case.** (1) *No armature at all:* supremist forms float free;
+there is no H/V grid to partition, so the D-12 schema has no anchor, not even a
+wrongly-oriented one (van Doesburg at least gives diagonals to reject). (2)
+*Masks are not enough:* a natural SVG `clip`/`mask` reproduces the silhouette —
+circle, square, drop — but a mask only answers **which pixels are black**; the
+schema must answer **why those planes exist**, and in Suprematism the answer is
+motion, not construction. (3) *The black drop as kinetic distortion:* the
+droplet shape is a geometric form (circle) under gravity — a **time-coded**
+figure. A static 2-D schema cannot represent “falling”; at most it stores the
+distorted outline, losing the meaning. (4) *The ceiling-view reading (teaching
+move):* present the drop as a **ceiling view of a 3-D scene** — volumes
+suspended/falling in space, seen from below. That single mental shift shows the
+class the correct generalization: the right schema lane for Malevich is
+*3-D volumetric + temporal*, not 2-D rectilinear measurement — which is exactly
+why it is out of scope here, not merely hard. Reproduction (outside git):
+[Commons file](https://commons.wikimedia.org/wiki/File:Supremus_55_(Malevich,_1916).jpg),
+**820 × 820 px** (Commons imageinfo; 87 KB), full frame.
 
 **Teaching sentence (Seat 1 / every M8 issue):** abstract + geometric ≠ schema-valid.
 *Ser III No. 5* is the named specimen for that sentence (same artist as C1 in
@@ -208,7 +272,7 @@ selector itself retells the history — not a single-genius shelf.
 
 ## Scholarly prior art — SIGraDi 2021 (discovery-only until coat fixed)
 
-Conference site: [SIGraDi 2021](https://www.sigradi.org/sigradi2021/).
+Conference site: [SIGraDi 2021](https://www.s igradi.org/sigradi2021/).
 
 **Özgün, Feyza Nur Koçer, and Sema Alaçam.** 2021. “Pixel-Based Geometric
 Decoding of Mondrian Compositions.” In *XXV International Conference of the
