@@ -2,20 +2,13 @@
 import ShellLayout from "../../layouts/ShellLayout.astro";
 import ScaffoldBanner from "../../components/ScaffoldBanner.astro";
 ---
-
----
-<!-- U7-T1 (Paula): Esta página se amplía para dejar una prueba visible y revisable del sistema de tokens compartido. 
- Se muestran los roles tipográficos, los colores de interfaz, un control rectangular con radius 0 y el estado real de las licencias tipográficas. 
- Así se puede comprobar qué tokens existen, cómo se consumen y qué fuentes son objetivos documentados frente a fuentes realmente disponibles. -->
-
- <ShellLayout title="Design tokens — Neoplastix" current="tokens">
+<ShellLayout title="Design tokens — Neoplastix" current="tokens">
   <ScaffoldBanner seat={7} handle="PauLAanDReEa-Ai" title="U7-T1 specimen scaffold" />
   
   <article class="prose">
     <h1>Token specimen</h1>
     <p class="lede">Barrel: <code>@mondrian/tokens</code>. Prefer <code>--nx-*</code>. Seat 7 owns this specimen (D-34 / D-35).</p>
   </article>
-  <!-- These four samples map directly to the headline, subhead, body and caption roles. -->
   <section class="token-specimen" aria-labelledby="type-roles">
     <h2 id="type-roles">Type roles</h2>
     <p class="token-specimen__headline">Headlines — Architype / Styl stack</p>
@@ -23,7 +16,6 @@ import ScaffoldBanner from "../../components/ScaffoldBanner.astro";
     <p class="token-specimen__body">Body — Neue Haas Grotesk / Inter. Measure neoplastic compositions; liquid-fill the frame; rotate hue as study.</p>
     <p class="token-specimen__caption">Captions — Univers / Inter · label chrome</p>
   </section>
-  <!-- Role swatches make the product chrome tokens visible without touching painting fills. -->
   <section class="token-specimen" aria-labelledby="colour-roles">
     <h2 id="colour-roles">Colour roles</h2>
     <ul class="token-swatches">
@@ -36,30 +28,100 @@ import ScaffoldBanner from "../../components/ScaffoldBanner.astro";
       <li style="--swatch: var(--nx-color-ink)"><span>ink</span></li>
     </ul>
   </section>
-  <!-- Form proof: radius 0 is intentional; rounded chrome is outside the visual contract. -->
   <section class="token-specimen" aria-labelledby="form-roles">
     <h2 id="form-roles">Form language</h2>
     <button class="form-proof" type="button">Rectangular control</button>
     <p class="token-specimen__note"><code>--nx-radius-chrome: 0</code> keeps controls and planes rectangular. Rounded corners are not part of the Neoplastic chrome language.</p>
   </section>
-  <!-- We document target typefaces honestly: fallback stacks are used until licences and files exist. -->
   <section class="token-specimen" aria-labelledby="font-licensing">
     <h2 id="font-licensing">Font licensing</h2>
-    <p class="token-specimen__note">Architype Van Doesburg and Neue Haas Grotesk are documented targets, not shipped assets. The specimen uses classroom-safe Styl, Jost, Inter and system fallbacks until licensed files are provided.</p>
+    <p class="token-specimen__note">Architype Van Doesburg and Neue Haas Grotesk are documented targets, not shipped assets. The specimen uses Jost and Inter (and system fallbacks); Styl joins when its files ship.</p>
   </section>
 </ShellLayout>
 <style>
-  .token-specimen { margin: var(--nx-space-6) 0; max-width: 42rem; }
-  .token-specimen h2 { font-family: var(--nx-font-subhead); font-size: var(--nx-text-lg); margin: 0 0 var(--nx-space-3); }
-  .token-specimen__headline { font-family: var(--nx-font-headline); font-size: var(--nx-text-2xl); letter-spacing: var(--nx-tracking-display); line-height: var(--nx-leading-tight); margin: 0 0 var(--nx-space-3); }
-  .token-specimen__subhead { font-family: var(--nx-font-subhead); font-size: var(--nx-text-xl); margin: 0 0 var(--nx-space-3); }
-  .token-specimen__body { font-family: var(--nx-font-body); font-size: var(--nx-text-md); line-height: var(--nx-leading-normal); margin: 0 0 var(--nx-space-3); }
-  .token-specimen__caption, .token-specimen__note { font-family: var(--nx-font-caption); font-size: var(--nx-text-sm); color: var(--nx-color-muted); }
-  .token-specimen__caption { margin: 0; }
-  .token-specimen__note { line-height: var(--nx-leading-normal); margin: var(--nx-space-4) 0 0; }
-  .token-swatches { display: grid; grid-template-columns: repeat(auto-fill, minmax(5.5rem, 1fr)); gap: var(--nx-space-3); list-style: none; margin: 0; padding: 0; }
-  .token-swatches li { aspect-ratio: 1; background: var(--swatch); border: 1px solid color-mix(in srgb, var(--nx-color-ink) 18%, transparent); border-radius: var(--nx-radius-chrome); display: grid; place-items: end start; padding: 0.35rem; }
-  .token-swatches span { font-family: var(--nx-font-caption); font-size: var(--nx-text-xs); background: color-mix(in srgb, var(--nx-color-canvas) 88%, transparent); color: var(--nx-color-ink); padding: 0.1rem 0.25rem; }
+  .token-specimen {
+    margin: var(--nx-space-6) 0;
+    max-width: 42rem;
+  }
+
+  .token-specimen h2 {
+    font-family: var(--nx-font-subhead);
+    font-size: var(--nx-text-lg);
+    margin: 0 0 var(--nx-space-3);
+  }
+
+  .token-specimen__headline {
+    font-family: var(--nx-font-headline);
+    font-size: var(--nx-text-2xl);
+    letter-spacing: var(--nx-tracking-display);
+    line-height: var(--nx-leading-tight);
+    margin: 0 0 var(--nx-space-3);
+  }
+
+  .token-specimen__subhead {
+    font-family: var(--nx-font-subhead);
+    font-size: var(--nx-text-xl);
+    margin: 0 0 var(--nx-space-3);
+  }
+
+  .token-specimen__body {
+    font-family: var(--nx-font-body);
+    font-size: var(--nx-text-md);
+    line-height: var(--nx-leading-normal);
+    margin: 0 0 var(--nx-space-3);
+  }
+
+  .token-specimen__caption,
+  .token-specimen__note {
+    font-family: var(--nx-font-caption);
+    font-size: var(--nx-text-sm);
+    color: var(--nx-color-muted);
+  }
+
+  .token-specimen__caption {
+    margin: 0;
+  }
+
+  .token-specimen__note {
+    line-height: var(--nx-leading-normal);
+    margin: var(--nx-space-4) 0 0;
+  }
+
+  .token-swatches {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(5.5rem, 1fr));
+    gap: var(--nx-space-3);
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .token-swatches li {
+    aspect-ratio: 1;
+    background: var(--swatch);
+    border: 1px solid color-mix(in srgb, var(--nx-color-ink) 18%, transparent);
+    border-radius: var(--nx-radius-chrome);
+    display: grid;
+    place-items: end start;
+    padding: 0.35rem;
+  }
+
+  .token-swatches span {
+    font-family: var(--nx-font-caption);
+    font-size: var(--nx-text-xs);
+    background: color-mix(in srgb, var(--nx-color-canvas) 88%, transparent);
+    color: var(--nx-color-ink);
+    padding: 0.1rem 0.25rem;
+  }
+
   /* Keep the proof control rectangular so the page tests the form token, not a one-off value. */
-  .form-proof { border: 1px solid var(--nx-color-ink); border-radius: var(--nx-radius-chrome); background: var(--nx-color-ink); color: var(--nx-color-canvas); font: 500 var(--nx-text-sm) / 1 var(--nx-font-body); min-height: 2.75rem; padding: 0.75rem 1rem; }
+  .form-proof {
+    border: 1px solid var(--nx-color-ink);
+    border-radius: var(--nx-radius-chrome);
+    background: var(--nx-color-ink);
+    color: var(--nx-color-canvas);
+    font: 500 var(--nx-text-sm) / 1 var(--nx-font-body);
+    min-height: 2.75rem;
+    padding: 0.75rem 1rem;
+  }
 </style>

@@ -1,5 +1,3 @@
-/* U7-T1 (Paula): Se actualizan los estilos de la interfaz para usar los tokens públicos --nx-* del paquete compartido. 
-El cambio hace que la interfaz consuma el sistema común y deja --mp-* únicamente como alias de compatibilidad. */
 /* Shell chrome — landmarks, nav, prose pages */
 
 .skip-link {
